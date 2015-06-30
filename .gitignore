@@ -3,6 +3,10 @@
 *.sublime-workspace
 *.sublime-project
 
+# Backup Folder #
+#################
+/backup
+
 # Compiled source #
 ###################
 *.com
