@@ -17,6 +17,8 @@ body {background: url('../images/body_bckd.png') repeat left top; font-family: '
 /*Misc*/
 strong {font-weight: 700;}
 .inner {width: 90%; max-width: 1053px; margin: 0 auto; display: table;}
+a:link, a:active, a:visited {text-decoration: underline; -webkit-transition: all 0.4s ease; transition: all 0.4s ease;}
+a:hover {text-decoration: none;}
 
 /* Typography */
 h1 {font-size: @26; line-height: 94%; font-weight: 700; text-transform: uppercase; color: @grey; float: left;}
@@ -25,13 +27,13 @@ h3 {font-size: @26; line-height: 230%; font-family: @ubuntu; font-weight: 400; b
 h4 {font-size: @20; font-family: @ubuntu; font-weight: 700; line-height: 180%; color: @grey; display: block; clear: left;}
 
 /*Header*/
-header {position: fixed; top: 0px; width: 100%; height: 80px; padding-top: 10px; background: @orange; -webkit-box-shadow: 0 8px 6px -6px #000; box-shadow: 0 8px 6px -6px #000;}
+header {position: fixed; top: 0px; width: 100%; min-width: 320px; height: 80px; padding-top: 10px; background: @orange; -webkit-box-shadow: 0 8px 6px -6px #000; box-shadow: 0 8px 6px -6px #000;}
 
 /*Navagation*/
 nav {display: block; float: left; width: 100%; margin-top: 5px;}
 nav li {display: inline-block; color: @yellow; width: 32%;}
-nav li a:link, nav li a:active, nav li a:visited {color: @yellow; text-decoration: none; text-align: center; font-size: @15; line-height: 200%; display: block; padding: 10px 0; outline: none; -webkit-transition: all 0.4s ease; transition: all 0.4s ease;}
-nav li a:hover {color: @grey; background-color: @yellow; outline: none;}
+nav li a:link, nav li a:active, nav li a:visited {color: @yellow; text-decoration: none; text-align: center; line-height: 200%; display: block; padding: 10px 0;}
+nav li a:hover {color: @grey; background-color: @yellow;}
 
 /*Main Content*/
 main {margin-top: 90px; margin-bottom: 20px; color: @grey;}
@@ -48,9 +50,8 @@ section {background: #f7f7f7; margin: 0 auto 30px; max-width: 1170px; overflow-y
 footer {width: 100%; background: #333; font-family: @ubuntu; font-weight: 400; color: @yellow; padding-bottom: 30px;}
 footer h3 {line-height: 60px; display: block; clear: left; border: none;}
 footer p {float: left; clear: left; font-size: @20; line-height: 170%;}
-
-a:link, a:active, a:visited {color: @yellow; text-decoration: none;}
-a:hover {color: @orange;}
+footer a:link, footer a:active, footer a:visited {color: @yellow; text-decoration: none;}
+footer a:hover {color: @orange;}
 
 .social {clear: left;}
 .social li {float: left; list-style: none; text-align: center; width: 20%; margin-top: 15px;}
