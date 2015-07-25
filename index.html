@@ -38,7 +38,8 @@
     <section id="about">
         <h3>About Me</h3>
         <div class="inner">
-          <p>Hello World! My name is Bill Dean and I'm a front-end web developer based in Toronto, Canada. I've been working in web design and development for about 12 years. More specifically, I've spent the past few years focused on HTML, CSS, JavaScript, jQuery and WordPress.</p>
+          <p>Hello World! My name is Bill Dean and I'm a web developer based in Toronto, Canada. I've been working in web design and development in one way or another for about 15 years. More specifically, I've spent the past few years focused on front-end development with WordPress and responsive design.</p>
+          <p>In addition to working on the front-end, in the last year I've also been doing some sysadmin work with Linux and Bash scripting on AWS. I've also begun adding other new tools into my daily workflow including Less and Gulp and learning new languages and frameworks like Angular and Laravel.</p>
           <p>I strive for clean, semantic code that makes sense.</p>
         </div>
     </section>
@@ -59,7 +60,7 @@
           <h4>Libraries &amp; Frameworks</h4>
           <ul>
             <li>jQuery</li>
-            <li>LESS</li>
+            <li>Less</li>
             <li>Bootstrap</li>
           </ul>
           <h4>CMS</h4>
@@ -69,7 +70,7 @@
           <h4>Version Control</h4>
           <ul>
             <li>SubVersion</li>
-            <li>GIT</li>
+            <li>Git</li>
           </ul>
           <h4>Editors</h4>
           <ul>
@@ -96,28 +97,28 @@
       </div>
   </footer>
 
-<!-- Scripts -->
+  <!-- Scripts -->
 
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript">
 
-  jQuery(document).ready(function($){
-    $('a').click(function(){
-      $('html, body').animate({
-            scrollTop: $( $(this).attr('href') ).offset().top -90 }, 500);
-        return false;
+    jQuery(document).ready(function($){
+      $('a').click(function(){
+        $('html, body').animate({
+              scrollTop: $( $(this).attr('href') ).offset().top -90 }, 500);
+          return false;
+      });
     });
-  });
 
-// Tracking
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    // Tracking
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 
-  try {
-    var pageTracker = _gat._getTracker("UA-60121501-1");
-  pageTracker._trackPageview();
-  } catch(err) {}
-</script>
+    try {
+      var pageTracker = _gat._getTracker("UA-60121501-1");
+    pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
 
   </body>
 </html>

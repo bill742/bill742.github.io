@@ -5,6 +5,8 @@ Hello World! My name is Bill Dean and I'm a web developer based in Toronto, Cana
 **TODO:**
 + Add portfolio section. 
 + Add favicon.
++ ~~Update intro copy.~~
++ Add contact form.
 + Create content for blog.
 + Add blog to nav.
 + Eventually rebuild to include CMS and blogging functionality.
