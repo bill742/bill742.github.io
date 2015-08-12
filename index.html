@@ -23,12 +23,14 @@
       <div class="inner">
           <h1>Bill Dean</h1>
           <h2>Web Developer</h2>
+          <div class="menu">&#9776;</div>
           <nav>
-              <ul>
-                  <li><a href="#about">About Me</a></li>
-                  <li><a href="#like">Things I Like</a></li>
-                  <li><a href="#contact">Contact Me</a></li>
-              </ul>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#like">Things I Like</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
           </nav>
       </div>
   </header>
@@ -39,7 +41,7 @@
         <h3>About Me</h3>
         <div class="inner">
           <p>Hello World! My name is Bill Dean and I'm a web developer based in Toronto, Canada. I've been working in web design and development in one way or another for about 15 years. More specifically, I've spent the past few years focused on front-end development with WordPress and responsive design.</p>
-          <p>In addition to working on the front-end, in the last year I've also been doing some sysadmin work with Linux and Bash scripting on AWS. I've also begun adding other new tools into my daily workflow including Less and Gulp and learning new languages and frameworks like Angular and Laravel.</p>
+          <p>In addition to working on the front-end, in the last year I've also been doing some sysadmin work with Linux and Bash scripting on AWS. I've also begun adding other new tools into my daily workflow including Less and Gulp and learning new languages and frameworks like Angular.js and Laravel.</p>
           <p>I strive for clean, semantic code that makes sense.</p>
         </div>
     </section>
@@ -50,8 +52,8 @@
           <p>Here are some languages, tools &amp; applications I like to use on a daily basis.</p>
           <h4>Languages</h4>
           <ul>
-            <li>HTML 5</li>
-            <li>CSS 3</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
             <li>JavaScript</li>
             <li>XML</li>
             <li>PHP</li>
@@ -80,12 +82,45 @@
         </div>
     </section>
 
+    <section id="portfolio">
+        <h3>Portfolio</h3>
+
+        <div class="portfolio first">
+          <h4>University of Southern California</h4>
+          <img src="images/usc-llm-lg.jpg" alt="University of Southern California - full size" class="port-img lg">
+          <img src="images/usc-llm-md.jpg" alt="University of Southern California - medium resolution" class="port-img md">
+          <img src="images/usc-llm-sm.jpg" alt="University of Southern California - small resolution" class="port-img sm">
+          <p>A responsive website built with mobile first in mind. Developed in early 2015 while working with Pearson Embanet.</p>
+          <p><strong>Technology Used:</strong> HTML5, CSS3, JavaScript, jQuery, WordPress</p>
+          <p><a href="http://onlinellm.usc.edu" target="_blank">View the website</a></p>
+        </div>
+
+        <div class="portfolio">
+          <h4>Kent State University</h4>
+          <img src="images/kent-pr-lg.jpg" alt="Kent State University - full size" class="port-img lg">
+          <img src="images/kent-pr-md.jpg" alt="Kent State University - medium resolution" class="port-img md">
+          <img src="images/kent-pr-sm.jpg" alt="Kent State University - small resolution" class="port-img sm">
+          <p>A single page responsive website developed for the Kent State University Public Relations program.</p>
+          <p><strong>Technology Used:</strong> HTML5, CSS3, JavaScript, jQuery, WordPress</p>
+          <p><a href="http://publicrelations.kent.edu/" target="_blank">View the website</a></p>
+        </div>
+
+        <div class="portfolio">
+        <h4>New Jersey Institute of Technology</h4>
+          <img src="images/njit-cs-lg.jpg" alt="New Jersey Institute of Technology - full size" class="port-img lg">
+          <img src="images/njit-cs-md.jpg" alt="New Jersey Institute of Technology - medium resolution" class="port-img md">
+          <img src="images/njit-cs-sm.jpg" alt="New Jersey Institute of Technology - small resolution" class="port-img sm">
+          <p>A large responsive website incorportaing a number of animations as well as a video background. Developed in Fall 2014 while working with Pearson Embanet.</p>
+          <p><strong>Technology Used:</strong> HTML5, CSS3, JavaScript, jQuery, WordPress</p>
+          <p><a href="http://computerscience.online.njit.edu/shape-the-future/" target="_blank">View the website</a></p>
+        </div>
+    </section>
+
   </main> <!--close container-->
 
   <footer id="contact">
     <h3>Contact Me</h3>
       <div class="inner">
-          <p><strong>Email:</strong> <a href="mailto:742designs@gmail.com">742designs@gmail.com</a></p>
 
           <ul class="social">
               <li><a href="https://github.com/bill742" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
@@ -94,31 +129,15 @@
               <li><a href="https://twitter.com/bil742" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
               <li><a href="https://plus.google.com/+BillDean742/" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a></li>
           </ul>
+
+          <a href="mailto:742designs@gmail.com" class="email">742designs@gmail.com</a>
       </div>
   </footer>
 
   <!-- Scripts -->
 
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script type="text/javascript">
-
-    jQuery(document).ready(function($){
-      $('a').click(function(){
-        $('html, body').animate({
-              scrollTop: $( $(this).attr('href') ).offset().top -90 }, 500);
-          return false;
-      });
-    });
-
-    // Tracking
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-
-    try {
-      var pageTracker = _gat._getTracker("UA-60121501-1");
-    pageTracker._trackPageview();
-    } catch(err) {}
-  </script>
+  <script src="js/scripts.js"></script>
 
   </body>
 </html>
