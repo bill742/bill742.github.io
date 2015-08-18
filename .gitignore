@@ -3,6 +3,10 @@
 *.sublime-workspace
 *.sublime-project
 
+# PhotoShop Design Files #
+########################
+*.psd
+
 # Backup Folder #
 #################
 /backup
