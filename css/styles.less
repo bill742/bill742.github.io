@@ -1,4 +1,46 @@
-@import url("reset.css");
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+	border: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+*, *:before, *:after {box-sizing: inherit;}
 
 /* Variables */
 @ubuntu: 'Ubuntu', sans-serif;
@@ -54,11 +96,14 @@ section {background: #f7f7f7; margin: 0 auto 30px; max-width: 1170px; overflow-y
 /*Portfolio*/
 .portfolio {margin: 20px auto; padding-bottom: 20px; display: block; border: 1px solid @grey; width: 90%; font-family: @ubuntu; line-height: 185%; overflow: auto;}
 .portfolio h4 {background-color: @grey; color: @orange; padding: 5px 15px; margin-bottom: 8px;}
-.port-img {width: 70%; float: left; cursor: pointer; margin-left: 15px;}
-.portfolio p {float: left; padding-left: 15px; padding-right: 15px;}
-.port-img.md {width: 55%;}
-.port-img.sm {width: 40%;}
+
+.portfolio p {float: left; padding: 0 15px;}
 .md, .sm {display: none;}
+
+.arrow {color: @grey; margin: 5px 10px; padding: 10px; cursor: pointer;}
+.fa-arrow-left {margin-left: 35%;}
+.port-img {cursor: pointer; width: 100%; margin: 0 auto;}
+.port-img.md, .port-img.sm {max-height: 240px; width: auto;}
 
 /*Contact*/
 footer {width: 100%; background: @grey; font-family: @ubuntu; font-weight: 400; color: @yellow; padding-bottom: 30px;}
@@ -78,10 +123,10 @@ footer a:hover {color: @orange;}
 	.menu {display: none;}
 	nav {display: block; margin-top: 5px;}
 	nav li {width: 24%; background-color: transparent;}
-	.portfolio p {float: right; text-align: left; width: 50%; padding-right: 15px;}
-	.port-img {width: 40%;}
-	.port-img.md {width: 25%;}
-	.port-img.sm {width: 15%;}
+	.gallery { width: 50%; float: left;}
+	.portfolio p {float: right; text-align: left; width: 45%;}
+	.port-img.md, .port-img.sm {max-height: 370px;}
+	.fa-arrow-left {margin-left: 40%;}
 }
 
 /*800*/

@@ -15,14 +15,43 @@ jQuery(document).ready(function($){
 
   // Show/Hide Portfolio images
   $('.port-img').click(function(){
-    if ($(this).hasClass("sm")) {
+    if ($(this).hasClass('sm')) {
       $(this)
-      .hide()
-      .prevAll('.lg').fadeIn('slow');
+        .hide()
+        .prevAll('.lg').fadeIn('slow');
     } else {
       $(this)
-      .hide()
-      .next('img').fadeIn('slow');
+        .hide()
+        .next('img').fadeIn('slow');
+    }
+  });
+
+  // Portfolio arrows
+  $('.fa-arrow-right').click(function(){
+    var t = $(this);
+    if (t.siblings('.port-img:visible').hasClass('sm')) {
+      $(t).siblings('.port-img').hide();
+      $(t).siblings('.port-img.lg').fadeIn('slow');
+    } else if (t.siblings('.port-img:visible').hasClass("md")) {
+      $(t).siblings('.port-img').hide();
+      $(t).siblings('.port-img.sm').fadeIn('slow').css('display', 'block');
+    } else {
+      $(t).siblings('.port-img').hide();
+      $(t).siblings('.port-img.md').fadeIn('slow').css('display', 'block');
+    }
+  });
+
+  $('.fa-arrow-left').click(function(){
+    var t = $(this);
+    if (t.siblings('.port-img:visible').hasClass('sm')) {
+      $(t).siblings('.port-img').hide();
+      $(t).siblings('.port-img.md').fadeIn('slow').css('display', 'block');
+    } else if (t.siblings('.port-img:visible').hasClass('md')) {
+      $(t).siblings('.port-img').hide();
+      $(t).siblings('.port-img.lg').fadeIn('slow');
+    } else {
+      $(t).siblings('.port-img').hide();
+      $(t).siblings('.port-img.sm').fadeIn('slow').css('display', 'block');
     }
   });
 
