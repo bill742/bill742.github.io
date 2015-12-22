@@ -91,13 +91,13 @@ main {margin-top: 90px; margin-bottom: 20px; color: @grey;}
 box-shadow: 2px 2px 20px 2px #000;}
 
 /*Sections*/
-section {background: #f7f7f7; margin: 0 auto 30px; max-width: 1170px; overflow-y: auto; border-bottom: 2px solid rgba(33, 33, 33, .6);}
+section {background: #f7f7f7; margin: 0 auto 30px; padding-bottom: 20px; max-width: 1170px; overflow-y: auto; border-bottom: 2px solid rgba(33, 33, 33, .6);}
 
 /*Portfolio*/
 .portfolio {margin: 20px auto; padding-bottom: 20px; display: block; border: 1px solid @grey; width: 90%; font-family: @ubuntu; line-height: 185%; overflow: auto;}
-.portfolio h4 {background-color: @grey; color: @orange; padding: 5px 15px; margin-bottom: 8px;}
+.portfolio h4 {background-color: @grey; color: @orange; padding: 5px 15px; margin-bottom: 20px;}
 
-.portfolio p {float: left; padding: 0 15px;}
+.portfolio p {float: left; padding: 0 15px; margin: 0 0 16px;}
 .md, .sm {display: none;}
 
 .arrow {color: @grey; margin: 5px 10px; padding: 10px; cursor: pointer;}
@@ -106,12 +106,11 @@ section {background: #f7f7f7; margin: 0 auto 30px; max-width: 1170px; overflow-y
 .port-img.md, .port-img.sm {max-height: 240px; width: auto;}
 
 /*Contact*/
-footer {width: 100%; background: @grey; font-family: @ubuntu; font-weight: 400; color: @yellow;}
+footer {width: 100%; background: @grey; font-family: @ubuntu; font-weight: 400; color: @yellow; padding: 30px 0;}
 footer h3 {line-height: 230%; display: block; padding-left: 0; clear: left; border: none; text-align: center; text-transform: uppercase;}
 footer a:link, footer a:active, footer a:visited {color: @yellow; text-decoration: none;}
 footer a:hover {color: @orange;}
-.footer-copy {font-size: @20; line-height: 170%; text-align: center; padding: 0 0 15px; display: block; font-size: 1.2em;}
-
+.footer-copy {font-size: @20; line-height: 170%; text-align: center; margin: 15px auto 30px; display: block; width: 50%;}
 .social {clear: left; overflow: auto;}
 .social li {float: left; list-style: none; text-align: center; width: 16%; margin: 15px 0;}
 .social li:first-child {margin-left: 0;}
@@ -122,7 +121,7 @@ footer a:hover {color: @orange;}
 	.menu {display: none;}
 	nav {display: block; margin-top: 5px;}
 	nav li {width: 24%; background-color: transparent;}
-	.gallery { width: 50%; float: left;}
+	.gallery { width: 50%; float: left; min-height: 350px;}
 	.portfolio p {float: right; text-align: left; width: 45%;}
 	.port-img.md, .port-img.sm {max-height: 370px;}
 	.fa-arrow-left {margin-left: 40%;}
@@ -135,7 +134,7 @@ footer a:hover {color: @orange;}
 	header {height: auto;}
 	nav {width: 60%; float: right; margin-top: 0;}
 	nav li a {font-size: @18;}
-	.social {clear: none; overflow: auto; width: 40%; margin: 10px auto 20px;}
+	.social {clear: none; overflow: auto; width: 40%; margin: 0 auto;}
 	.social li {margin: 0;}
 }
 
