@@ -600,7 +600,10 @@ body.resume {
   }
 
   .wrapper {
-    background-color: $brand-color;
+
+    @media (min-width: $on-palm){
+        background-color: $brand-color;
+    }
   }
 }
 
