@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bill Dean - Front-End Web Developer</title>
+    <description>Hello World! My name is Bill Dean and I&#39;m a web developer based in Toronto, Canada. I specialize in HTML5, CSS3, JavaScript, jQuery, and WordPress.</description>
+    <link>http://bill742.github.io/</link>
+    <atom:link href="http://bill742.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 20 Jun 2016 21:17:56 -0400</pubDate>
+    <lastBuildDate>Mon, 20 Jun 2016 21:17:56 -0400</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+  </channel>
+</rss>
