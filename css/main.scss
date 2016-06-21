@@ -705,10 +705,12 @@ body.resume {
     width: 100%;
     padding: 10px 0;
     color: $secondary-text;
+    background-color: $brand-color;
 
     @media (min-width: $on-laptop) {
       float: right;
       width: 32%;
+      background-color: transparent;
     }
 
     @media (min-width: 1000px) {
