@@ -591,6 +591,14 @@ body.resume {
   color: $text-color;
   background-color: $secondary-text;
 
+  header, footer {
+
+    @media print {
+      display: none;
+    }
+
+  }
+
   .page-content {
     padding: 30px $section-spacing-mobile 0;
 
@@ -604,6 +612,14 @@ body.resume {
     @media (min-width: $on-palm){
         background-color: $brand-color;
     }
+
+    @media print {
+      background-color: transparent;
+    }
+  }
+
+  h2 {
+    font-size: $_26;
   }
 }
 
@@ -701,6 +717,8 @@ body.resume {
   }
 }
 
+$pad: 15px;
+
 .resume-sidebar {
     width: 100%;
     padding: 10px 0;
@@ -711,16 +729,27 @@ body.resume {
       float: right;
       width: 32%;
       background-color: transparent;
+      padding-top: 0;
     }
 
     @media (min-width: 1000px) {
       width: 28%;
     }
 
+    @media print {
+      background-color: transparent;
+      border-left: 1px solid $text-color;
+      color: $text-color;
+    }
+
     .profile {
         border-radius: 50%;
         margin: 10px auto 20px;
         display: block;
+
+        @media print {
+          margin-top: 0;
+        }
     }
 
     .name {
@@ -735,6 +764,10 @@ body.resume {
         line-height: 120%;
         margin: 12px 0;
         display: block;
+
+        @media print {
+          color: $text-color;
+        }
     }
 
     ul.contact-list {
@@ -742,7 +775,7 @@ body.resume {
         text-align: center;
 
         @media (min-width: $on-laptop) {
-          padding: 0 10px;
+          padding: 0 $pad;
           text-align: left;
         }
 
@@ -755,10 +788,18 @@ body.resume {
         text-decoration: none;
         color: $grey-color-light;
       }
+
+      @media print {
+        color: $text-color;
+      }
     }
 
     i {
         margin-right: 8px;
+
+        @media print {
+          color: $text-color;
+        }
     }
   }
 
@@ -771,6 +812,10 @@ body.resume {
       @media (min-width: $on-laptop) {
         margin: 20px 10px;
       }
+
+      @media print {
+        color: $text-color;
+      }
   }
 
   .school-block {
@@ -779,7 +824,7 @@ body.resume {
       font-size: $_14;
 
       @media (min-width: $on-laptop) {
-        margin: 0 10px 30px;
+        margin: 0 $pad 30px;
       }
 
       strong {
