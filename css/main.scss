@@ -666,7 +666,7 @@ body.resume {
       clear: left;
 
       @media print {
-          font-size: 1em;
+          font-size: $_14;
       }
     }
     .title {
@@ -690,7 +690,7 @@ body.resume {
         margin-left: 18px;
 
         @media print {
-            font-size: 1em;
+            font-size: $_14;
         }
       }
     }
@@ -700,7 +700,17 @@ body.resume {
     h2 {
       line-height: 1;
       padding-bottom: 12px;
+
+      @media print {
+          padding-bottom: 0;
+      }
     }
+  }
+
+  .resume-skills {
+      .title {
+          line-height: 1;
+      }
   }
 
   h4 {
