@@ -592,11 +592,9 @@ body.resume {
   background-color: $secondary-text;
 
   header, footer {
-
     @media print {
       display: none;
     }
-
   }
 
   .page-content {
@@ -605,10 +603,13 @@ body.resume {
     @media (min-width: $on-palm) {
       padding: 30px $section-spacing 12px;
     }
+
+    @media print {
+        padding: 0;
+    }
   }
 
   .wrapper {
-
     @media (min-width: $on-palm){
         background-color: $brand-color;
     }
@@ -620,6 +621,10 @@ body.resume {
 
   h2 {
     font-size: $_26;
+
+    @media print {
+        font-size: $_22;
+    }
   }
 }
 
@@ -637,6 +642,11 @@ body.resume {
       width: 69%;
     }
 
+    @media print {
+        width: 65%;
+        padding: 0 3% 20px 0;
+    }
+
   section {
   	padding: 0;
     margin: 0;
@@ -652,33 +662,41 @@ body.resume {
 
   	p {
       font-size: $_18;
-  		line-height: 140%;
+      line-height: 140%;
       clear: left;
+
+      @media print {
+          font-size: 1em;
+      }
     }
     .title {
       font-size: $_20;
       font-weight: 700;
       clear: left;
     }
-  	.date {
-      font-size: $_15;
-    }
     .secondary-title  {
       font-size: $_18;
       line-height: 120%;
     }
+    .date {
+      font-size: $_15;
+    }
+
     ul {
       margin: 10px 0 20px;
 
       li {
         font-size: $_18;
         margin-left: 18px;
+
+        @media print {
+            font-size: 1em;
+        }
       }
     }
   }
 
   .overview {
-
     h2 {
       line-height: 1;
       padding-bottom: 12px;
@@ -740,6 +758,8 @@ $pad: 15px;
       background-color: transparent;
       border-left: 1px solid $text-color;
       color: $text-color;
+      float: right;
+      width: 32%;
     }
 
     .profile {
@@ -773,15 +793,26 @@ $pad: 15px;
     ul.contact-list {
         list-style-type: none;
         text-align: center;
+        font-size: $_14;
+
+        span {
+            display: block;
+            margin-left: 21px;
+        }
 
         @media (min-width: $on-laptop) {
           padding: 0 $pad;
           text-align: left;
         }
 
+        @media print {
+            text-align: left;
+            padding: 0 $pad;
+            font-size: $_14;
+        }
+
     a {
       color: $secondary-text;
-      font-size: $_14;
       text-decoration: none;
 
       &:hover {
@@ -796,10 +827,6 @@ $pad: 15px;
 
     i {
         margin-right: 8px;
-
-        @media print {
-          color: $text-color;
-        }
     }
   }
 
@@ -810,7 +837,7 @@ $pad: 15px;
       text-align: left;
 
       @media (min-width: $on-laptop) {
-        margin: 20px 10px;
+        margin: 20px $pad;
       }
 
       @media print {
