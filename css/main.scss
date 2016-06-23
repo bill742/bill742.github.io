@@ -709,6 +709,10 @@ body.resume {
         }
       }
     }
+
+    .break {
+      page-break-before: always;
+    }
   }
 
   .overview {
