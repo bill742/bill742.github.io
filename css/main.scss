@@ -246,6 +246,17 @@ section.about {
     @media (min-width: $on-laptop) {
         padding: 30px 60px;
     }
+
+    p.about-resume {
+        background-color: #F03838;
+        padding: 8px 12px;
+        margin: 10px auto 0;
+        width: 20%;
+
+        &:hover a {
+            color: #000;
+        }
+    }
   }
 }
 

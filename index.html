@@ -6,9 +6,9 @@ layout: default
 
   <div class="about-container">
     <h2>About Me</h2>
-    <p>Hello World! My name is Bill Dean and I'm a front-end web developer based in Toronto, Canada. I've been working in web design and development for a number of years. I specialize in  coding responsive websites using HTML5, CSS3, JavaScript, jQuery, and WordPress. I am also comfortable with Sass, PHP, MySQL, and interacting with the Linux command line. Recently I've been focused on adding new tools into my daily workflow including Sass and Gulp and learning new frameworks like React and Angular.</p>
+    <p>Hello World! My name is Bill Dean and I'm a front-end web developer based in Toronto, Canada. I've been working in web design and development for a number of years. I specialize in coding responsive websites using HTML5, CSS3, JavaScript, jQuery, and WordPress. I am also comfortable with Sass, PHP, MySQL, and interacting with the Linux command line. Recently I've been focused on adding new tools into my daily workflow including Sass and Gulp and learning new frameworks like React and Angular.</p>
     <p>I strive for clean, semantic code that makes sense.</p>
-    <p><a href="/resume">View my resume</a></p>
+    <p class="about-resume"><a href="/resume">View my resume</a></p>
   </div>
 
 </section>
@@ -63,7 +63,30 @@ layout: default
 
   <h2>Portfolio</h2>
 
-  <div class="portfolio-row">
+    <div class="portfolio-row">
+      <div class="portfolio-container">
+          <img src="/images/quote-generator.jpg" alt="Random Quote Generator" class="port-img" />
+          <div class="port-copy">
+              <h3>Random Quote Generator</h3>
+              <i class="fa fa-plus plus" aria-hidden="true"></i>
+              <i class="fa fa-times port-close" aria-hidden="true"></i>
+              <p>An app that pulls data from the <a href="https://quotesondesign.com/api-v4-0/" target="_blank">Quotes on Design API</a> to generate random inspirational quotes about design. The app also allows the user to tweet any of the quotes.</p>
+              <p><a href="https://github.com/bill742/random-quote-generator" target="_blank">GitHub</a> - <a href="https://rawgit.com/bill742/random-quote-generator/master/" target="_blank">Demo</a></p>
+          </div>
+      </div>
+      <div class="portfolio-container">
+          <img src="/images/github-viewer.jpg" alt="Github Viewer" class="port-img" />
+          <div class="port-copy">
+              <h3>Github Viewer</h3>
+              <i class="fa fa-plus plus" aria-hidden="true"></i>
+              <i class="fa fa-times port-close" aria-hidden="true"></i>
+              <p>An AngularJS app that allows users to search for accounts on Github. The results are pulled using the GitHub API and  display the account's associated repositiories, languages, contributors, and the number of stars for each project.</p>
+              <p><a href="https://github.com/bill742/github-viewer" target="_blank">GitHub</a> - <a href="https://rawgit.com/bill742/github-viewer/master/" target="_blank">Demo</a></p>
+          </div>
+      </div>
+    </div>
+
+    <div class="portfolio-row">
       <div class="portfolio-container">
           <img src="/images/webdev-res-lg.jpg" alt="Web Dev Resources" class="port-img" />
           <div class="port-copy">
@@ -71,7 +94,7 @@ layout: default
               <i class="fa fa-plus plus" aria-hidden="true"></i>
               <i class="fa fa-times port-close" aria-hidden="true"></i>
               <p>The app uses AngularJS (1.4) to read data from a JSON file and display it via templates. Data-binding allows the search function to dynamically present relevant results as the user types. Bootstrap does the heavy lifting to display the app responsively.</p>
-              <p><a href="https://github.com/bill742/WebDev-Resources" target="_blank">View the project on GitHub</a></p>
+              <p><a href="https://github.com/bill742/WebDev-Resources" target="_blank">GitHub</a> - <a href="https://rawgit.com/bill742/WebDev-Resources/master/" target="_blank">Demo</a></p>
           </div>
       </div>
 
