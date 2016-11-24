@@ -3,6 +3,9 @@
 ---
 @charset "utf-8";
 
+@import "_font-awesome";
+@import "https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css";
+
 // Variables
 $base-font-family: "Roboto Condensed", Arial, sans-serif;
 $ubuntu: 'Ubuntu', sans-serif;
@@ -952,6 +955,21 @@ footer {
     text-align: center;
     width: 20%;
     margin: 15px 0;
+
+    .icon>svg  {
+        width: 32px;
+        height: 32px;
+        path {
+          fill: $text-color;
+        }
+        &:hover {
+          path {
+            fill: $brand-color;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+          }
+        }
+    }
   }
 }
 
