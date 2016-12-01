@@ -3,9 +3,6 @@
 ---
 @charset "utf-8";
 
-@import "_font-awesome";
-@import "https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css";
-
 // Variables
 $base-font-family: "Roboto Condensed", Arial, sans-serif;
 $ubuntu: 'Ubuntu', sans-serif;
@@ -254,7 +251,10 @@ section.about {
         background-color: #F03838;
         padding: 8px 12px;
         margin: 10px auto 0;
-        width: 20%;
+        width: 80%;
+        @media (min-width: $on-laptop) {
+            width: 40%;
+        }
 
         &:hover a {
             color: #000;
@@ -316,10 +316,20 @@ section.skills {
     display: block;
     width: 80%;
 
-    i {
+    // i {
+    //   margin: 10px;
+    //   font-size: 60px;
+    //   display: inline-block;
+    // }
+
+    svg {
+      width: 60px;
+      height: 60px;
       margin: 10px;
-      font-size: 60px;
       display: inline-block;
+      path {
+        fill: $brand-color;
+      }
     }
   }
 
@@ -944,6 +954,8 @@ footer {
   }
 
 }
+
+
 .social {
   overflow: auto;
   padding: 0 $section-spacing;
@@ -954,21 +966,27 @@ footer {
     list-style: none;
     text-align: center;
     width: 20%;
+    height: 60px;
     margin: 15px 0;
 
-    .icon>svg  {
-        width: 32px;
-        height: 32px;
+    svg  {
+      width: 60%;
+      height: 60%;
+      display: inline-block;
+      path {
+        fill: $text-color;
+      }
+      &:hover {
         path {
-          fill: $text-color;
+          fill: $brand-color;
+          -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease;
         }
-        &:hover {
-          path {
-            fill: $brand-color;
-            -webkit-transition: all 0.4s ease;
-            transition: all 0.4s ease;
-          }
-        }
+      }
+      @media (min-width: $on-laptop) {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
@@ -994,7 +1012,9 @@ footer {
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base"//,
+        "base",
+        "_font-awesome"
+        // "https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"
         //"layout",
         //"syntax-highlighting"
 ;
