@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 // Variables
-$base-font-family: "Roboto Condensed", Arial, sans-serif;
+$base-font-family: 'Roboto Condensed', Arial, sans-serif;
 $ubuntu: 'Ubuntu', sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -47,27 +47,29 @@ $on-palm:          650px;
 // Typography
 h1 {
   font-size: $_35;
-  line-height: 94%;
   font-weight: 700 !important;
-  text-transform: uppercase;
-  text-align: center;
+  line-height: 94%;
   padding: 12px 0 4px !important;
+  text-align: center;
+  text-transform: uppercase;
+
   @media (min-width: $on-laptop) {
-      float: left;
-      text-align: left;
-      padding: 8px 0 0 !important;
+    float: left;
+    text-align: left;
+    padding: 8px 0 0 !important;
   }
 
   a:link, a:active, a:hover, a:visited {
-    text-decoration: none;
     color: $secondary-text;
+    text-decoration: none;
   }
 }
+
 h2 {
+  color: $brand-color;
+  font-family: $ubuntu;
   font-size: $_32;
   font-weight: 400;
-  font-family: $ubuntu;
-  color: $brand-color;
   line-height: 230%;
   text-align: center;
   text-transform: uppercase;
@@ -76,31 +78,32 @@ h2 {
     margin-top: 20px;
   }
 }
+
 h3 {
+  clear: left;
   font-size: $_22;
   display: inline;
   padding-left: 5%;
-  clear: left;
   color: $brand-color;
 }
 h4 {
+  clear: left;
+  color: $secondary-text;
+  display: block;
   font-size: $_20;
   font-family: $ubuntu;
   font-weight: 700;
   line-height: 180%;
-  color: $secondary-text;
-  display: block;
-  clear: left;
 }
 
 // Header
 header {
-  height: 90px;
   background-color: $text-color;
   float: none !important;
+  height: 90px;
 
   @media (min-width: $on-palm) {
-      padding: 0 $section-spacing-mobile;
+    padding: 0 $section-spacing-mobile;
   }
 
   @media (min-width: $on-laptop) {
@@ -109,57 +112,57 @@ header {
   }
 
   .subtitle {
-      color: $secondary-text;
-      font-size: $_22;
-      text-align: center;
-      clear: left;
-      display: block;
+    clear: left;
+    color: $secondary-text;
+    font-size: $_22;
+    text-align: center;
+    display: block;
 
-      @media (min-width: $on-laptop) {
-          float: left;
-      }
+    @media (min-width: $on-laptop) {
+      float: left;
+    }
   }
 
   /*Navagation*/
   nav {
+    background-color: rgba(0,0,0,0.9);
     display: none;
-    width: 100%;
     margin: 0 auto;
     position: absolute;
-    background-color: rgba(0,0,0,0.9);
+    width: 100%;
     z-index: 5;
 
     @media (min-width: $on-palm) {
-        margin-left: -8%;
-        top: 80px;
+      margin-left: -8%;
+      top: 80px;
     }
 
     a {
-      float: left;
-      width: 100%;
       color: $secondary-text;
+      display: block;
+      float: left;
+      line-height: 40px;
       text-decoration: none;
       text-align: center;
-      line-height: 40px;
-      display: block;
-      -webkit-transition: all 0.4s ease;
       transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      width: 100%;
 
       &:active, &:visited {
-          color: $secondary-text;
+        color: $secondary-text;
       }
 
       &:hover {
-          color: $secondary-text;
-          background-color: $brand-color;
-          text-decoration: none;
+        background-color: $brand-color;
+        color: $secondary-text;
+        text-decoration: none;
       }
     }
   }
 
   @mixin menu-btns {
-    font-size: $_32;
     color: $secondary-text;
+    font-size: $_32;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -216,11 +219,11 @@ section {
 
 // About
 section.about {
-  background-image: url(/images/hero.jpg);
-  background-repeat: no-repeat;
-  background-position: center 0;
-  background-size: cover;
   background-attachment: fixed;
+  background-image: url("/images/hero.jpg");
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   h2 {
     color: $secondary-text;
@@ -231,34 +234,37 @@ section.about {
   }
 
   a:link, a:active, a:visited {
-      color: $secondary-text;
+    color: $secondary-text;
 
-      &:hover {
-          color: $brand-color;
-      }
+    &:hover {
+      color: $brand-color;
+    }
   }
 
   .about-container {
     background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
     padding: 0 14px 20px;
+    text-align: center;
 
     @media (min-width: $on-laptop) {
-        padding: 30px 60px;
+      padding: 30px 60px;
     }
 
-    p.about-resume {
-        background-color: #F03838;
-        padding: 8px 12px;
-        margin: 10px auto 0;
-        width: 80%;
-        @media (min-width: $on-laptop) {
-            width: 40%;
-        }
+    a.about-resume {
+      background-color: $brand-color;
+      display: block;
+      font-size: $_20;
+      margin: 10px auto 0;
+      padding: 8px 12px;
+      width: 80%;
 
-        &:hover a {
-            color: #000;
-        }
+      @media (min-width: $on-laptop) {
+        width: 40%;
+      }
+
+      &:hover {
+        color: $text-color;
+      }
     }
   }
 }
@@ -282,15 +288,15 @@ section.skills {
     flex: 1 0 0;
 
     .skill-icon {
-        color: $secondary-text;
-        font-size: 20px;
-        line-height: 60px;
-        background-color: $brand-color;
-        margin: 0 auto 16px;
-        display: block;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
+      color: $secondary-text;
+      font-size: 20px;
+      line-height: 60px;
+      background-color: $brand-color;
+      margin: 0 auto 16px;
+      display: block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
     }
 
     h3 {
@@ -379,13 +385,13 @@ section.portfolio {
         overflow: hidden;
 
         @media (min-width: $on-laptop) {
-            float: left;
-            width: 49%;
-            margin: 16px 0 0;
+          float: left;
+          width: 49%;
+          margin: 16px 0 0;
 
-            &:nth-child(1) {
-              margin-right: 2%;
-            }
+          &:nth-child(1) {
+            margin-right: 2%;
+          }
         }
 
     @mixin port-btn {
@@ -411,34 +417,37 @@ section.portfolio {
     }
 
     .port-copy {
-        position: absolute;
-        top: 70%;
-        width: 100%;
-        height: 380px;
-        background-color: rgba(0, 0, 0, 0.8);
-        cursor: pointer;
-        z-index: 10;
-        transition: all 0.5s ease;
+      position: absolute;
+      top: 70%;
+      width: 100%;
+      height: 380px;
+      background-color: rgba(0, 0, 0, 0.8);
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.5s ease;
 
-        @media (min-width: 380px) {
-          top: 80%;
-        }
-        @media (min-width: 525px) {
-          top: 85%;
-        }
-        @media (min-width: $on-laptop) {
-          top: 80%;
-        }
-        @media (min-width: 1200px) {
-          top: 85%;
-        }
+      @media (min-width: 380px) {
+        top: 80%;
+      }
+
+      @media (min-width: 525px) {
+        top: 85%;
+      }
+
+      @media (min-width: $on-laptop) {
+        top: 80%;
+      }
+
+      @media (min-width: 1200px) {
+        top: 85%;
+      }
 
         h3 {
-            color: $secondary-text;
-            line-height: 60px;
-            padding-left: 20px;
-            float: left;
-            font-size: $_18;
+          color: $secondary-text;
+          line-height: 60px;
+          padding-left: 20px;
+          float: left;
+          font-size: $_18;
 
             @media (min-width: 380px) {
               font-size: $_22;
@@ -668,28 +677,28 @@ body.resume {
 }
 
 .resume-content {
-    width: 100%;
-    background-color: $secondary-text;
-    padding: 30px 0 20px;
+  background-color: $secondary-text;
+  padding: 30px 0 20px;
+  width: 100%;
 
-    @mixin resume-title {
-      font-size: $_18;
-      line-height: 120%;
-    }
+  @mixin resume-title {
+    font-size: $_18;
+    line-height: 120%;
+  }
 
-    @media (min-width: $on-laptop) {
-      width: 65%;
-      padding: 0 3% 20px 0;
-    }
+  @media (min-width: $on-laptop) {
+    width: 65%;
+    padding: 0 3% 5px 0;
+  }
 
-    @media (min-width: 1000px) {
-      width: 69%;
-    }
+  @media (min-width: 1000px) {
+    width: 69%;
+  }
 
-    @media print {
-        width: 65%;
-        padding: 0 3% 20px 0;
-    }
+  @media print {
+    width: 65%;
+    padding: 0 3% 20px 0;
+  }
 
   section {
   	padding: 0;
@@ -701,7 +710,7 @@ body.resume {
     }
 
     h3 {
-        display: block;
+      display: block;
     }
 
   	p {
@@ -781,27 +790,27 @@ body.resume {
   }
 
   @mixin bar-inner {
-      background-color: $brand-color;
-      height: 25px;
+    background-color: $brand-color;
+    height: 25px;
   }
 
   .adv {
-      @include bar-inner;
-      width: 95%;
+    @include bar-inner;
+    width: 95%;
   }
 
   .mid {
-      @include bar-inner;
-      width: 60%;
+    @include bar-inner;
+    width: 60%;
   }
 
   .beg {
-      @include bar-inner;
-      width: 30%;
+    @include bar-inner;
+    width: 30%;
   }
 }
 
-$pad: 15px;
+$pad: 40px;
 
 .resume-sidebar {
     width: 100%;
@@ -829,19 +838,19 @@ $pad: 15px;
     }
 
     .profile {
-        border-radius: 50%;
-        margin: 10px auto 20px;
-        display: block;
+      border-radius: 50%;
+      margin: 10px auto 20px;
+      display: block;
 
-        @media print {
-          margin-top: 0;
-        }
+      @media print {
+        margin-top: 0;
+      }
     }
 
     .name {
-        text-transform: none;
-        text-align: center;
-        float: none;
+      float: none;
+      text-align: center;
+      text-transform: none;
     }
 
     .tagline {
@@ -857,35 +866,45 @@ $pad: 15px;
     }
 
     ul.contact-list {
-        list-style-type: none;
-        text-align: center;
-        font-size: $_14;
+      list-style-type: none;
+      text-align: center;
+      font-size: $_14;
 
-        li {
-            clear: left;
-            padding: 4px 0;
+      li {
+        clear: left;
+        padding: 4px 0;
 
-            svg  {
-              width: 13px;
-              height: 13px;
-              padding: 5px 8px 0 0;
-              float: left;
-              path {
-                fill: $secondary-text;
-              }
-              &:hover {
-                path {
-                  fill: $grey-color-light;
-                  -webkit-transition: all 0.4s ease;
-                  transition: all 0.4s ease;
-                }
-              }
+        svg  {
+          width: 13px;
+          height: 13px;
+          padding: 5px 8px 0 0;
+          float: none;
+
+          @media (min-width: $on-laptop) {
+            float: left;
+          }
+
+          path {
+            fill: $secondary-text;
+
+            @media print {
+              fill: $text-color;
             }
+          }
 
-            span {
-                display: block;
-                margin-left: 21px;
+          &:hover {
+            path {
+              fill: $grey-color-light;
+              -webkit-transition: all 0.4s ease;
+              transition: all 0.4s ease;
             }
+          }
+        }
+
+          span {
+            display: block;
+            margin-left: 21px;
+          }
         }
 
         @media (min-width: $on-laptop) {
@@ -895,7 +914,7 @@ $pad: 15px;
 
         @media print {
             text-align: left;
-            padding: 0 $pad;
+            padding: 0 15px;
             font-size: $_14;
         }
 
