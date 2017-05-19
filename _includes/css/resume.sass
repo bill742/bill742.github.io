@@ -1,0 +1,288 @@
+// Resume
+body.resume
+  color: $text-color
+
+  header, footer
+    @media print
+      display: none
+
+  .page-content
+    padding: 30px $section-spacing-mobile 0
+    background-color: $secondary-text
+
+    @media (min-width: $on-palm)
+      padding: 30px $section-spacing 0
+
+    @media print
+      padding: 0
+
+  .wrapper
+    @media (min-width: $on-palm)
+      background-color: $brand-color
+
+    @media print
+      background-color: transparent
+
+  h2
+    font-size: $_26
+
+    @media print
+      font-size: $_22
+
+  .resume-link
+    display: block
+    width: 80%
+    margin: 0 auto
+    padding: 20px 0
+    font-size: $_20
+    line-height: 170%
+    text-align: center
+    color: $brand-color
+    background-color: $background-color
+
+    &:hover
+      color: $text-color
+
+    @media (min-width: $on-palm)
+      width: 100%
+      margin: 0
+
+    @media print
+      display: none
+
+    &:hover
+      text-decoration: none
+
+.resume-content
+  background-color: $secondary-text
+  padding: 30px 0 20px
+  width: 100%
+
+  @mixin resume-title
+    font-size: $_18
+    line-height: 120%
+
+  @media (min-width: $on-laptop)
+    width: 65%
+    padding: 0 3% 20px 0
+
+  @media (min-width: 1000px)
+    width: 69%
+
+  @media print
+    width: 65%
+    padding: 0 3% 0 0
+
+  section
+    padding: 0
+    margin: 0
+
+    h2
+      color: $text-color
+      text-align: left
+
+    h3
+      display: block
+
+    p
+      font-size: $_18
+      line-height: 140%
+      clear: left
+
+      @media print
+        font-size: $_14
+
+    .role
+      @include resume-title
+      clear: left
+
+    .company
+      font-size: $_20
+      font-weight: 700
+
+    .date
+      font-size: $_15
+
+    ul
+      margin: 10px 0 20px
+
+      li
+        font-size: $_18
+        margin-left: 18px
+
+        @media print
+          font-size: $_14
+
+    .break
+      page-break-before: always
+
+  .overview
+    h2
+      line-height: 1
+      padding-bottom: 12px
+
+      @media print
+        padding-bottom: 0
+
+  .resume-skills
+    .title
+      line-height: 1
+
+      .skills-title
+        @include resume-title
+        font-weight: bold
+
+      p
+        font-size: 1em
+
+  h4
+    color: $secondary-text
+
+  .bar
+    background-color: #f5f5f5
+    border: 1px solid #555
+    width: 100%
+    margin-bottom: 10px
+
+  @mixin bar-inner
+    background-color: $brand-color
+    height: 25px
+
+  .adv
+    @include bar-inner
+    width: 95%
+
+  .mid
+    @include bar-inner
+    width: 60%
+
+  .beg
+    @include bar-inner
+    width: 30%
+
+$pad: 40px
+
+.resume-sidebar
+  width: 100%
+  padding: 10px 0
+  color: $secondary-text
+  background-color: $brand-color
+
+  @media (min-width: $on-laptop)
+    float: right
+    width: 32%
+    background-color: transparent
+    padding-top: 0
+
+  @media (min-width: 1000px)
+    width: 28%
+
+  @media print
+    background-color: transparent
+    border-left: 1px solid $text-color
+    color: $text-color
+    float: right
+    width: 32%
+
+  .profile
+    border-radius: 50%
+    margin: 10px auto 20px
+    display: block
+
+    @media print
+      margin-top: 0
+
+  .name
+    float: none
+    text-align: center
+    text-transform: none
+
+  .tagline
+    color: $secondary-text
+    text-align: center
+    line-height: 120%
+    margin: 12px 0
+    display: block
+
+    @media print
+      color: $text-color
+
+  ul.contact-list
+    list-style-type: none
+    text-align: center
+    font-size: $_14
+
+    li
+      clear: left
+      padding: 4px 0
+
+      svg
+        width: 13px
+        height: 13px
+        padding: 5px 8px 0 0
+        float: none
+        fill: $secondary-text
+
+        @media (min-width: $on-laptop)
+          float: left
+
+        @media print
+          fill: $text-color
+
+        &:hover
+          fill: $grey-color-light
+          -webkit-transition: all 0.4s ease
+          transition: all 0.4s ease
+
+        span
+          display: block
+          margin-left: 21px
+
+      @media (min-width: $on-laptop)
+        padding: 0 $pad
+        text-align: left
+
+      @media print
+        text-align: left
+        padding: 0 15px
+        font-size: $_14
+
+    a
+      color: $secondary-text
+      text-decoration: none
+
+      &:hover
+        text-decoration: none
+        color: $grey-color-light
+
+      @media print
+        color: $text-color
+
+    i
+      margin-right: 8px
+
+  h2.sidebar-title
+    float: none
+    margin: 20px
+    color: $secondary-text
+    text-align: left
+
+    @media (min-width: $on-laptop)
+      margin: 20px $pad
+
+    @media print
+      color: $text-color
+
+  .school-block
+    margin-bottom: 30px
+    margin-left: 20px
+    font-size: $_14
+
+    @media (min-width: $on-laptop)
+      margin: 0 $pad 30px
+
+    strong
+      display: block
+
+    .date
+      display: block

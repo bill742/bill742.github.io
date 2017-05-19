@@ -1,0 +1,119 @@
+// Portfolio
+section.portfolio
+  overflow-y: auto
+  padding-bottom: 20px
+  background-color: $background-color
+
+  @media (min-width: $on-laptop)
+    padding-bottom: 40px
+
+  a
+    text-decoration: underline
+    color: $secondary-text
+
+    &:hover
+      text-decoration: none
+      color: $secondary-text
+
+  .portfolio-row
+    max-width: 1082px
+
+    @media (min-width: 1082px)
+      margin: 0 auto
+
+  .portfolio-container
+    width: 100%
+    margin: 20px auto
+    max-width: 530px
+    position: relative
+    overflow: hidden
+
+    @media (min-width: $on-laptop)
+      float: left
+      width: 49%
+      margin: 16px 0 0
+
+      &:nth-child(1)
+        margin-right: 2%
+
+  @mixin port-btn
+    line-height: 60px
+    color: $secondary-text
+    font-size: $_18
+    padding-right: 20px
+    float: right
+
+    @media (min-width: 380px)
+      font-size: $_22
+
+  .plus
+    @include port-btn
+
+  .port-img
+    display: block
+    -webkit-transition: all 0.4s ease
+    transition: all 0.4s ease
+
+  .port-copy
+    position: absolute
+    top: 70%
+    width: 100%
+    height: 380px
+    background-color: rgba(0, 0, 0, 0.8)
+    cursor: pointer
+    z-index: 10
+    transition: all 0.5s ease
+
+    @media (min-width: 380px)
+      top: 80%
+
+    @media (min-width: 525px)
+      top: 85%
+
+    @media (min-width: $on-laptop)
+      top: 80%
+
+    @media (min-width: 1200px)
+      top: 85%
+
+      h3
+        color: $secondary-text
+        line-height: 60px
+        padding-left: 20px
+        float: left
+        font-size: $_18
+
+        @media (min-width: 380px)
+          font-size: $_22
+
+      p
+        color: $secondary-text
+        font-size: 0.8em
+        line-height: 120%
+        padding: 0 20px
+        margin: 8px 0
+        clear: both
+        display: none
+
+        @media (min-width: 420px)
+          font-size: 1em
+
+        @media (min-width: 900px)
+          line-height: 180%
+
+      .port-close
+        @include port-btn
+        display: none
+
+  &:hover
+    .port-img
+      opacity: 0.8
+
+    i.plus, .port-close
+      color: $brand-color
+
+  .slide
+    top: 0
+
+  .img-hover
+    opacity: 0.8

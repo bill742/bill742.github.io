@@ -1,0 +1,77 @@
+header
+  background-color: $text-color
+  float: none !important
+  height: 90px
+
+  @media (min-width: $on-palm)
+    padding: 0 $section-spacing-mobile
+
+  @media (min-width: $on-laptop)
+    padding: 0 $section-spacing
+    height: 80px
+
+  .subtitle
+    clear: left
+    color: $secondary-text
+    font-size: $_22
+    text-align: center
+    display: block
+
+    @media (min-width: $on-laptop)
+      float: left
+
+  /*Navagation*/
+  nav
+    background-color: rgba(0,0,0,0.9)
+    display: none
+    margin: 0 auto
+    position: absolute
+    width: 100%
+    z-index: 5
+
+    @media (min-width: $on-palm)
+      margin-left: -8%
+      top: 80px
+
+    a
+      color: $secondary-text
+      display: block
+      float: left
+      line-height: 40px
+      text-decoration: none
+      text-align: center
+      transition: all 0.4s ease
+      -webkit-transition: all 0.4s ease
+      width: 100%
+
+      &:active, &:visited
+        color: $secondary-text
+
+      &:hover
+        background-color: $brand-color
+        color: $secondary-text
+        text-decoration: none
+
+  @mixin menu-btns
+    color: $secondary-text
+    font-size: $_32
+    position: absolute
+    top: 10px
+    right: 10px
+    float: right
+    cursor: pointer
+    -webkit-transition: all 0.4s ease
+    transition: all 0.4s ease
+
+    &:hover
+      color: $brand-color
+
+    @media (min-width: $on-laptop)
+      position: relative
+
+  .menu-btn
+    @include menu-btns
+
+  .close
+    @include menu-btns
+    display: none

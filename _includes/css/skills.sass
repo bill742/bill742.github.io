@@ -1,0 +1,61 @@
+// Skills Section
+section.skills
+  text-align: center
+
+  .pract-container
+    display: flex
+    flex-direction: column
+    margin: 20px 0
+
+    @media (min-width: $on-palm)
+      flex-direction: row
+      justify-content: space-around
+
+  .pract-box
+    flex: 1 0 0
+
+    .skill-icon
+      color: $secondary-text
+      font-size: 20px
+      line-height: 60px
+      background-color: $brand-color
+      margin: 0 auto 16px
+      display: block
+      width: 60px
+      height: 60px
+      border-radius: 50%
+
+    h3
+      text-align: left
+      color: $brand-color
+      line-height: 120%
+
+    p
+      font-size: 1em
+      line-height: 130%
+      margin-bottom: 30px
+      padding: 0 20px
+
+      @media (min-width: $on-palm)
+        margin-bottom: 20px
+
+  .skills-tech
+    margin: 20px auto
+    display: block
+    width: 80%
+
+    svg
+      width: 60px
+      height: 60px
+      margin: 10px
+      display: inline-block
+
+      path
+        fill: $brand-color
+
+  .skills-practices
+
+    i
+      font-size: 1.2em
+      margin: 6px
+      color: $brand-color
