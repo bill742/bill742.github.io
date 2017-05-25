@@ -17,12 +17,8 @@ $nav-width: percentage(1/6)
 //Colors
 $text-color: #000
 $secondary-text:   #fff
-$background-color: #dadada
+$background-color: #dcdcdc
 $brand-color:      #f03838
-
-$grey-color:       #828282
-$grey-color-light: lighten($grey-color, 40%)
-$grey-color-dark:  darken($grey-color, 25%)
 
 // Font Sizes
 $_14: 0.875em
@@ -39,6 +35,30 @@ $_35: 2.2em
 $content-width:    100%
 $on-laptop:        800px
 $on-palm:          650px
+
+// Reset
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure
+  margin: 0
+  padding: 0
+
+body
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family
+  color: $text-color
+  -webkit-text-size-adjust: 100%
+  -webkit-font-feature-settings: "kern" 1
+  -moz-font-feature-settings: "kern" 1
+  -o-font-feature-settings: "kern" 1
+  font-feature-settings: "kern" 1
+  font-kerning: normal
+
+// Set `margin-bottom` to maintain vertical rhythm
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm
+  margin-bottom: $spacing-unit / 2
 
 // Typography
 h1
@@ -120,7 +140,7 @@ section
     @content
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "base", "_font-awesome"
+@import "_font-awesome"
 // "https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"
 //"layout",
 //"syntax-highlighting"

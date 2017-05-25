@@ -37,6 +37,7 @@ body.resume
     font-size: $_20
     line-height: 170%
     text-align: center
+    text-decoration: none
     color: $brand-color
     background-color: $background-color
 
@@ -216,6 +217,19 @@ $pad: 40px
       clear: left
       padding: 4px 0
 
+      @media (min-width: $on-laptop)
+        padding: 0 $pad
+        text-align: left
+
+      @media print
+        text-align: left
+        padding: 0 15px
+        font-size: $_14
+
+      span
+        display: block
+        margin-left: 21px
+
       svg
         width: 13px
         height: 13px
@@ -229,37 +243,22 @@ $pad: 40px
         @media print
           fill: $text-color
 
-        &:hover
-          fill: $grey-color-light
-          -webkit-transition: all 0.4s ease
-          transition: all 0.4s ease
+      i
+        margin-right: 8px
 
-        span
-          display: block
-          margin-left: 21px
-
-      @media (min-width: $on-laptop)
-        padding: 0 $pad
-        text-align: left
-
-      @media print
-        text-align: left
-        padding: 0 15px
-        font-size: $_14
-
-    a
-      color: $secondary-text
-      text-decoration: none
-
-      &:hover
+      a
+        color: $secondary-text
         text-decoration: none
-        color: $grey-color-light
 
-      @media print
-        color: $text-color
+        &:hover
+          text-decoration: none
+          color: $background-color
 
-    i
-      margin-right: 8px
+          svg
+            fill: $background-color
+
+        @media print
+          color: $text-color
 
   h2.sidebar-title
     float: none
