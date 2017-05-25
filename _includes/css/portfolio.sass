@@ -2,7 +2,7 @@
 section.portfolio
   overflow-y: auto
   padding-bottom: 20px
-  background-color: $background-color
+  border-top: 6px solid $background-color
 
   @media (min-width: $on-laptop)
     padding-bottom: 40px
@@ -16,7 +16,7 @@ section.portfolio
       color: $secondary-text
 
   .portfolio-row
-    max-width: 1082px
+    // max-width: 1082px
 
     @media (min-width: 1082px)
       margin: 0 auto
@@ -39,15 +39,16 @@ section.portfolio
   @mixin port-btn
     line-height: 60px
     color: $secondary-text
-    font-size: $_18
+    font-weight: bold
     padding-right: 20px
     float: right
 
-    @media (min-width: 380px)
-      font-size: $_22
+    // @media (min-width: 380px)
+    //   font-size: $_32
 
   .plus
     @include port-btn
+    font-size: $_32
 
   .port-img
     display: block
@@ -56,7 +57,7 @@ section.portfolio
 
   .port-copy
     position: absolute
-    top: 70%
+    top: 85%
     width: 100%
     height: 380px
     background-color: rgba(0, 0, 0, 0.8)
@@ -64,53 +65,51 @@ section.portfolio
     z-index: 10
     transition: all 0.5s ease
 
-    @media (min-width: 380px)
-      top: 80%
+    // @media (min-width: 380px)
+    //   top: 80%
+    //
+    // @media (min-width: 525px)
+    //   top: 85%
+    //
+    // @media (min-width: $on-laptop)
+    //   top: 80%
+    //
+    // @media (min-width: 1200px)
+    //   top: 85%
 
-    @media (min-width: 525px)
-      top: 85%
+    h3
+      color: $secondary-text
+      line-height: 60px
+      padding-left: 20px
+      float: left
+      font-size: $_18
 
-    @media (min-width: $on-laptop)
-      top: 80%
+      @media (min-width: 380px)
+        font-size: $_22
 
-    @media (min-width: 1200px)
-      top: 85%
+    p
+      color: $secondary-text
+      font-size: 0.8em
+      line-height: 120%
+      padding: 0 20px
+      margin: 8px 0
+      clear: both
+      display: none
 
-      h3
-        color: $secondary-text
-        line-height: 60px
-        padding-left: 20px
-        float: left
-        font-size: $_18
+      @media (min-width: 420px)
+        font-size: 1em
 
-        @media (min-width: 380px)
-          font-size: $_22
+      @media (min-width: 900px)
+        line-height: 180%
 
-      p
-        color: $secondary-text
-        font-size: 0.8em
-        line-height: 120%
-        padding: 0 20px
-        margin: 8px 0
-        clear: both
-        display: none
-
-        @media (min-width: 420px)
-          font-size: 1em
-
-        @media (min-width: 900px)
-          line-height: 180%
-
-      .port-close
-        @include port-btn
-        display: none
+    .port-close
+      @include port-btn
+      font-size: $_28
+      display: none
 
   &:hover
     .port-img
       opacity: 0.8
-
-    i.plus, .port-close
-      color: $brand-color
 
   .slide
     top: 0

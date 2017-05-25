@@ -54,10 +54,7 @@ header
 
   @mixin menu-btns
     color: $secondary-text
-    font-size: $_32
     position: absolute
-    top: 10px
-    right: 10px
     float: right
     cursor: pointer
     -webkit-transition: all 0.4s ease
@@ -65,13 +62,25 @@ header
 
     &:hover
       color: $brand-color
+      border-color: $brand-color
 
     @media (min-width: $on-laptop)
       position: relative
 
   .menu-btn
     @include menu-btns
+    top: 10px
+    right: 10px
+    font-size: $_32
 
   .close
     @include menu-btns
     display: none
+    top: 18px
+    right: 5px
+    width: 29px
+    font-size: $_20
+    font-weight: bold
+    text-align: center
+    border: 3px solid $secondary-text
+    border-radius: 50%
