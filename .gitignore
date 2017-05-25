@@ -3,12 +3,9 @@
 *.sublime-workspace
 *.sublime-project
 
-# PhotoShop Design Files #
+# Unnecessary directories #
 ########################
-*.psd
-
-# Backup Folder #
-#################
+/node_modules
 /backup
 
 # Compiled source #
@@ -19,7 +16,7 @@
 *.exe
 *.o
 *.so
- 
+
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source
@@ -32,7 +29,7 @@
 *.rar
 *.tar
 *.zip
- 
+
 # Logs and databases #
 ######################
 *.log
