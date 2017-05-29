@@ -1,11 +1,12 @@
 // Portfolio
-section.portfolio
+.portfolio
   overflow-y: auto
   padding-bottom: 20px
   border-top: 6px solid $background-color
 
   @media (min-width: $on-laptop)
     padding-bottom: 40px
+
 
   a
     text-decoration: underline
@@ -27,6 +28,7 @@ section.portfolio
     @media (min-width: $widescreen)
       justify-content: space-between
 
+
     .portfolio-container
       margin: 20px auto
       position: relative
@@ -43,6 +45,7 @@ section.portfolio
     padding-right: 20px
     float: right
 
+
   .plus
     @include port-btn
     font-size: $_32
@@ -50,8 +53,7 @@ section.portfolio
   .port-img
     display: block
     width: 100%
-    -webkit-transition: all 0.4s ease
-    transition: all 0.4s ease
+    transition: all .4s ease
 
   .port-copy
     position: absolute
@@ -59,16 +61,17 @@ section.portfolio
     width: 100%
     max-width: 530px
     height: 380px
-    background-color: rgba(0, 0, 0, 0.8)
+    background-color: $text-color-opacity8
     cursor: pointer
     z-index: 10
-    transition: all 0.5s ease
+    transition: all .5s ease
 
     @media (min-width: 380px)
       top: 80%
 
     @media (min-width: 525px)
       top: 85%
+
 
     h3
       color: $secondary-text
@@ -80,9 +83,10 @@ section.portfolio
       @media (min-width: 380px)
         font-size: $_22
 
+
     p
       color: $secondary-text
-      font-size: 0.8em
+      font-size: .8em
       line-height: 120%
       padding: 0 20px
       margin: 8px 0
@@ -95,6 +99,7 @@ section.portfolio
       @media (min-width: 900px)
         line-height: 180%
 
+
     .port-close
       @include port-btn
       font-size: $_28
@@ -102,10 +107,10 @@ section.portfolio
 
   &:hover
     .port-img
-      opacity: 0.8
+      opacity: .8
 
   .slide
     top: 0
 
   .img-hover
-    opacity: 0.8
+    opacity: .8
