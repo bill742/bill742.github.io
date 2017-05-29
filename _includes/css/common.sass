@@ -1,14 +1,14 @@
-@charset "utf-8"
+@charset 'utf-8'
 
 // Variables
 $base-font-family: 'Roboto Condensed', Arial, sans-serif
 $ubuntu: 'Ubuntu', sans-serif
 $base-font-size:   16px
 $base-font-weight: 400
-$small-font-size:  $base-font-size * 0.875
+$small-font-size:  $base-font-size * .875
 $base-line-height: 1.5
 
-$spacing-unit: 0px
+$spacing-unit: 0
 $section-spacing: 8%
 $section-spacing-mobile: 5%
 
@@ -16,13 +16,14 @@ $nav-width: percentage(1/6)
 
 //Colors
 $text-color: #000
+$text-color-opaacity: rgba(0, 0, 0, .5)
 $secondary-text:   #fff
 $background-color: #dcdcdc
 $brand-color:      #f03838
 
 // Font Sizes
-$_14: 0.875em
-$_15: 0.938em
+$_14: .875em
+$_15: .938em
 $_18: 1.125em
 $_20: 1.25em
 $_22: 1.375em
@@ -45,13 +46,9 @@ dl, dd, ol, ul, figure
   padding: 0
 
 body
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family
+  font: $base-font-weight #{$base-font-size} / #{$base-line-height} $base-font-family
   color: $text-color
-  -webkit-text-size-adjust: 100%
-  -webkit-font-feature-settings: "kern" 1
-  -moz-font-feature-settings: "kern" 1
-  -o-font-feature-settings: "kern" 1
-  font-feature-settings: "kern" 1
+  font-feature-settings: 'kern' 1
   font-kerning: normal
 
 // Set `margin-bottom` to maintain vertical rhythm
@@ -64,20 +61,25 @@ ul, ol, dl, figure,
 // Typography
 h1
   font-size: $_35
-  font-weight: 700 !important
+  font-weight: 700
   line-height: 94%
-  padding: 12px 0 4px !important
+  padding: 12px 0 4px
   text-align: center
   text-transform: uppercase
 
   @media (min-width: $on-laptop)
     float: left
     text-align: left
-    padding: 8px 0 0 !important
+    padding: 8px 0 0
 
-  a:link, a:active, a:hover, a:visited
-    color: $secondary-text
-    text-decoration: none
+
+  a
+    &:link,
+    &:active,
+    &:hover,
+    &:visited
+      color: $secondary-text
+      text-decoration: none
 
 h2
   color: $brand-color
@@ -90,6 +92,7 @@ h2
 
   @media (min-width: $on-laptop)
     margin-top: 20px
+
 
 h3
   clear: left
@@ -121,9 +124,13 @@ section
   @media (min-width: $on-laptop)
     padding: 30px $section-spacing 40px
 
-  a:link, a:active, a:visited
-    color: $brand-color
-    text-decoration: none
+
+  a
+    &:link,
+    &:active,
+    &:visited
+      color: $brand-color
+      text-decoration: none
 
     &:hover
       color: $text-color
@@ -131,7 +138,7 @@ section
 .four-o-four-copy
   text-align: center
 
-  a:hover
+  &:hover
     color: $brand-color
     text-decoration: underline
 
@@ -141,7 +148,7 @@ section
     @content
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "_font-awesome"
+@import '_font-awesome'
 // "https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"
 //"layout",
 //"syntax-highlighting"

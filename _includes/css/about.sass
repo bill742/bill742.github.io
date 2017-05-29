@@ -1,6 +1,6 @@
-section.about
+.about
   background-attachment: fixed
-  background-image: url("/images/hero.jpg")
+  background-image: url('/images/hero.jpg')
   background-position: center 0
   background-repeat: no-repeat
   background-size: cover
@@ -11,21 +11,25 @@ section.about
   p
     color: $secondary-text
 
-  a:link, a:active, a:visited
-    color: $secondary-text
+  a
+    &:link,
+    &:active,
+    &:visited
+      color: $secondary-text
 
     &:hover
       color: $brand-color
 
   .about-container
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: $text-color-opaacity
     padding: 0 14px 20px
     text-align: center
 
     @media (min-width: $on-laptop)
       padding: 30px 60px
 
-    a.about-resume
+
+    .about-resume
       background-color: $brand-color
       display: block
       font-size: $_20
@@ -35,6 +39,7 @@ section.about
 
       @media (min-width: $on-laptop)
         width: 40%
+
 
       &:hover
         color: $text-color
