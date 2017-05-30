@@ -10,16 +10,16 @@ layout: resume
   </div>
 
   <ul class="contact-list">
-      <li><i class="fa fa-home" aria-hidden="true"></i>433 Melita Crescent<span>Toronto, ON M6G3X5</span></li>
+      <li><svg class="resume-icons"><use xlink:href="/images/icons-resume.svg#home"></use></svg>433 Melita Crescent<span>Toronto, ON M6G3X5</span></li>
       <li><a href="mailto: {{ site.email }}"><svg><use xlink:href="/images/icons.svg#email"></use></svg>{{ site.email }}</a></li>
-      <li><i class="fa fa-phone"></i>416.556.5238</li>
-      <li><a href="http://billdean.me/" target="_blank"><i class="fa fa-globe"></i>billdean.me</a></li>
+      <li><svg class="resume-icons"><use xlink:href="/images/icons-resume.svg#phone"></use></svg>416.556.5238</li>
+      <li><a href="http://billdean.me/" target="_blank"><svg class="resume-icons"><use xlink:href="/images/icons-resume.svg#web"></use></svg>billdean.me</a></li>
       <li><a href="https://github.com/{{ site.github_username }}" target="_blank"><svg><use xlink:href="/images/icons.svg#github"></use></svg>github.com/{{ site.github_username }}</a></li>
       <li><a href="http://ca.linkedin.com/in/{{ site.linkedin_username }}" target="_blank"><svg><use xlink:href="/images/icons.svg#linkedin"></use></svg>ca.linkedin.com/in/{{ site.linkedin_username }}</a></li>
       <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank"><svg><use xlink:href="/images/icons.svg#twitter"></use></svg>@{{ site.twitter_username }}</a></li>
   </ul>
 
-  <h2 class="sidebar-title"><i class="fa fa-graduation-cap"></i> Education</h2>
+  <h2 class="sidebar-title"><svg class="grad"><use xlink:href="/images/icons-resume.svg#grad"></use></svg> Education</h2>
 
   <div class="school-block">
     <strong>International Academy of Design and Technology</strong>
@@ -37,33 +37,28 @@ layout: resume
   </div>
 
   <div class="school-block">
-      <strong>St. Francis Xavier University</strong>
-      Bachelor of Arts in Music
-      <span class="date">September 1991 - April 1995</span>
-      <span class="date">Antigonish, NS</span>
+    <strong>St. Francis Xavier University</strong>
+    Bachelor of Arts in Music
+    <span class="date">September 1991 - April 1995</span>
+    <span class="date">Antigonish, NS</span>
   </div>
 </div>
 
 <div class="resume-content">
   <section class="overview">
-    <h2><i class="fa fa-user"></i> Overview</h2>
+    <h2><svg class="resume-icons"><use xlink:href="/images/icons-resume.svg#overview"></use></svg>Overview</h2>
     <p>I am a skilled front-end web developer who has been building things on the web for a number of years. I have extensive experience coding responsive websites with mobile first in mind. I possess a passion for learning new technology and strive for clean, semantic code that makes sense.</p>
   </section>
 
   <section>
-    <h2><i class="fa fa-laptop"></i> Experience</h2>
+    <h2><svg class="resume-icons"><use xlink:href="/images/icons-resume.svg#exp"></use></svg>Experience</h2>
     <div class="company">Pearson Embanet</div>
-    <div class="role">Systems Support Analyst</div>
-    <div class="date">Toronto, ON | Oct 2015 - present</div>
+    <div class="role">Systems Support Analyst / Web Developer</div>
+    <div class="date">Toronto, ON | May 2009 - present</div>
     <ul>
       <li>Supporting cloud based server infrastructure on AWS. Tasks include setting up new environments, maintaining version control systems and managing website deployments</li>
       <li>Automating everyday server maintenance tasks through Bash and Python scripting</li>
-      <li>Working with developers to troubleshoot website issues and customize WordPress installations</li>
-    </ul>
-
-    <div class="role">Web Developer</div>
-    <div class="date">Toronto, ON | May 2009 - Oct 2015</div>
-    <ul>
+      <!-- <li>Working with developers to troubleshoot website issues and customize WordPress installations</li> -->
       <li>Coding and maintaining more than 200 responsive websites using HTML5, CSS3, JavaScript, jQuery, PHP and WordPress</li>
       <li>Collaborating with designers to meet business requirements and build websites based on PhotoShop mock-ups</li>
       <li>Debugging and performing QA for code across multiple browsers, operating systems and mobile platforms</li>
@@ -79,7 +74,7 @@ layout: resume
       <li>Tested websites on multiple platforms including speech and text browsers</li>
     </ul>
 
-    <div class="company break">Pet Health Inc</div>
+    <div class="company">Pet Health Inc</div>
     <div class="role">Web Designer</div>
     <span class="date">Oakville, ON | 2003 - 2004</span>
     <ul>
@@ -89,7 +84,7 @@ layout: resume
       <li>Coordinated and designed three monthly e-Newsletters</li>
     </ul>
 
-    <div class="company">City of Toronto Cycling Committee</div>
+    <div class="company break">City of Toronto Cycling Committee</div>
     <div class="role">Communications and Web Facilitator</div>
     <span class="date">Toronto, ON | 2000 - 2001</span>
     <ul>
@@ -107,15 +102,17 @@ layout: resume
   </section>
 
   <section class="resume-skills">
-    <h2><i class="fa fa-tachometer"></i> Skills</h2>
+    <h2><svg class="resume-icons"><use xlink:href="/images/icons-resume.svg#skills"></use></svg>Skills</h2>
     <div class="skills-title">Coding</div>
     <p>HTML5 - CSS3 - JavaScript - PHP</p>
     <div class="skills-title">Frameworks and Libraries</div>
     <p>jQuery - Sass - Bootstrap</p>
-    <!-- <p>jQuery - AngularJS 1 - Sass - Bootstrap</p> -->
+    <!-- AngularJS 1 -->
     <div class="skills-title">Tools and Applications</div>
-    <p>Gulp - AWS - MySQL - PhotoShop</p>
-    <!-- <p>Gulp - Vagrant - AWS - MySQL - PhotoShop</p> -->
+    <p>Gulp - AWS - PhotoShop</p>
+    <!-- Vagrant -->
+    <div class="skills-title">Databases</div>
+    <p>MySQL</p>
     <div class="skills-title">Version Control</div>
     <p>Git - Subversion</p>
     <div class="skills-title">CMS</div>

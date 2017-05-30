@@ -1,10 +1,11 @@
-// Resume
-body.resume
+.resume
   color: $text-color
 
-  header, footer
+  header,
+  footer
     @media print
       display: none
+
 
   .page-content
     padding: 30px $section-spacing-mobile 0
@@ -16,6 +17,7 @@ body.resume
     @media print
       padding: 0
 
+
   .wrapper
     @media (min-width: $on-palm)
       background-color: $brand-color
@@ -23,19 +25,14 @@ body.resume
     @media print
       background-color: transparent
 
-  h2
-    font-size: $_26
-
-    @media print
-      font-size: $_22
 
   .resume-link
     display: block
     width: 80%
     margin: 0 auto
-    padding: 20px 0
+    padding: 25px 0
     font-size: $_20
-    line-height: 170%
+    line-height: 1
     text-align: center
     text-decoration: none
     color: $brand-color
@@ -44,6 +41,9 @@ body.resume
     &:hover
       color: $text-color
 
+      svg
+        fill: $text-color
+
     @media (min-width: $on-palm)
       width: 100%
       margin: 0
@@ -51,8 +51,12 @@ body.resume
     @media print
       display: none
 
-    &:hover
-      text-decoration: none
+
+    svg
+      width: 16px
+      height: 16px
+      margin-right: 4px
+      fill: $brand-color
 
 .resume-content
   background-color: $secondary-text
@@ -74,13 +78,29 @@ body.resume
     width: 65%
     padding: 0 3% 0 0
 
+
   section
-    padding: 0
+    padding: 0 0 20px
     margin: 0
 
     h2
+      margin-top: 0
+      padding-top: 20px
+      padding-bottom: 20px
       color: $text-color
       text-align: left
+      line-height: 1
+      font-size: $_26
+
+      @media print
+        font-size: $_22
+
+
+      .resume-icons
+        float: left
+        width: 26px
+        height: 26px
+        margin-right: 8px
 
     h3
       display: block
@@ -93,11 +113,13 @@ body.resume
       @media print
         font-size: $_14
 
+
     .role
       @include resume-title
       clear: left
 
     .company
+      clear: left
       font-size: $_20
       font-weight: 700
 
@@ -114,52 +136,22 @@ body.resume
         @media print
           font-size: $_14
 
+
     .break
       page-break-before: always
 
   .overview
-    h2
-      line-height: 1
-      padding-bottom: 12px
-
-      @media print
-        padding-bottom: 0
+    p
+      margin: 0
 
   .resume-skills
-    .title
-      line-height: 1
 
-      .skills-title
-        @include resume-title
-        font-weight: bold
+    .skills-title
+      @include resume-title
+      font-weight: bold
 
-      p
-        font-size: 1em
-
-  h4
-    color: $secondary-text
-
-  .bar
-    background-color: #f5f5f5
-    border: 1px solid #555
-    width: 100%
-    margin-bottom: 10px
-
-  @mixin bar-inner
-    background-color: $brand-color
-    height: 25px
-
-  .adv
-    @include bar-inner
-    width: 95%
-
-  .mid
-    @include bar-inner
-    width: 60%
-
-  .beg
-    @include bar-inner
-    width: 30%
+    p
+      font-size: 1em
 
 $pad: 40px
 
@@ -185,6 +177,7 @@ $pad: 40px
     float: right
     width: 32%
 
+
   .profile
     border-radius: 50%
     margin: 10px auto 20px
@@ -192,6 +185,7 @@ $pad: 40px
 
     @media print
       margin-top: 0
+
 
   .name
     float: none
@@ -209,7 +203,8 @@ $pad: 40px
     @media print
       color: $text-color
 
-  ul.contact-list
+
+  .contact-list
     list-style-type: none
     text-align: center
     font-size: $_14
@@ -226,6 +221,7 @@ $pad: 40px
         text-align: left
         padding: 0 15px
         font-size: $_14
+
 
       span
         display: block
@@ -244,8 +240,6 @@ $pad: 40px
         @media print
           fill: $text-color
 
-      i
-        margin-right: 8px
 
       a
         color: $secondary-text
@@ -261,17 +255,24 @@ $pad: 40px
         @media print
           color: $text-color
 
-  h2.sidebar-title
+
+  .sidebar-title
     float: none
     margin: 20px
     color: $secondary-text
     text-align: left
 
     @media (min-width: $on-laptop)
-      margin: 20px $pad
+      margin: 20px $pad 0
 
     @media print
       color: $text-color
+
+
+  .grad
+    width: 35px
+    height: 26px
+    fill: $secondary-text
 
   .school-block
     margin-bottom: 30px
@@ -280,6 +281,7 @@ $pad: 40px
 
     @media (min-width: $on-laptop)
       margin: 0 $pad 30px
+
 
     strong
       display: block
