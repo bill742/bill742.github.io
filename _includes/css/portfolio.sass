@@ -1,4 +1,3 @@
-// Portfolio
 .portfolio
   overflow-y: auto
   padding-bottom: 20px
@@ -9,8 +8,11 @@
 
 
   a
-    text-decoration: underline
-    color: $secondary-text
+    &:link,
+    &:active,
+    &:visited
+      text-decoration: underline
+      color: $secondary-text
 
     &:hover
       text-decoration: none
@@ -53,7 +55,8 @@
   .port-img
     display: block
     width: 100%
-    transition: all .4s ease
+    transition-duration: .4s
+    transition-timing-function: ease
 
   .port-copy
     position: absolute
@@ -64,7 +67,8 @@
     background-color: $text-color-opacity8
     cursor: pointer
     z-index: 10
-    transition: all .5s ease
+    transition-duration: .5s
+    transition-timing-function: ease
 
     @media (min-width: 380px)
       top: 80%
