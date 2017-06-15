@@ -205,22 +205,21 @@ $pad: 40px
 
 
   .contact-list
+    margin: 0 20px
     list-style-type: none
-    text-align: center
     font-size: $_14
 
     li
       clear: left
       padding: 4px 0
+      line-height: 17px
 
       @media (min-width: $on-laptop)
-        padding: 0 $pad
-        text-align: left
+        padding: 4px $pad
 
       @media print
-        text-align: left
-        padding: 0 15px
         font-size: $_14
+        line-height: 15px
 
 
       span
@@ -228,16 +227,21 @@ $pad: 40px
         margin-left: 21px
 
       svg
-        width: 13px
-        height: 13px
-        padding: 4px 8px 0 0
-        float: none
+        width: 17px
+        height: 17px
+        float: left
+        padding: 0 8px 0 0
         fill: $secondary-text
 
         @media (min-width: $on-laptop)
-          float: left
+          width: 15px
+          height: 15px
 
         @media print
+          width: 15px
+          height: 15px
+          float: left
+          padding: 0 8px 0 0
           fill: $text-color
 
 
@@ -259,6 +263,7 @@ $pad: 40px
   .sidebar-title
     float: none
     margin: 20px
+    font-size: $_26
     color: $secondary-text
     text-align: left
 
@@ -273,6 +278,10 @@ $pad: 40px
     width: 35px
     height: 26px
     fill: $secondary-text
+
+    @media print
+      fill: $text-color
+
 
   .school-block
     margin-bottom: 30px
