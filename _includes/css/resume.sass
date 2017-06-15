@@ -154,6 +154,7 @@
       font-size: 1em
 
 $pad: 40px
+$pad-phone: 20px
 
 .resume-sidebar
   width: 100%
@@ -205,17 +206,18 @@ $pad: 40px
 
 
   .contact-list
-    margin: 0 20px
+    margin: 0 $pad-phone
     list-style-type: none
     font-size: $_14
+
+    @media (min-width: $on-laptop)
+      margin: 0 $pad
+
 
     li
       clear: left
       padding: 4px 0
       line-height: 17px
-
-      @media (min-width: $on-laptop)
-        padding: 4px $pad
 
       @media print
         font-size: $_14
@@ -262,7 +264,7 @@ $pad: 40px
 
   .sidebar-title
     float: none
-    margin: 20px
+    margin: $pad-phone
     font-size: $_26
     color: $secondary-text
     text-align: left
@@ -285,7 +287,7 @@ $pad: 40px
 
   .school-block
     margin-bottom: 30px
-    margin-left: 20px
+    margin-left: $pad-phone
     font-size: $_14
 
     @media (min-width: $on-laptop)
