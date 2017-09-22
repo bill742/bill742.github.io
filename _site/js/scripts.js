@@ -31,11 +31,12 @@ jQuery(document).ready(function($) {
     });
 
     // Portfolio rollover
-    $('.port-copy').click(function() {
-      $(this).toggleClass('slide');
-      $(this).children('span').toggle();
-      $(this).children('p').toggle();
-      $(this).siblings('.port-img').toggleClass('img-hover');
+    $('.portfolio-container').hover(function() {
+      var element = $(this).children('.port-copy');
+      element.toggleClass('slide');
+      element.children('span').toggle();
+      element.children('p').toggle();
+      element.siblings('.port-img').toggleClass('img-hover');
     });
 
 }); // End DocReady
