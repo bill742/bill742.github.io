@@ -40,13 +40,6 @@ $widescreen:       1282px
 $on-laptop:        800px
 $on-palm:          650px
 
-// Reset
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure
-  margin: 0
-  padding: 0
-
 body
   font: $base-font-weight #{$base-font-size} / #{$base-line-height} $base-font-family
   color: $text-color
@@ -54,9 +47,19 @@ body
   font-kerning: normal
 
 // Set `margin-bottom` to maintain vertical rhythm
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
 %vertical-rhythm
   margin-bottom: $spacing-unit / 2
 
