@@ -22,8 +22,8 @@ linkedin_username:  bill742
 markdown: kramdown
 future: true
 sass:
-    style: compressed
+  style: compressed
 
-gems:
+plugins:
   - jekyll-sitemap
   - octopress-autoprefixer
