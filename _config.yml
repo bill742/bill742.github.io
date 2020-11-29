@@ -7,23 +7,23 @@
 
 # Site settings
 title: Bill Dean - Front-End Web Developer
-email: 742designs@gmail.com
+email: hello@billdean.me
 description: Hello World! My name is Bill Dean and I'm a web developer based in Toronto, Canada. I specialize in HTML5, CSS3, JavaScript, and WordPress.
 og-description: My name is Bill Dean and I'm a web developer based in Toronto, Canada.
 og-image: https://bill742.github.io/images/hero.jpg
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://bill742.github.io" # the base hostname & protocol for your site
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://bill742.github.io' # the base hostname & protocol for your site
 twitter_username: bil742
-github_username:  bill742
-codepen_username:  bill742
-linkedin_username:  bill742
+github_username: bill742
+codepen_username: bill742
+linkedin_username: bill742
 
 # Build settings
 markdown: kramdown
 future: true
 sass:
-  style: compressed
+    style: compressed
 
 plugins:
-  - jekyll-sitemap
-  - octopress-autoprefixer
+    - jekyll-sitemap
+    - octopress-autoprefixer
