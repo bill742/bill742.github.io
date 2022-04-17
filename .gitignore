@@ -43,8 +43,3 @@ Thumbs.db
 
 # Misc
 /docs/CoverLetter*
-_site/docs/CoverLetter*
-
-# ruby vendor
-vendor/**/**
-.bundle
