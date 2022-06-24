@@ -1,0 +1,49 @@
+@keyframes show-menu {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.navContainer {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  background-color: var(--black);
+  width: 100%;
+  animation: show-menu 0.5s ease-in-out;
+}
+
+.navButton {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all .4s ease;
+  color: var(--white);
+  background-color: var(--black);
+  border: none;
+}
+
+.navButton:hover {
+  color: var(--accent);
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+
+.navItem {
+  color: var(--white);
+}
+
+.navItem:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .navList {
+    margin: 1.25rem 0;
+    flex-direction: column;
+    text-align: center;
+  }
+}
