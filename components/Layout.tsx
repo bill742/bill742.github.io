@@ -1,15 +1,22 @@
+import { ReactNode } from 'react';
 import Head from 'next/head';
-import Header from './Header';
+import Header from './Header/Header';
 
-export default function Layout() {
+type Props = {
+  children: ReactNode;
+};
+
+export default function Layout(props: Props) {
   return (
     <div>
       <Head>
-        <title>Title</title>
+        <title>Title goes here</title>
         <meta name="description" content="description goes here" />
         <meta name="keywords" content="keywords go here" />
       </Head>
       <Header />
+
+      {props.children}
     </div>
   );
 }
