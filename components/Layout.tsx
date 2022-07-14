@@ -10,7 +10,7 @@ export default function Layout(props: Props) {
   return (
     <div>
       <Head>
-        <title>Title goes here</title>
+        <title>Bill Dean - Front-End Web Developer</title>
         <meta name="description" content="description goes here" />
         <meta name="keywords" content="keywords go here" />
       </Head>
