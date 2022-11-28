@@ -7,7 +7,7 @@
   position: absolute;
   top: 5rem;
   left: 0;
-  background-color: var(--black);
+  background-color: var(--white);
   width: 100%;
   animation: show-menu 0.1s ease-in-out;
 }
@@ -27,7 +27,8 @@
 
 .navList {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  column-gap: 1rem;
   align-items: center;
   list-style: none;
 }
@@ -42,9 +43,8 @@
   color: var(--accent);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .navList {
-    margin: 1.25rem 0;
     flex-direction: column;
     text-align: center;
   }
