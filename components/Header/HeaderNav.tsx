@@ -1,6 +1,9 @@
-import { Fragment, useCallback, useState } from 'react';
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { Show } from '@chakra-ui/react';
+
 import Link from 'next/link';
-import styles from '../../styles/HeaderNav.module.css';
+import { Fragment, useCallback, useState } from 'react';
+// import styles from '../../styles/HeaderNav.module.css';
 
 export default function HeaderNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,11 +19,11 @@ export default function HeaderNav() {
       link: '/#skills',
       text: 'Skills',
     },
-    {
-      key: 3,
-      link: '/#portfolio',
-      text: 'Portfolio',
-    },
+    // {
+    //   key: 3,
+    //   link: '/#portfolio',
+    //   text: 'Portfolio',
+    // },
     {
       key: 4,
       link: '/#contact',
@@ -39,23 +42,37 @@ export default function HeaderNav() {
 
   return (
     <Fragment>
-      {!isMenuOpen && (
-        <button className={styles.navButton} onClick={toggleMenu}>
-          &#9776;
+      <Show breakpoint="(min-width: 1200px)">
+        <nav>
+          <ul>
+            {navItems.map((navItem) => (
+              <li key={navItem.key}>
+                <Link href={navItem.link} color="mode('white', 'black')">
+                  {navItem.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </Show>
+
+      <Show breakpoint="(max-width: 1200px)">
+        <button onClick={toggleMenu}>
+          {isMenuOpen ? (
+            <CloseIcon aria-label="Close Menu" />
+          ) : (
+            <HamburgerIcon aria-label="Open Menu" />
+          )}
         </button>
-      )}
-      {isMenuOpen && (
-        <button className={styles.navButton} onClick={toggleMenu}>
-          X
-        </button>
-      )}
+      </Show>
+
       {isMenuOpen && (
         <nav className={styles.navContainer}>
           <ul className={styles.navList}>
             {navItems.map((navItem) => (
               <li key={navItem.key}>
-                <Link href={navItem.link}>
-                  <a className={styles.navItem}>{navItem.text}</a>
+                <Link href={navItem.link} className={styles.navItem}>
+                  {navItem.text}
                 </Link>
               </li>
             ))}
