@@ -1,16 +1,17 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
+        "es2022": true,
         "node": true
     },
     "extends": [
         "eslint:recommended",
+        "eslint-config-prettier",
         "next",
         "plugin:react/recommended",
         "plugin:@next/next/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
+        "plugin:@typescript-eslint/recommended"
+        // "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -23,15 +24,98 @@
     "plugins": [
         "prettier",
         "react",
+        "react-memo",
+        "simple-import-sort",
+        "sort-destructure-keys",
+        "sort-keys-fix",
         "@typescript-eslint"
     ],
     "rules": {
+        "@next/next/no-html-link-for-pages": "off",
+        "@next/next/no-img-element": "off",
         "prettier/prettier": "error",
-        "no-console": "warn",
-        // suppress errors for missing 'import React' in files
+        "no-console": [
+            "error",
+            { "allow": ["error", "group", "groupEnd", "info", "table", "warn"] }
+          ],
+          "no-param-reassign": [
+            "error",
+            {
+              "ignorePropertyModificationsFor": [
+                "acc", // for reducer accumulators
+                "draft" // for Immer drafts
+              ],
+              "props": true
+            }
+          ],
+          "no-restricted-imports": [
+            "warn",
+            {
+              "patterns": ["./", "../"]
+            }
+          ],
+          "no-useless-rename": "warn",
+          "object-shorthand": "warn",
+          "simple-import-sort/imports": [
+            "warn",
+            {
+              "groups": [
+                // Default groups
+                ["^\\u0000"],
+                ["^@?\\w"],
+                ["^[^.]"],
+                ["^\\."],
+                // Aliased local directories (due to tsconfig.json baseUrl)
+                ["^src/.*"]
+              ]
+            }
+          ],
+        "sort-keys-fix/sort-keys-fix": ["warn", "asc", {"caseSensitive": true, "natural": false}],
+        "react/jsx-one-expression-per-line": "off",
+        "react/no-unknown-property": ["error", {"ignore": ["css"]}],
+        "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_"}]
+        "react-memo/require-usememo": "warn",
+        "@typescript-eslint/array-type": ["warn", {"default": "generic"} ],
+        "@typescript-eslint/ban-types": ["error",  {"extendDefaults": true, "types": { "{}": "false"}}],
+        "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+        "@typescript-eslint/member-ordering": ["warn", {
+            "default": {
+                "memberTypes": ["signiture", "field"],
+                "order": "alphabetically"
+            }
+        }],
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-namespace": [
+            "warn",
+            {
+              "allowDefinitionFiles": true
+            }
+          ],
+        "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_"}],
+        "@typescript-eslint/no-var-requires": "off"
     },
+    "overrides": [
+        {
+            "files": ["components/**/*"],
+            "rules": {
+                "react/display-name": [
+                    "warn",
+                    {
+                      "ignoreTranspilerName": true
+                    }
+                  ],
+                  "react-memo/require-memo": "warn"
+            }
+        },
+        {
+            "files": ["*.json"],
+            "rules": {
+                "printWidth": 1
+            }
+        }
+    ],
+
     "settings": {
         "react": {
             "version": "detect"
