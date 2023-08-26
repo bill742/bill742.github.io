@@ -1,32 +1,95 @@
-import { Grid, Heading } from '@chakra-ui/react';
-import CSSSvg from '../icons/skills/CSSSvg';
-import GraphQLSvg from '../icons/skills/GraphQLSvg';
-import HTMLSvg from '../icons/skills/HTMLSvg';
-import JavaScriptSvg from '../icons/skills/JavascriptSvg';
-import JestSvg from '../icons/skills/JestSvg';
-import NextSvg from '../icons/skills/NextSvg';
-import React from '../icons/skills/ReactSvg';
-import TypeScriptSvg from '../icons/skills/TypeScriptSvg';
+import { Heading } from '@chakra-ui/react';
+import IconLink from 'components/IconLink';
+
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiReact,
+  SiGraphql,
+  SiJest,
+  SiPlaywright,
+} from 'react-icons/si';
 
 export default function Skills() {
+  const iconSize = '3.75rem';
+  const iconRole = 'img';
+  const stackIcons = [
+    {
+      icon: SiHtml5,
+      id: 1,
+      label: 'HTML',
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiCss3,
+      id: 2,
+      label: 'CSS',
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiJavascript,
+      id: 3,
+      label: 'JavaScript',
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiReact,
+      id: 4,
+      label: 'React',
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiTypescript,
+      id: 5,
+      label: 'TypeScript',
+      role: iconRole,
+      size: iconSize,
+    },
+
+    {
+      icon: SiNextdotjs,
+      id: 6,
+      label: 'NextJS',
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiGraphql,
+      id: 7,
+      label: 'GraphQL',
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiJest,
+      id: 8,
+      label: 'Jest',
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiPlaywright,
+      id: 9,
+      label: 'Playwright',
+      role: iconRole,
+      size: iconSize,
+    },
+  ];
+
   return (
-    <section>
-      <Heading as="h3">Skills</Heading>
-      <Grid
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridTemplateRows="repeat(3, 1fr)"
-        gridGap="3rem"
-        justifyContent="center"
-      >
-        <HTMLSvg />
-        <CSSSvg />
-        <JavaScriptSvg />
-        <TypeScriptSvg />
-        <JestSvg />
-        <React />
-        <GraphQLSvg />
-        <NextSvg />
-      </Grid>
+    <section id="stack">
+      <Heading as="h3">My Current Stack</Heading>
+
+      <IconLink hasLink={false} iconInfos={stackIcons} />
     </section>
   );
 }
+
+Skills.displayName = 'Skills';
