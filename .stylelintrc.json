@@ -1,11 +1,18 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
-  "plugins": ["stylelint-order"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "customSyntax": "@stylelint/postcss-css-in=js",
   "rules": {
     "at-rule-empty-line-before": null,
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
     "at-rule-semicolon-newline-after": "always",
+    "color-function-notation": "legacy",
     "comment-empty-line-before": null,
     "declaration-block-semicolon-newline-after": "always",
     "declaration-empty-line-before": null,
@@ -19,16 +26,29 @@
     "order/order": [
       "dollar-variables",
       "declarations",
-      { "type": "at-rule", "name": "font-face" },
+      {
+        "type": "at-rule",
+        "name": "font-face"
+      },
       "rules",
-      { "type": "at-rule", "name": "media" }
+      {
+        "type": "at-rule",
+        "name": "media"
+      }
     ],
     "order/properties-order": [
       {
         "groupName": "Positioning",
         "emptyLineBefore": "always",
         "noEmptyLineBetween": true,
-        "properties": ["position", "top", "right", "bottom", "left", "z-index"]
+        "properties": [
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index"
+        ]
       },
       {
         "groupName": "Box model",
@@ -297,6 +317,14 @@
       ],
       {
         "message": "Property disallowed due to insufficient browser support (there may be an equivalent Emotion utility function in @asl-19/emotion-utils)"
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "label"
+        ]
       }
     ],
     "rule-empty-line-before": null,
