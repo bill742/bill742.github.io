@@ -27,7 +27,7 @@ const Contact = memo(() => {
       icon: SiGmail,
       id: 3,
       label: 'Gmail',
-      link: 'mailto:742designs@gmail.com',
+      link: 'mailto:hello@billdean.me',
       role: iconRole,
       size: iconSize,
     },
