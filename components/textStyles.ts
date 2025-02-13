@@ -1,15 +1,9 @@
-import { mode } from '@chakra-ui/theme-tools';
+// import { mode } from '@chakra-ui/theme-tools';
 
 export const TextStyles = {
-  baseStyle: (props) => ({
-    color: mode('primaryDark', 'primaryLight')(props),
+  baseStyle: () => ({
+    // color: mode('primaryDark', 'primaryLight'),
   }),
-  sizes: {},
-  variants: {
-    aboutText: (props) => ({
-      color: '#fff',
-      textAlign: 'center',
-    }),
-  },
   defaultProps: {},
+  sizes: {},
 };
