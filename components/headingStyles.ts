@@ -1,19 +1,15 @@
-import { mode } from '@chakra-ui/theme-tools';
+import { background, color } from '@chakra-ui/react';
 
 export const HeadingStyles = {
-  baseStyle: (props) => ({
-    color: mode('primaryDark', 'primaryLight')(props),
+  baseStyle: () => ({
+    marginBottom: '3rem',
   }),
+  defaultProps: {},
   sizes: {},
   variants: {
-    header: (props) => ({
-      color: mode('white', 'black')(props),
-      transform: 'uppercase',
-    }),
-    about: (props) => ({
-      color: 'white',
-      textAlign: 'center',
+    header: () => ({
+      textTransform: 'uppercase',
+      marginBottom: 0,
     }),
   },
-  defaultProps: {},
 };

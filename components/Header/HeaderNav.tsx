@@ -1,9 +1,9 @@
+import { extendTheme } from '@chakra-ui/react';
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Show } from '@chakra-ui/react';
 
 import Link from 'next/link';
 import { Fragment, useCallback, useState } from 'react';
-// import styles from '../../styles/HeaderNav.module.css';
 
 export default function HeaderNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,23 +11,23 @@ export default function HeaderNav() {
   const navItems = [
     {
       key: 1,
-      link: '/#about',
+      link: '#about',
       text: 'About Me',
     },
     {
       key: 2,
-      link: '/#skills',
-      text: 'Skills',
+      link: '#stack',
+      text: 'Stack',
     },
     // {
     //   key: 3,
-    //   link: '/#portfolio',
+    //   link: '#portfolio',
     //   text: 'Portfolio',
     // },
     {
       key: 4,
-      link: '/#contact',
-      text: 'Get In Touch',
+      link: '#contact',
+      text: 'Contact',
     },
     {
       key: 5,
@@ -40,6 +40,22 @@ export default function HeaderNav() {
     setIsMenuOpen(!isMenuOpen);
   }, [isMenuOpen]);
 
+  const mobileNavStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: '1rem',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    boxSize: '250px',
+    color: 'white',
+    textShadow: '0 0 20px black',
+    fontWeight: 'bold',
+    fontSize: '20px',
+    px: 4,
+    background: '#fff',
+  };
+
   return (
     <Fragment>
       <Show breakpoint="(min-width: 1200px)">
@@ -47,9 +63,7 @@ export default function HeaderNav() {
           <ul>
             {navItems.map((navItem) => (
               <li key={navItem.key}>
-                <Link href={navItem.link} color="mode('white', 'black')">
-                  {navItem.text}
-                </Link>
+                <Link href={navItem.link}>{navItem.text}</Link>
               </li>
             ))}
           </ul>
@@ -67,13 +81,12 @@ export default function HeaderNav() {
       </Show>
 
       {isMenuOpen && (
-        <nav className={styles.navContainer}>
-          <ul className={styles.navList}>
+        <nav>
+          {/* TODO: better way to import specific styles? */}
+          <ul sx={mobileNavStyles}>
             {navItems.map((navItem) => (
               <li key={navItem.key}>
-                <Link href={navItem.link} className={styles.navItem}>
-                  {navItem.text}
-                </Link>
+                <Link href={navItem.link}>{navItem.text}</Link>
               </li>
             ))}
           </ul>
