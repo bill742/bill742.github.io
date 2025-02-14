@@ -1,51 +1,9 @@
 {
-  "editor.formatOnSave": false,
-  "editor.rulers": [],
-  "editor.tabSize": 2,
-  "editor.wordWrap": "off",
-  "eslint.validate": [
-    "javascript",
-    "typescript"
-  ],
-  "files.associations": {
-    ".env.*": "shellscript"
-  },
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    ".next": true,
-    ".next-test": true,
-    "tsconfig.tsbuildinfo": true,
-  },
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
+    "source.fixAll.eslint": "always"
   },
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "prettier.configPath": ".prettierrc.json",
-  "rewrap.reformat": true,
-  "rewrap.wrappingColumn": 80,
-  "search.exclude": {
-    "**/node_modules": true,
-    ".vscode": true,
-    "package-lock.json": true,
-  },
-  "stylelint.validate": [
-    "typescript",
-    "typescriptreact"
-  ],
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifierEnding": "minimal",
-  "typescript.preferences.quoteStyle": "double",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "[javascript][json][typescript][typescriptreact][yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
