@@ -13,6 +13,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        lg: "976px",
+        md: "768px",
+        sm: "480px",
+        xl: "1440px",
+      },
     },
   },
 } satisfies Config;
