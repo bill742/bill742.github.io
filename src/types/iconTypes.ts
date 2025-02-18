@@ -1,4 +1,4 @@
-import { IconType } from 'react-icons';
+import { IconType } from "react-icons";
 
 export type iconType = {
   icon: IconType;
@@ -7,4 +7,5 @@ export type iconType = {
   link?: string;
   role: string;
   size: string;
+  text?: string;
 };
