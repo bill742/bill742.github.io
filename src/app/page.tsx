@@ -7,10 +7,10 @@ import Skills from "@/components/Sections/Skills";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/",
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/`,
   },
   description:
-    "Hello World! My name is Bill Dean and I'm a web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript.",
+    "I'm a front-end web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript.",
   title: `${process.env.NEXT_PUBLIC_SITE_TITLE}`,
 };
 
