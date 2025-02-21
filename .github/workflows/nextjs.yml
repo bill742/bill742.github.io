@@ -48,15 +48,9 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
           PORTFOLIO_VAR: ${{ vars.NEXT_PUBLIC_ALLOW_PORTFOLIO }}
           NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
-          EMAIL_VAR: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
+          NEXT_PUBLIC_EMAIL_ADDRESS: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
           GITHUBUSER_VAR: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
           LINKEDINUSER_VAR: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
-
-      - name: ${{ vars.HELLO_WORLD_STEP }}
-        if: ${{ vars.HELLO_WORLD_ENABLED == 'true' }}
-        uses: actions/hello-world-javascript-action@main
-        with:
-          who-to-greet: ${{ vars.GREET_NAME }}
 
   # Build job
   build:
@@ -108,6 +102,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
