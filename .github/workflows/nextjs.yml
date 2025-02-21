@@ -28,6 +28,7 @@ env:
   DAY_OF_WEEK: Monday
   NEXT_PUBLIC_EMAIL_ADDRESS: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
   NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
+  NEXT_TEST_VALUE: ${{ secrets.NEXT_TEST_VALUE }}
 
 jobs:
   # Build job
@@ -82,7 +83,7 @@ jobs:
           NEXT_PUBLIC_GH_USERNAME: ${{ env.NEXT_PUBLIC_GH_USERNAME }}
           NEXT_PUBLIC_SITE_TITLE: ${{ env.NEXT_PUBLIC_SITE_TITLE }}
           NEXT_PUBLIC_SITE_URL: ${{ env.NEXT_PUBLIC_SITE_URL }}
-        run: echo "Today is $DAY_OF_WEEK! Email is $NEXT_PUBLIC_EMAIL_ADDRESS and LinkedIn is $NEXT_PUBLIC_LINKEDIN_USERNAME"
+        run: echo "Today is $DAY_OF_WEEK! Email is $NEXT_PUBLIC_EMAIL_ADDRESS and LinkedIn is $NEXT_PUBLIC_LINKEDIN_USERNAME. The secret is $NEXT_TEST_VALUE"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
