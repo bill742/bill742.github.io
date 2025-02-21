@@ -8,7 +8,7 @@ export default function About() {
       <p className="max-w-2xl text-center">
         I specialize in creating websites and applications using modern
         JavaScript with React, NextJS and TypeScript. I also have experience
-        working with APIs through GrpahQL.
+        working with APIs through GraphQL.
       </p>
     </section>
   );
