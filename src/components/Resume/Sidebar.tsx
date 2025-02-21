@@ -55,7 +55,7 @@ const Sidebar: FC = memo(() => {
       icon: TiSocialGithubCircular,
       id: 5,
       label: "Github",
-      link: `https://github.com/${process.env.GITHUB_USERNAME}`,
+      link: `https://github.com/${process.env.GH_USERNAME}`,
       role: iconRole,
       size: iconSize,
       text: "Github",
@@ -72,7 +72,7 @@ const Sidebar: FC = memo(() => {
   ];
 
   return (
-    <div className="flex flex-col gap-y-6 py-8 bg-red-700 pe-8 ps-8 content-start">
+    <div className="flex flex-col content-start gap-y-6 bg-red-700 py-8 pe-8 ps-8">
       <div className="flex flex-col items-center">
         <Image
           src="/images/bill-dean.jpg"
@@ -82,7 +82,7 @@ const Sidebar: FC = memo(() => {
           height={120}
         />
         <h2 className="text-4xl font-bold">Bill Dean</h2>
-        <h3 className="text-2xl font-bold mt-3">Front-End Web Developer</h3>
+        <h3 className="mt-3 text-2xl font-bold">Front-End Web Developer</h3>
       </div>
 
       <IconList
