@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function Resume() {
   return (
-    <div className="flex flex-col-reverse gap-8 md:flex-row">
+    <div className="mt-16 flex flex-col-reverse gap-8 md:flex-row">
       <div className="flex flex-col gap-6">
         <Overview />
         <Experience />

@@ -84,14 +84,16 @@ export default function Skills() {
   ];
 
   return (
-    <section id="stack" className="w-full">
-      <h3 className="header">My Current Stack</h3>
-      <p>Languages, tools & applications I use in my daily workflow.</p>
+    <section id="skills" className="flex w-full flex-col gap-y-12">
+      <h3 className="header">Skills</h3>
+      <p className="text-center">
+        Languages, tools & applications I use in my daily workflow.
+      </p>
 
       <IconList
         iconInfos={stackIcons}
         hasText={false}
-        className="mt-8 flex w-full flex-row flex-wrap justify-start gap-8 md:justify-between"
+        className="m-auto flex max-w-sm flex-row flex-wrap justify-center gap-8 md:justify-between"
       />
     </section>
   );

@@ -26,7 +26,7 @@ const Contact = memo(() => {
     {
       icon: SiGmail,
       id: 3,
-      label: "Gmail",
+      label: "Email",
       link: `mailto:${process.env.EMAIL_ADDRESS}`,
       role: iconRole,
       size: iconSize,
@@ -34,13 +34,16 @@ const Contact = memo(() => {
   ];
 
   return (
-    <section id="contact" className="w-full">
+    <section id="contact" className="flex w-full flex-col items-center gap-y-8">
       <h3 className="header">Contact</h3>
+      <p className="text-center">
+        Send me a message or view some code samples at the links below.
+      </p>
       <div className="space-between flex flex-row flex-wrap">
         <IconList
           hasText={false}
           iconInfos={contactIcons}
-          className="mt-8 flex w-full flex-row flex-wrap justify-start gap-8 md:justify-between"
+          className="flex w-full flex-col flex-wrap justify-start gap-16 md:flex-row md:justify-between"
         />
       </div>
     </section>

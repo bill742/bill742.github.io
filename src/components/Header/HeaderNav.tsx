@@ -14,8 +14,8 @@ const HeaderNav: FC = memo(() => {
     },
     {
       key: 2,
-      link: "#stack",
-      text: "Stack",
+      link: "#skills",
+      text: "Skills",
     },
     // {
     //   key: 3,
