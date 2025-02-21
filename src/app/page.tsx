@@ -6,9 +6,9 @@ import About from "@/components/Sections/About";
 // import Skills from "@/components/Sections/Skills";
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
+  // alternates: {
+  //   canonical: "/",
+  // },
   description:
     "Hello World! My name is Bill Dean and I'm a web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript.",
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_APP_BASE_URL}`),
