@@ -24,6 +24,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  DAY_OF_WEEK: Monday
+
 jobs:
   # Build job
   build:
@@ -79,7 +82,7 @@ jobs:
           NEXT_PUBLIC_EMAIL_ADDRESS: ${{ env.NEXT_PUBLIC_EMAIL_ADDRESS }}
           NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ env.NEXT_PUBLIC_LINKEDIN_USERNAME }}
           NEXT_PUBLIC_SITE_URL: ${{ env.NEXT_PUBLIC_SITE_URL }}
-        run: echo "Environment variables configured."
+        run: echo "Today is $DAY_OF_WEEK!"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
