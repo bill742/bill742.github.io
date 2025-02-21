@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 import About from "@/components/Sections/About";
-import Contact from "@/components/Sections/Contact";
-import Portfolio from "@/components/Sections/Portfolio";
-import Skills from "@/components/Sections/Skills";
+// import Contact from "@/components/Sections/Contact";
+// import Portfolio from "@/components/Sections/Portfolio";
+// import Skills from "@/components/Sections/Skills";
 
 export const metadata: Metadata = {
   alternates: {
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const portfolio = process.env.NEXT_PUBLIC_ALLOW_PORTFOLIO;
+  // const portfolio = process.env.NEXT_PUBLIC_ALLOW_PORTFOLIO;
 
   return (
     <main className="row-start-2 mb-16 mt-16 flex flex-col items-center gap-20 sm:items-start">
       <About />
-      <Skills />
+      {/* <Skills />
       {portfolio && <Portfolio />}
-      <Contact />
+      <Contact /> */}
     </main>
   );
 }
