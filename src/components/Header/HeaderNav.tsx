@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 // import { FC, memo, useCallback, useState } from 'react';
 import { FC, memo } from "react";
