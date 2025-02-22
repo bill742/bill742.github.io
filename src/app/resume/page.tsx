@@ -7,10 +7,10 @@ import Skills from "@/components/Resume/Skills";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/resume`,
+    canonical: "https://billdean.me//resume",
   },
   description: "View my resume.",
-  title: `Resume - ${process.env.SITE_TITLE}`,
+  title: "Bill Dean - Front-End Web Developer",
 };
 
 export default function Resume() {
