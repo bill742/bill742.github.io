@@ -3,6 +3,7 @@ import "./globals.css";
 import { Roboto } from "next/font/google";
 
 import Header from "@/components/Header/Header";
+import SkipNav from "@/components/SkipNav";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -18,8 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <div className="container mx-auto max-w-6xl p-6">
+          <SkipNav />
           <Header />
-          {children}
+          <div id="main">{children}</div>
         </div>
       </body>
     </html>
