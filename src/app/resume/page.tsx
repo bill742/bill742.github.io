@@ -7,7 +7,7 @@ import Skills from "@/components/Resume/Skills";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://billdean.me//resume",
+    canonical: "https://billdean.me/resume",
   },
   description: "View my resume.",
   title: "Bill Dean - Front-End Web Developer",
