@@ -1,9 +1,10 @@
+"use client";
+
 import Link from "next/link";
-// import { FC, memo, useCallback, useState } from 'react';
-import { FC, memo } from "react";
+import { FC, memo, useCallback, useState } from "react";
 
 const HeaderNav: FC = memo(() => {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     {
@@ -33,50 +34,54 @@ const HeaderNav: FC = memo(() => {
     },
   ];
 
-  // const toggleMenu = useCallback(() => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // }, [isMenuOpen]);
+  const toggleMobileMenu = useCallback(() => {
+    setIsMenuOpen(!isMenuOpen);
+  }, [isMenuOpen]);
+
+  console.log(isMenuOpen);
 
   return (
-    <>
-      {/* <Show breakpoint="(min-width: 1200px)">
-        <nav>
-          <ul>
+    <nav className="space-x-6">
+      <ul className="hidden space-x-6 md:flex">
+        {navItems.map((navItem) => (
+          <li key={navItem.key}>
+            <Link
+              href={`/${navItem.link}`}
+              className="font-semibold lowercase hover:underline"
+            >
+              {navItem.text}
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <button
+        id="menu-btn"
+        className={`hamburger ${isMenuOpen ? "open" : "closed"} block focus:outline-none md:hidden`}
+        onClick={toggleMobileMenu}
+      >
+        <span className="hamburger-top"></span>
+        <span className="hamburger-middle"></span>
+        <span className="hamburger-bottom"></span>
+      </button>
+
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <ul className="absolute left-6 right-6 mt-10 flex flex-col items-center space-y-6 self-end bg-black py-8 font-bold drop-shadow-md sm:w-auto sm:self-center">
             {navItems.map((navItem) => (
               <li key={navItem.key}>
-                <Link href={navItem.link}>{navItem.text}</Link>
+                <Link
+                  href={`/${navItem.link}`}
+                  className="font-semibold lowercase hover:underline"
+                >
+                  {navItem.text}
+                </Link>
               </li>
             ))}
           </ul>
-        </nav>
-      </Show> */}
-      {/* <Show breakpoint="(max-width: 1200px)"> */}
-      {/* <button onClick={toggleMenu}> */}
-      {/* {isMenuOpen ? (
-          <CloseIcon aria-label="Close Menu" />
-        ) : (
-          <HamburgerIcon aria-label="Open Menu" />
-        )} */}
-      {/* X
-      </button> */}
-      {/* </Show> */}
-      {/* {isMenuOpen && ( */}
-      <nav className="hidden space-x-6 md:flex">
-        <ul className="flex space-x-6">
-          {navItems.map((navItem) => (
-            <li key={navItem.key}>
-              <Link
-                href={`/${navItem.link}`}
-                className="font-semibold lowercase hover:underline"
-              >
-                {navItem.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      {/* )} */}
-    </>
+        </div>
+      )}
+    </nav>
   );
 });
 
