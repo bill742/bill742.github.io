@@ -9,8 +9,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://billdean.me/resume",
   },
-  description: "View my resume.",
-  title: "Bill Dean - Front-End Web Developer",
+  description:
+    "View mmore details about my experience and skills on my resume.",
+  title: "Resume",
 };
 
 export default function Resume() {
