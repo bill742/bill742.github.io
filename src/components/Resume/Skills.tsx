@@ -7,7 +7,7 @@ const Skills: FC = memo(() => (
       <FaGaugeHigh /> Skills
     </h2>
     <div className="font-bold">Coding</div>
-    <div>HTML5 - CSS3 - JavaScript - PHP</div>
+    <div>HTML5 - CSS3 - JavaScript - Python</div>
     <div className="font-bold">Frameworks and Libraries</div>
     <div>React - NextJS - TailwindCSS - TypeScript - EmotionJS</div>
 

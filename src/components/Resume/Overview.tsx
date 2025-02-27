@@ -6,11 +6,16 @@ const Overview: FC = memo(() => (
     <h2 className="resumeHeader">
       <FaUser /> Overview
     </h2>
-    <p className="mt-0">
-      I am a skilled front-end web developer who has been building things on the
-      web for a number of years. I have extensive experience coding responsive
-      websites with mobile first in mind. I possess a passion for learning new
-      technology and strive for clean, semantic code that makes sense.
+    <p className="text-base">
+      Innovative and detail-oriented React Developer with a strong foundation in
+      front-end development, specializing in building dynamic and responsive
+      user interfaces. Proficient in React.js, JavaScript, TypeScript, and
+      modern UI frameworks, with experience in state management, API
+      integration, and performance optimization. Passionate about crafting
+      seamless user experiences and writing clean, maintainable code. Adept at
+      collaborating with cross-functional teams to develop scalable web
+      applications. Seeking an opportunity to leverage my expertise in React
+      development to contribute to a forward-thinking organization.
     </p>
   </section>
 ));

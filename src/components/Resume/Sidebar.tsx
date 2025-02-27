@@ -96,25 +96,21 @@ const Sidebar: FC = memo(() => {
       </h2>
 
       <div className="font-0.875">
-        <div>
-          <strong>International Academy of Design and Technology</strong>
-        </div>
-        <div>
-          <div>Digital Media Design Program</div>
-          <div>January 2002 - June 2002 Toronto, ON</div>
-        </div>
+        <strong>International Academy of Design and Technology</strong>
+        <div>Digital Media Design Program</div>
+        <div>Toronto, ON</div>
       </div>
 
       <div className="font-0.875">
         <strong>Keyin Technical College</strong>
         <div>Diploma in Computer Science</div>
-        <div>January 1997 - July 1998 Halifax, NS</div>
+        <div>Halifax, NS</div>
       </div>
 
       <div className="font-0.875">
         <strong>St. Francis Xavier University</strong>
         <div>Bachelor of Arts in Music</div>
-        <div>September 1991 - April 1995 Antigonish, NS</div>
+        <div>Antigonish, NS</div>
       </div>
     </div>
   );
