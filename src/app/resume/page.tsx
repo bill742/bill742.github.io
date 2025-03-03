@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import Experience from "@/components/Resume/Experience";
 import Overview from "@/components/Resume/Overview";
@@ -16,14 +17,20 @@ export const metadata: Metadata = {
 
 export default function Resume() {
   return (
-    <div className="mt-16 flex flex-col-reverse gap-8 md:flex-row">
-      <div className="flex flex-col gap-6">
-        <Overview />
-        <Experience />
-        <Skills />
+    <>
+      <div className="mx-auto my-6 flex w-1/2 justify-center rounded-xl bg-red-700 py-4 font-bold">
+        <Link href="docs/Resume-BillDean.pdf">Download a PDF version</Link>
       </div>
 
-      <Sidebar />
-    </div>
+      <div className="mt-16 flex flex-col-reverse gap-8 md:flex-row">
+        <div className="flex flex-col gap-6">
+          <Overview />
+          <Experience />
+          <Skills />
+        </div>
+
+        <Sidebar />
+      </div>
+    </>
   );
 }
