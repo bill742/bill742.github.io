@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://billdean.me/resume",
   },
   description:
-    "View mmore details about my experience and skills on my resume.",
+    "View my resume for more details about my experience and skills.",
   title: "Resume",
 };
 
