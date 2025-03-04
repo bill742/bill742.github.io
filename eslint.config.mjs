@@ -14,6 +14,7 @@ const eslintConfig = [
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
     plugins: ["simple-import-sort", "sort-keys-fix"],
     rules: {
+      "no-console": ["warn"],
       "prefer-arrow-callback": ["error"],
       "prefer-template": ["error"],
       quotes: ["error", "double"],

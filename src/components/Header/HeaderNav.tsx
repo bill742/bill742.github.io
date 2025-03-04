@@ -38,8 +38,6 @@ const HeaderNav: FC = memo(() => {
     setIsMenuOpen(!isMenuOpen);
   }, [isMenuOpen]);
 
-  console.log(isMenuOpen);
-
   return (
     <nav className="space-x-6">
       <ul className="hidden space-x-6 md:flex">
