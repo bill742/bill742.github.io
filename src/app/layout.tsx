@@ -41,6 +41,11 @@ export default function RootLayout({
           <Header />
           <div id="main">{children}</div>
         </div>
+        {/* 100% privacy-first analytics */}
+        <script
+          async
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+        ></script>
       </body>
     </html>
   );
