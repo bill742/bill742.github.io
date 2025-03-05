@@ -12,6 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+    ignore: ["node_modules/*", ".next/*", "out/*"],
     plugins: ["simple-import-sort", "sort-keys-fix"],
     rules: {
       "no-console": ["warn"],
