@@ -7,12 +7,12 @@ const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
+  ignorePatterns: ["node_modules/*", ".next/*", "out/*"],
 });
 
 const eslintConfig = [
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
-    ignore: ["node_modules/*", ".next/*", "out/*"],
     plugins: ["simple-import-sort", "sort-keys-fix"],
     rules: {
       "no-console": ["warn"],
