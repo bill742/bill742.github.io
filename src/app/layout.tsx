@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
-import Header from "@/components/header";
+import Header from "@/components/header/header";
 import SkipNav from "@/components/skip-nav";
 import { ThemeProvider } from "@/components/theme-provider";
 
