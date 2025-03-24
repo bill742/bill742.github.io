@@ -10,7 +10,7 @@ import {
   TiWorld,
 } from "react-icons/ti";
 
-import IconList from "@/components/IconList";
+import IconList from "@/components/icon-list";
 
 const Sidebar: FC = memo(() => {
   const iconSize = "1.44rem";

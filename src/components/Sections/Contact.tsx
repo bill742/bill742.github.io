@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 
-import IconList from "@/components/IconList";
+import IconList from "@/components/icon-list";
 
 const Contact = memo(() => {
   const iconSize = "60";

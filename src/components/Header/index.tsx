@@ -1,5 +1,5 @@
-import HeaderNav from "@/components/Header/HeaderNav";
-import SiteHeading from "@/components/Header/SiteHeading";
+import HeaderNav from "@/components/header/header-nav";
+import SiteHeading from "@/components/header/site-heading";
 
 export default function Header() {
   return (

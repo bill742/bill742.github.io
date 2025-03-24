@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import Experience from "@/components/Resume/Experience";
-import Overview from "@/components/Resume/Overview";
-import Sidebar from "@/components/Resume/Sidebar";
-import Skills from "@/components/Resume/Skills";
+import Experience from "@/components/resume/experience";
+import Overview from "@/components/resume/overview";
+import Sidebar from "@/components/resume/sidebar";
+import Skills from "@/components/resume/skills";
 
 export const metadata: Metadata = {
   alternates: {

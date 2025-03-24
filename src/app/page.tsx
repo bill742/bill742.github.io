@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import About from "@/components/Sections/About";
-import Contact from "@/components/Sections/Contact";
-import Portfolio from "@/components/Sections/Portfolio";
-import Skills from "@/components/Sections/Skills";
+import About from "@/components/sections/about";
+import Contact from "@/components/sections/contact";
+import Portfolio from "@/components/sections/portfolio";
+import Skills from "@/components/sections/skills";
 
 export const metadata: Metadata = {
   alternates: {
