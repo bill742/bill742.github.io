@@ -1,7 +1,9 @@
+import { memo } from "react";
+
 import HeaderNav from "@/components/header/header-nav";
 import SiteHeading from "@/components/header/site-heading";
 
-export default function Header() {
+const Header = memo(() => {
   return (
     <header className="flex items-center justify-between">
       <div className="align-center flex flex-col gap-4 md:flex-row">
@@ -10,4 +12,8 @@ export default function Header() {
       <HeaderNav />
     </header>
   );
-}
+});
+
+Header.displayName = "Header";
+
+export default Header;
