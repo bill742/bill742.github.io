@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-  ignorePatterns: ["node_modules/*", ".next/*", "out/*"],
+  ignorePatterns: ["node_modules/*", ".next/*", "out/*", "tailwind.config.js"],
 });
 
 const eslintConfig = [
