@@ -3,8 +3,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
-import Header from "@/components/Header/Header";
-import SkipNav from "@/components/SkipNav";
+import Header from "@/components/header";
+import SkipNav from "@/components/skip-nav";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -34,13 +35,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={roboto.className}>
-        <div className="container mx-auto max-w-6xl p-6">
-          <SkipNav />
-          <Header />
-          <div id="main">{children}</div>
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="container mx-auto max-w-6xl p-6">
+            <SkipNav />
+            <Header />
+
+            <div id="main">{children}</div>
+          </div>
+        </ThemeProvider>
         {/* 100% privacy-first analytics */}
 
         <script
