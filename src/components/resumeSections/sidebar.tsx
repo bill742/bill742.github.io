@@ -1,24 +1,17 @@
+import { Globe, GraduationCap, House, Mail, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import { FC, memo } from "react";
-import { FaGraduationCap } from "react-icons/fa6";
-import {
-  TiHome,
-  TiMail,
-  TiPhone,
-  TiSocialGithubCircular,
-  TiSocialLinkedin,
-  TiWorld,
-} from "react-icons/ti";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import IconList from "@/components/icon-list";
 
 const Sidebar: FC = memo(() => {
-  const iconSize = "1.44rem";
+  const iconSize = "20";
   const iconRole = "img";
 
   const contactIcons = [
     {
-      icon: TiHome,
+      icon: House,
       id: 1,
       label: "Home",
       role: iconRole,
@@ -26,7 +19,7 @@ const Sidebar: FC = memo(() => {
       text: "Toronto, ON",
     },
     {
-      icon: TiMail,
+      icon: Mail,
       id: 2,
       label: "Email",
       link: "mailto:hello@billdean.me",
@@ -35,7 +28,7 @@ const Sidebar: FC = memo(() => {
       text: "hello@billdean.me",
     },
     {
-      icon: TiPhone,
+      icon: PhoneCall,
       id: 3,
       label: "Phone",
       role: iconRole,
@@ -43,7 +36,7 @@ const Sidebar: FC = memo(() => {
       text: "416.556.5238",
     },
     {
-      icon: TiWorld,
+      icon: Globe,
       id: 4,
       label: "Website",
       link: "https://billdean.me",
@@ -52,7 +45,7 @@ const Sidebar: FC = memo(() => {
       text: "billdean.me",
     },
     {
-      icon: TiSocialGithubCircular,
+      icon: FaGithub,
       id: 5,
       label: "Github",
       link: "https://github.com/bill742",
@@ -61,7 +54,7 @@ const Sidebar: FC = memo(() => {
       text: "Github",
     },
     {
-      icon: TiSocialLinkedin,
+      icon: FaLinkedin,
       id: 6,
       label: "LinkedIn",
       link: "https://www.linkedin.com/in/bill742",
@@ -72,7 +65,7 @@ const Sidebar: FC = memo(() => {
   ];
 
   return (
-    <div className="flex flex-col content-start gap-y-6 bg-red-700 py-8 pe-8 ps-8">
+    <div className="flex flex-col content-start gap-y-6 pe-8 ps-8">
       <div className="flex flex-col items-center">
         <Image
           src="/images/bill-dean.jpg"
@@ -82,7 +75,9 @@ const Sidebar: FC = memo(() => {
           height={120}
         />
         <h2 className="text-4xl font-bold">Bill Dean</h2>
-        <h3 className="mt-3 text-2xl font-bold">Front-End Web Developer</h3>
+        <h3 className="mt-3 text-center text-2xl font-bold">
+          Front-End Web Developer
+        </h3>
       </div>
 
       <IconList
@@ -92,7 +87,7 @@ const Sidebar: FC = memo(() => {
       />
 
       <h2 className="resumeHeader">
-        <FaGraduationCap /> Education
+        <GraduationCap className="w-8" /> Education
       </h2>
 
       <div className="font-0.875">

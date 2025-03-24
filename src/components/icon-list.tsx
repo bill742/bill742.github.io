@@ -15,7 +15,7 @@ const IconList: FC<{
           <Link
             href={icon.link || ""}
             passHref
-            className="flex flex-row"
+            className="flex flex-row items-center"
             target="_blank"
             rel="noreferrer noopener"
           >
