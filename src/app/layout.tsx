@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: {
     default: "Bill Dean - Front-End Web Developer",
-    template: "%s | Bill Dean - Front-End Web Developer",
+    template: `%s | ${process.env.NEXT_PUBLIC_SITE_TITLE}`,
   },
   twitter: {
     card: "summary_large_image",
