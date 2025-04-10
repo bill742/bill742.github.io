@@ -27,7 +27,7 @@ const Contact = memo(() => {
       icon: SiGmail,
       id: 3,
       label: "Email",
-      link: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
+      link: `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`,
       role: iconRole,
       size: iconSize,
     },
