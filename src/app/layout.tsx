@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Bill Dean - Front-End Web Developer",
   },
   title: {
-    default: "Bill Dean - Front-End Web Developer",
+    default: `${process.env.NEXT_PUBLIC_SITE_TITLE}`,
     template: `%s | ${process.env.NEXT_PUBLIC_SITE_TITLE}`,
   },
   twitter: {
