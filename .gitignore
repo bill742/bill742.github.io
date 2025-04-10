@@ -45,3 +45,4 @@ next-env.d.ts
 
 # Misc
 /docs/CoverLetter*
+.sync.ffs_db
