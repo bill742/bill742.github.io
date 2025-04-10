@@ -24,6 +24,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
+
 jobs:
   # Build job
   build:
@@ -71,6 +74,10 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+      - name: Add Environment Variables
+        env:
+          NEXT_PUBLIC_SITE_TITLE: ${{ env.NEXT_PUBLIC_SITE_TITLE }}
+        run: echo "Site title $NEXT_PUBLIC_SITE_TITLE"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
