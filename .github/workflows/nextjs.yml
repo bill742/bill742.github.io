@@ -24,12 +24,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  DAY_OF_WEEK: Monday
-  NEXT_PUBLIC_EMAIL_ADDRESS: ${{ secrets.NEXT_PUBLIC_EMAIL_ADDRESS }}
-  NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ secrets.NEXT_PUBLIC_LINKEDIN_USERNAME }}
-  NEXT_TEST_VALUE: ${{ secrets.NEXT_TEST_VALUE }}
-
 jobs:
   # Build job
   build:
@@ -77,13 +71,6 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Add Environment Variables
-        env:
-          NEXT_PUBLIC_ALLOW_PORTFOLIO: ${{ env.NEXT_PUBLIC_ALLOW_PORTFOLIO }}
-          NEXT_PUBLIC_GH_USERNAME: ${{ env.NEXT_PUBLIC_GH_USERNAME }}
-          NEXT_PUBLIC_SITE_TITLE: ${{ env.NEXT_PUBLIC_SITE_TITLE }}
-          NEXT_PUBLIC_SITE_URL: ${{ env.NEXT_PUBLIC_SITE_URL }}
-        run: echo "Today is $DAY_OF_WEEK! Email is $NEXT_PUBLIC_EMAIL_ADDRESS and LinkedIn is $NEXT_PUBLIC_LINKEDIN_USERNAME. The secret is $NEXT_TEST_VALUE"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
