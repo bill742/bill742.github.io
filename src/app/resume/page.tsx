@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://billdean.me/resume",
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/resume`,
   },
   description:
     "View my resume for more details about my experience and skills.",

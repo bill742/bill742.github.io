@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "I'm a front-end web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript.",
     images: "/opengraph-image.png",
-    title: "Bill Dean - Front-End Web Developer",
+    title: `${process.env.NEXT_PUBLIC_SITE_TITLE}`,
   },
   title: {
     default: `${process.env.NEXT_PUBLIC_SITE_TITLE}`,
