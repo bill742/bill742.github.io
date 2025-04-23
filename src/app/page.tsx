@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import About from "@/components/homeSections/about";
 import Contact from "@/components/homeSections/contact";
+import Intro from "@/components/homeSections/intro";
 import Portfolio from "@/components/homeSections/portfolio";
 import Skills from "@/components/homeSections/skills";
 
@@ -17,7 +18,8 @@ export default function Home() {
   const portfolio = process.env.NEXT_PUBLIC_ALLOW_PORTFOLIO;
 
   return (
-    <main className="row-start-2 mb-16 mt-16 flex flex-col items-center gap-20 sm:items-start">
+    <main className="row-start-2 mt-16 mb-16 flex flex-col items-center gap-20 sm:items-start">
+      <Intro />
       <About />
       <Skills />
       {portfolio === "TRUE" && <Portfolio />}
