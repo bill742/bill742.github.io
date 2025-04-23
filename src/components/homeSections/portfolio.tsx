@@ -1,3 +1,4 @@
+import { BriefcaseBusiness } from "lucide-react";
 import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 
@@ -14,7 +15,9 @@ import {
 export default function Portfolio() {
   return (
     <section className="section" id="portfolio">
-      <h3 className="header">Portfolio</h3>
+      <h3 className="header">
+        <BriefcaseBusiness className="text-slate-500" /> Portfolio
+      </h3>
       <div className="flex flex-col gap-4 md:flex-row">
         <Card>
           <CardHeader>

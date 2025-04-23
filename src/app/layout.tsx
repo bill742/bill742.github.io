@@ -43,15 +43,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="container mx-auto max-w-6xl p-6">
+          <div className="p-6">
             <SkipNav />
             <Header />
 
-            <div id="main">{children}</div>
+            <div id="main" className="container mx-auto max-w-6xl p-6">
+              {children}
+            </div>
           </div>
         </ThemeProvider>
-        {/* 100% privacy-first analytics */}
 
+        {/* 100% privacy-first analytics */}
         <script
           data-collect-dnt="true"
           async

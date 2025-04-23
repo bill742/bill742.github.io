@@ -1,14 +1,15 @@
+import { Mail, PhoneCall } from "lucide-react";
 import { memo } from "react";
-import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import IconList from "@/components/icon-list";
 
 const Contact = memo(() => {
-  const iconSize = "60";
+  const iconSize = "50";
   const iconRole = "img";
   const contactIcons = [
     {
-      icon: SiGithub,
+      icon: FaGithub,
       id: 1,
       label: "GitHub",
       link: `https://github.com/${process.env.NEXT_PUBLIC_GH_USERNAME}`,
@@ -16,7 +17,7 @@ const Contact = memo(() => {
       size: iconSize,
     },
     {
-      icon: SiLinkedin,
+      icon: FaLinkedin,
       id: 2,
       label: "LinkedIn",
       link: `https://www.linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_USERNAME}`,
@@ -24,7 +25,7 @@ const Contact = memo(() => {
       size: iconSize,
     },
     {
-      icon: SiGmail,
+      icon: Mail,
       id: 3,
       label: "Email",
       link: "mailto:hello@billdean.me",
@@ -34,18 +35,19 @@ const Contact = memo(() => {
   ];
 
   return (
-    <section id="contact" className="flex w-full flex-col items-center gap-y-8">
-      <h3 className="header">Contact</h3>
-      <p className="text-center">
-        Send me a message or view some code samples at the links below.
+    <section id="contact" className="section">
+      <h3 className="header">
+        <PhoneCall className="text-slate-500" /> Contact
+      </h3>
+      <p>
+        Feel free to send me a message or view some code samples at the links
+        below.
       </p>
-      <div className="space-between flex flex-row flex-wrap">
-        <IconList
-          hasText={false}
-          iconInfos={contactIcons}
-          className="flex w-full flex-col flex-wrap justify-start gap-16 md:flex-row md:justify-between"
-        />
-      </div>
+      <IconList
+        hasText={false}
+        iconInfos={contactIcons}
+        className="flex w-full flex-row flex-wrap justify-between gap-6"
+      />
     </section>
   );
 });

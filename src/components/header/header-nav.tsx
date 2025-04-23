@@ -26,11 +26,11 @@ const HeaderNav: FC = memo(() => {
       link: "#skills",
       text: "Skills",
     },
-    // {
-    //   key: 3,
-    //   link: '#portfolio',
-    //   text: 'Portfolio',
-    // },
+    {
+      key: 3,
+      link: "#portfolio",
+      text: "Portfolio",
+    },
     {
       key: 4,
       link: "#contact",
@@ -50,9 +50,10 @@ const HeaderNav: FC = memo(() => {
           <li key={navItem.key}>
             <Link
               href={`/${navItem.link}`}
-              className="font-semibold lowercase hover:underline"
+              className="group font-semibold lowercase"
             >
               {navItem.text}
+              <div className="h-[2px] w-0 bg-slate-500 transition-all duration-500 group-hover:w-full"></div>
             </Link>
           </li>
         ))}
