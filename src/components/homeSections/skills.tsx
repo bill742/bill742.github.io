@@ -1,15 +1,19 @@
-// import { Heading } from '@chakra-ui/react';
+import { FaGitAlt } from "react-icons/fa6";
+import { FaGaugeHigh } from "react-icons/fa6";
 import {
   SiCss3,
+  SiDjango,
   SiGraphql,
   SiHtml5,
   SiJavascript,
   SiJest,
   SiNextdotjs,
+  SiPython,
   SiReact,
+  SiTailwindcss,
   SiTypescript,
-  // SiPlaywright,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 import IconList from "@/components/icon-list";
 
@@ -81,19 +85,55 @@ export default function Skills() {
     //   role: iconRole,
     //   size: iconSize,
     // },
+    {
+      icon: VscVscode,
+      id: 10,
+      label: "VSCode",
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: FaGitAlt,
+      id: 11,
+      label: "Git",
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiTailwindcss,
+      id: 12,
+      label: "TailwindCSS",
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiPython,
+      id: 13,
+      label: "Python",
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: SiDjango,
+      id: 14,
+      label: "Django",
+      role: iconRole,
+      size: iconSize,
+    },
   ];
 
   return (
-    <section id="skills" className="flex w-full flex-col gap-y-12">
-      <h3 className="header">Skills</h3>
-      <p className="text-center">
-        Languages, tools & applications I use in my daily workflow.
-      </p>
+    <section id="skills" className="section">
+      <h3 className="header">
+        <FaGaugeHigh className="text-slate-500" />
+        Skills
+      </h3>
+      <p>Languages, tools & applications I use in my daily workflow.</p>
 
       <IconList
         iconInfos={stackIcons}
         hasText={false}
-        className="m-auto flex max-w-sm flex-row flex-wrap justify-center gap-8 md:justify-between"
+        className="m-auto flex flex-row flex-wrap justify-center gap-12 md:justify-between"
       />
     </section>
   );
