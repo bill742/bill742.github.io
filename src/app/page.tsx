@@ -15,14 +15,12 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const portfolio = process.env.NEXT_PUBLIC_ALLOW_PORTFOLIO;
-
   return (
     <main className="row-start-2 mt-16 mb-16 flex flex-col items-center gap-20 sm:items-start">
       <Intro />
       <About />
       <Skills />
-      {portfolio === "TRUE" && <Portfolio />}
+      <Portfolio />
       <Contact />
     </main>
   );
