@@ -128,7 +128,10 @@ export default function Skills() {
         <FaGaugeHigh className="text-slate-500" />
         Skills
       </h3>
-      <p>Languages, tools & applications I use in my daily workflow.</p>
+      <p>
+        The languages, tools & applications I currently use in my daily
+        workflow.
+      </p>
 
       <IconList
         iconInfos={stackIcons}

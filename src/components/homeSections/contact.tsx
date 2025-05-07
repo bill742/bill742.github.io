@@ -9,10 +9,10 @@ const Contact = memo(() => {
   const iconRole = "img";
   const contactIcons = [
     {
-      icon: FaGithub,
+      icon: Mail,
       id: 1,
-      label: "GitHub",
-      link: `https://github.com/${process.env.NEXT_PUBLIC_GH_USERNAME}`,
+      label: "Email",
+      link: "mailto:hello@billdean.me",
       role: iconRole,
       size: iconSize,
     },
@@ -25,10 +25,10 @@ const Contact = memo(() => {
       size: iconSize,
     },
     {
-      icon: Mail,
+      icon: FaGithub,
       id: 3,
-      label: "Email",
-      link: "mailto:hello@billdean.me",
+      label: "GitHub",
+      link: `https://github.com/${process.env.NEXT_PUBLIC_GH_USERNAME}`,
       role: iconRole,
       size: iconSize,
     },
@@ -39,10 +39,6 @@ const Contact = memo(() => {
       <h3 className="header">
         <PhoneCall className="text-slate-500" /> Contact
       </h3>
-      <p>
-        Feel free to send me a message or view some code samples at the links
-        below.
-      </p>
       <IconList
         hasText={false}
         iconInfos={contactIcons}

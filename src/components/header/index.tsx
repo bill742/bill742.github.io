@@ -5,7 +5,7 @@ import SiteHeading from "@/components/header/site-heading";
 
 const Header = memo(() => {
   return (
-    <header className="flex items-center justify-between">
+    <header className="flex items-center justify-between" id="top">
       <SiteHeading />
       <HeaderNav />
     </header>
