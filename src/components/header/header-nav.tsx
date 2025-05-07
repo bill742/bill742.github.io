@@ -36,11 +36,6 @@ const HeaderNav: FC = memo(() => {
       link: "#contact",
       text: "Contact",
     },
-    {
-      key: 5,
-      link: "resume",
-      text: "Resume",
-    },
   ];
 
   return (
