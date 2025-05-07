@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
+import Footer from "@/components/footer/footer";
 import Header from "@/components/header";
 import SkipNav from "@/components/skip-nav";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -50,6 +51,7 @@ export default function RootLayout({
             <div id="main" className="container mx-auto max-w-6xl p-6">
               {children}
             </div>
+            <Footer />
           </div>
         </ThemeProvider>
 
