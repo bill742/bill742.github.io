@@ -31,7 +31,7 @@ export default function About() {
 
         <Button asChild className="w-full bg-slate-500 md:w-1/2">
           <Link
-            href="docs/Resume-BillDean.pdf"
+            href="docs/Bill-Dean-Web-Developer.pdf"
             target="_blank"
             className="text-lg font-bold"
           >
