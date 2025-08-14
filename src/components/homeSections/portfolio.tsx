@@ -6,6 +6,7 @@ const portfolioData = [
   {
     content:
       "A resource that uses the GitHub API to allow users to find GitHub users by username and view their public repositories. Built using React.",
+    demoLink: "https://github-finder-kohl-chi.vercel.app/",
     description: "GitHub user search and repository viewer",
     githubLink: "https://github.com/bill742/github-finder",
     title: "GitHub Finder",
