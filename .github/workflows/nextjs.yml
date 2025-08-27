@@ -31,6 +31,7 @@ env:
   NEXT_PUBLIC_EMAIL_ADDRESS: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
   NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
   NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
+  NEXT_PUBLIC_FORMSPREE_CODE: ${{ vars.NEXT_PUBLIC_FORMSPREE_CODE }}
 
 jobs:
   # Build job
@@ -87,6 +88,7 @@ jobs:
           NEXT_PUBLIC_EMAIL_ADDRESS: ${{ env.NEXT_PUBLIC_EMAIL_ADDRESS }}
           NEXT_PUBLIC_GH_USERNAME: ${{ env.NEXT_PUBLIC_GH_USERNAME }}
           NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ env.NEXT_PUBLIC_LINKEDIN_USERNAME }}
+          NEXT_PUBLIC_FORMSPREE_CODE: ${{ env.NEXT_PUBLIC_FORMSPREE_CODE }}
         run: echo "Site title ${{ env.NEXT_PUBLIC_SITE_TITLE }}"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
