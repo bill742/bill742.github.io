@@ -2,6 +2,7 @@ import { Mail, PhoneCall } from "lucide-react";
 import { memo } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import ContactForm from "@/components/contact-form";
 import IconList from "@/components/icon-list";
 
 const Contact = memo(() => {
@@ -39,6 +40,7 @@ const Contact = memo(() => {
       <h3 className="header">
         <PhoneCall className="text-slate-500" /> Contact
       </h3>
+      <ContactForm />
       <IconList
         hasText={false}
         iconInfos={contactIcons}

@@ -59,6 +59,7 @@ export default function RootLayout({
         <script
           data-collect-dnt="true"
           async
+          data-hostname="billdean.me"
           src="https://scripts.simpleanalyticscdn.com/latest.js"
         ></script>
         <noscript>
