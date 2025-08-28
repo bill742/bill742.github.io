@@ -44,11 +44,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="p-6">
+          <div className="min-h-screen bg-background">
             <SkipNav />
-            <Header />
+            <div className="border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+              <div className="container mx-auto max-w-6xl px-6 py-4">
+                <Header />
+              </div>
+            </div>
 
-            <div id="main" className="container mx-auto max-w-6xl p-6">
+            <div id="main" className="container mx-auto max-w-6xl px-6 py-8">
               {children}
             </div>
             <Footer />

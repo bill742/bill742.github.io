@@ -44,11 +44,11 @@ const HeaderNav: FC = memo(() => {
         {navItems.map((navItem) => (
           <li key={navItem.key}>
             <Link
-              href={`/${navItem.link}`}
-              className="group font-semibold lowercase"
+              href={navItem.link}
+              className="group font-semibold lowercase text-foreground hover:text-primary transition-colors duration-200 relative"
             >
               {navItem.text}
-              <div className="h-[2px] w-0 bg-slate-500 transition-all duration-500 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></div>
             </Link>
           </li>
         ))}
@@ -60,16 +60,16 @@ const HeaderNav: FC = memo(() => {
       <ModeToggle className="md:hidden" />
       <DropdownMenu>
         <DropdownMenuTrigger asChild className="md:hidden">
-          <Button variant="outline" size="icon">
-            <Menu />
+          <Button variant="outline" size="icon" className="border-border hover:bg-accent">
+            <Menu className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="md:hidden">
+        <DropdownMenuContent align="end" className="md:hidden bg-card border-border">
           {navItems.map((navItem) => (
-            <DropdownMenuItem key={navItem.key} className="justify-end">
+            <DropdownMenuItem key={navItem.key} className="justify-end hover:bg-accent">
               <Link
-                href={`/${navItem.link}`}
-                className="font-semibold lowercase"
+                href={navItem.link}
+                className="font-semibold lowercase text-foreground hover:text-primary transition-colors duration-200"
               >
                 {navItem.text}
               </Link>

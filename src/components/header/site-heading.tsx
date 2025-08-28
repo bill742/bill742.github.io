@@ -7,10 +7,10 @@ export default function SiteHeading() {
         href={"/"}
         aria-label="Home"
         tabIndex={0}
-        className="group text-3xl font-bold"
+        className="group text-3xl font-bold text-foreground hover:text-primary transition-colors duration-200"
       >
-        BD
-        <div className="h-[2px] w-0 bg-slate-500 transition-all duration-500 group-hover:w-full"></div>
+        <span className="gradient-text">BD</span>
+        <div className="h-[2px] w-0 bg-primary transition-all duration-500 group-hover:w-full"></div>
       </Link>
     </div>
   );

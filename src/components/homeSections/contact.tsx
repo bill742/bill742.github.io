@@ -38,14 +38,21 @@ const Contact = memo(() => {
   return (
     <section id="contact" className="section">
       <h3 className="header">
-        <PhoneCall className="text-slate-500" /> Contact
+        <PhoneCall className="text-primary" /> Contact
       </h3>
-      <ContactForm />
-      <IconList
-        hasText={false}
-        iconInfos={contactIcons}
-        className="flex w-full flex-row flex-wrap justify-between gap-6"
-      />
+      <div className="space-y-8">
+        <ContactForm />
+        <div className="text-center">
+          <p className="text-lg text-muted-foreground mb-6">
+            Or connect with me on social media:
+          </p>
+          <IconList
+            hasText={false}
+            iconInfos={contactIcons}
+            className="flex w-full flex-row flex-wrap justify-center gap-8"
+          />
+        </div>
+      </div>
     </section>
   );
 });

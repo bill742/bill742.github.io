@@ -125,10 +125,10 @@ export default function Skills() {
   return (
     <section id="skills" className="section">
       <h3 className="header">
-        <FaGaugeHigh className="text-slate-500" />
+        <FaGaugeHigh className="text-primary" />
         Skills
       </h3>
-      <p>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center">
         The languages, tools & applications I currently use in my daily
         workflow.
       </p>
@@ -136,7 +136,7 @@ export default function Skills() {
       <IconList
         iconInfos={stackIcons}
         hasText={false}
-        className="m-auto flex flex-row flex-wrap justify-center gap-12 md:justify-between"
+        className="m-auto flex flex-row flex-wrap justify-center gap-16 md:justify-between"
       />
     </section>
   );

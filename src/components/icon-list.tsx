@@ -15,7 +15,7 @@ const IconList: FC<{
           <Link
             href={icon.link || ""}
             passHref
-            className="flex flex-row items-center"
+            className="flex flex-row items-center text-muted-foreground hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-accent/50"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -23,6 +23,7 @@ const IconList: FC<{
               size={icon.size}
               role={icon.role}
               aria-label={icon.label}
+              className="transition-transform duration-200 hover:scale-110"
             />
             {hasText && <span className="ms-2">{icon.text}</span>}
           </Link>
@@ -34,6 +35,7 @@ const IconList: FC<{
               size={icon.size}
               role={icon.role}
               aria-label={icon.label}
+              className="text-muted-foreground"
             />
 
             {hasText && <span className="ms-2">{icon.text}</span>}
