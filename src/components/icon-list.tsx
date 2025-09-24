@@ -10,12 +10,12 @@ const IconList: FC<{
 }> = memo(({ className, hasText, iconInfos }) => {
   const iconItems = iconInfos.map((icon) => {
     return (
-      <li key={icon.id} className={hasText ? "flex flex-row" : ""}>
+      <li key={icon.id} className={hasText ? "min-w-25" : ""}>
         {icon.link && (
           <Link
             href={icon.link || ""}
             passHref
-            className="flex flex-row items-center text-muted-foreground hover:text-primary transition-colors duration-200 p-2 rounded-lg hover:bg-accent/50"
+            className="text-muted-foreground hover:text-primary hover:bg-accent/50 flex flex-row items-center rounded-lg p-2 transition-colors duration-200"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -31,14 +31,15 @@ const IconList: FC<{
 
         {!icon.link && (
           <>
-            <icon.icon
-              size={icon.size}
-              role={icon.role}
-              aria-label={icon.label}
-              className="text-muted-foreground"
-            />
-
-            {hasText && <span className="ms-2">{icon.text}</span>}
+            <div className="text-primary flex flex-col items-center gap-y-1 rounded-lg p-2">
+              <icon.icon
+                size={icon.size}
+                role={icon.role}
+                aria-label={icon.label}
+                className=""
+              />
+              {hasText && <span>{icon.text}</span>}
+            </div>
           </>
         )}
       </li>

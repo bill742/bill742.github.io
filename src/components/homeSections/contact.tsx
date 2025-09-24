@@ -40,18 +40,19 @@ const Contact = memo(() => {
       <h3 className="header">
         <PhoneCall className="text-primary" /> Contact
       </h3>
-      <div className="space-y-8">
-        <ContactForm />
-        <div className="text-center">
-          <p className="text-lg text-muted-foreground mb-6">
-            Or connect with me on social media:
-          </p>
-          <IconList
-            hasText={false}
-            iconInfos={contactIcons}
-            className="flex w-full flex-row flex-wrap justify-center gap-8"
-          />
-        </div>
+
+      <p>
+        Send me a message and let me know how I can help you with your next
+        project.
+      </p>
+      <ContactForm />
+      <div className="text-center">
+        <p className="mb-6">Or connect with me through the links below:</p>
+        <IconList
+          hasText={false}
+          iconInfos={contactIcons}
+          className="flex w-full flex-row flex-wrap justify-center gap-8"
+        />
       </div>
     </section>
   );
