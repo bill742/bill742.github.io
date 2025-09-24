@@ -1,10 +1,7 @@
-import { FaGitAlt } from "react-icons/fa6";
-import { FaGaugeHigh } from "react-icons/fa6";
+import { FaGaugeHigh, FaGitAlt } from "react-icons/fa6";
 import {
-  SiCss3,
   SiDjango,
   SiGraphql,
-  SiHtml5,
   SiJavascript,
   SiJest,
   SiNextdotjs,
@@ -21,26 +18,29 @@ export default function Skills() {
   const iconSize = "60";
   const iconRole = "img";
   const stackIcons = [
-    {
-      icon: SiHtml5,
-      id: 1,
-      label: "HTML",
-      role: iconRole,
-      size: iconSize,
-    },
-    {
-      icon: SiCss3,
-      id: 2,
-      label: "CSS",
-      role: iconRole,
-      size: iconSize,
-    },
+    // {
+    //   icon: SiHtml5,
+    //   id: 1,
+    //   label: "HTML",
+    //   role: iconRole,
+    //   size: iconSize,
+    //   text: "HTML5",
+    // },
+    // {
+    //   icon: SiCss3,
+    //   id: 2,
+    //   label: "CSS",
+    //   role: iconRole,
+    //   size: iconSize,
+    //   text: "CSS3",
+    // },
     {
       icon: SiJavascript,
       id: 3,
       label: "JavaScript",
       role: iconRole,
       size: iconSize,
+      text: "JavaScript",
     },
     {
       icon: SiReact,
@@ -48,6 +48,7 @@ export default function Skills() {
       label: "React",
       role: iconRole,
       size: iconSize,
+      text: "React",
     },
     {
       icon: SiTypescript,
@@ -55,6 +56,7 @@ export default function Skills() {
       label: "TypeScript",
       role: iconRole,
       size: iconSize,
+      text: "TypeScript",
     },
 
     {
@@ -63,6 +65,7 @@ export default function Skills() {
       label: "NextJS",
       role: iconRole,
       size: iconSize,
+      text: "Next.js",
     },
     {
       icon: SiGraphql,
@@ -70,6 +73,7 @@ export default function Skills() {
       label: "GraphQL",
       role: iconRole,
       size: iconSize,
+      text: "GraphQL",
     },
     {
       icon: SiJest,
@@ -77,6 +81,7 @@ export default function Skills() {
       label: "Jest",
       role: iconRole,
       size: iconSize,
+      text: "Jest",
     },
     // {
     //   icon: SiPlaywright,
@@ -91,6 +96,7 @@ export default function Skills() {
       label: "VSCode",
       role: iconRole,
       size: iconSize,
+      text: "VSCode",
     },
     {
       icon: FaGitAlt,
@@ -98,6 +104,7 @@ export default function Skills() {
       label: "Git",
       role: iconRole,
       size: iconSize,
+      text: "Git",
     },
     {
       icon: SiTailwindcss,
@@ -105,6 +112,7 @@ export default function Skills() {
       label: "TailwindCSS",
       role: iconRole,
       size: iconSize,
+      text: "TailwindCSS",
     },
     {
       icon: SiPython,
@@ -112,6 +120,7 @@ export default function Skills() {
       label: "Python",
       role: iconRole,
       size: iconSize,
+      text: "Python",
     },
     {
       icon: SiDjango,
@@ -119,24 +128,25 @@ export default function Skills() {
       label: "Django",
       role: iconRole,
       size: iconSize,
+      text: "Django",
     },
   ];
 
   return (
     <section id="skills" className="section">
       <h3 className="header">
-        <FaGaugeHigh className="text-slate-500" />
+        <FaGaugeHigh className="text-primary" />
         Skills
       </h3>
-      <p>
+      <p className="mx-auto max-w-2xl text-center">
         The languages, tools & applications I currently use in my daily
         workflow.
       </p>
 
       <IconList
         iconInfos={stackIcons}
-        hasText={false}
-        className="m-auto flex flex-row flex-wrap justify-center gap-12 md:justify-between"
+        hasText={true}
+        className="m-auto flex flex-row flex-wrap justify-center gap-8 md:justify-between"
       />
     </section>
   );

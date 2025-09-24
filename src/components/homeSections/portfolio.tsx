@@ -23,21 +23,20 @@ const portfolioData = [
 
 export default function Portfolio() {
   return (
-    <section className="section" id="portfolio">
+    <section className="section" id="projects">
       <h3 className="header">
-        <BriefcaseBusiness className="text-slate-500" /> Portfolio
+        <BriefcaseBusiness className="text-primary" /> Projects
       </h3>
-      <div className="flex flex-col gap-4 md:flex-row">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {portfolioData.map((item, index) => (
-          <div key={index} className="w-full md:w-1/2">
-            <PortfolioCard
-              title={item.title}
-              description={item.description}
-              content={item.content}
-              githubLink={item.githubLink}
-              demoLink={item.demoLink}
-            />
-          </div>
+          <PortfolioCard
+            key={index}
+            title={item.title}
+            description={item.description}
+            content={item.content}
+            githubLink={item.githubLink}
+            demoLink={item.demoLink}
+          />
         ))}
       </div>
     </section>

@@ -20,25 +20,39 @@ const PortfolioCard: FC<{
   demoLink?: string;
 }> = memo(({ title, description, content, githubLink, demoLink }) => {
   return (
-    <Card>
+    <Card className="card-hover bg-card border-border hover:border-primary/30 justify-between">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardTitle className="text-foreground text-lg">{title}</CardTitle>
+        <CardDescription className="text-muted-foreground text-base">
+          {description}
+        </CardDescription>
       </CardHeader>
-      <CardContent>{content}</CardContent>
-      <CardFooter className="flex gap-6">
+      <CardContent className="text-muted-foreground leading-relaxed">
+        {content}
+      </CardContent>
+      <CardFooter className="flex flex-col gap-8 sm:flex-row">
         {githubLink && (
-          <Button>
-            <Link href={githubLink} target="_blank" rel="noopener noreferrer">
-              <SiGithub className="mr-2 inline-block" />
+          <Button asChild className="button-primary">
+            <Link
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-1/2"
+            >
+              <SiGithub className="mr-2 h-4 w-4" />
               GitHub
             </Link>
           </Button>
         )}
         {demoLink && (
-          <Button>
-            <Link href={demoLink} target="_blank" rel="noopener noreferrer">
-              Demo
+          <Button asChild className="button-primary">
+            <Link
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-1/2"
+            >
+              Live Demo
             </Link>
           </Button>
         )}

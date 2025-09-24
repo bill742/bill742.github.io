@@ -46,7 +46,7 @@ export default function ContactForm() {
       <Button
         type="submit"
         disabled={state.submitting}
-        className="mt-6 mb-6 bg-slate-500"
+        className="button-primary mt-6 mb-6"
       >
         Send Message
       </Button>
