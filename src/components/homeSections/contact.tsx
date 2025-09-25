@@ -2,6 +2,7 @@ import { Mail, PhoneCall } from "lucide-react";
 import { memo } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import ContactForm from "@/components/contact-form";
 import IconList from "@/components/icon-list";
 
 const Contact = memo(() => {
@@ -37,13 +38,22 @@ const Contact = memo(() => {
   return (
     <section id="contact" className="section">
       <h3 className="header">
-        <PhoneCall className="text-slate-500" /> Contact
+        <PhoneCall className="text-primary" /> Contact
       </h3>
-      <IconList
-        hasText={false}
-        iconInfos={contactIcons}
-        className="flex w-full flex-row flex-wrap justify-between gap-6"
-      />
+
+      <p>
+        Send me a message and let me know how I can help you with your next
+        project.
+      </p>
+      <ContactForm />
+      <div className="text-center">
+        <p className="mb-6">Or connect with me through the links below:</p>
+        <IconList
+          hasText={false}
+          iconInfos={contactIcons}
+          className="flex w-full flex-row flex-wrap justify-center gap-8"
+        />
+      </div>
     </section>
   );
 });

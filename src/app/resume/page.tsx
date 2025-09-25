@@ -25,7 +25,7 @@ export default function Resume() {
         asChild
         className="mx-auto my-6 flex justify-center font-bold md:mt-16 md:w-1/2"
       >
-        <Link href="docs/Resume-BillDean.pdf" className="text-lg">
+        <Link href="docs/Bill-Dean-Web-Developer.pdf" className="text-lg">
           <FileUser /> Download a PDF version
         </Link>
       </Button>
