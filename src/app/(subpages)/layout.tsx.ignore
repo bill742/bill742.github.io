@@ -1,0 +1,18 @@
+import type { ReactNode } from "react";
+
+import SubPagesHeader from "@/components/header/header-subpages";
+
+export default function Layout({
+  children,
+  // header,
+}: {
+  children: ReactNode;
+  // header: ReactNode;
+}) {
+  return (
+    <>
+      <SubPagesHeader />
+      {children}
+    </>
+  );
+}
