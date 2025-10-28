@@ -59,18 +59,17 @@ export default function RootLayout({
         >
           <div className="bg-background min-h-screen">
             <SkipNav />
-            <div className="border-border/50 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b backdrop-blur">
-              <div className="container mx-auto max-w-6xl px-6 py-4">
-                <Header />
-              </div>
-            </div>
+            {/* <div className="border-border/50 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b backdrop-blur">
+              <div className="container mx-auto max-w-6xl px-6 py-4"> */}
+            <Header />
+            {/* </div>
+            </div> */}
 
-            <div id="main" className="container mx-auto max-w-6xl px-6 pt-8">
+            <main id="main" className="container mx-auto max-w-6xl px-6 pt-8">
               {children}
-            </div>
-            <div className="container mx-auto max-w-6xl px-6 py-4">
-              <Footer />
-            </div>
+            </main>
+
+            <Footer />
           </div>
         </ThemeProvider>
 
