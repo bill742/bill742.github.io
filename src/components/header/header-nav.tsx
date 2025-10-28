@@ -10,46 +10,46 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { scrollToSection } from "@/utils/scrollToSection";
+import { headerNavItemType } from "@/types/types";
 
+import HeaderNavItem from "./header-nav-item";
 import ModeToggle from "./mode-toggle";
 
 const HeaderNav: FC = memo(() => {
   const navItems = [
     {
+      isHome: true,
       key: 1,
       link: "#about",
       text: "About Me",
     },
     {
+      isHome: true,
       key: 2,
       link: "#skills",
       text: "Skills",
     },
     {
+      isHome: true,
       key: 3,
       link: "#projects",
       text: "Projects",
     },
     {
+      isHome: true,
       key: 4,
       link: "#contact",
       text: "Contact",
     },
+    { isHome: false, key: 5, link: "/blog", text: "Blog" },
   ];
 
   return (
     <nav className="flex gap-x-2">
       <ul className="hidden space-x-6 md:flex md:items-center">
-        {navItems.map((navItem) => (
+        {navItems.map((navItem: headerNavItemType) => (
           <li key={navItem.key}>
-            <button
-              onClick={() => scrollToSection(navItem.link.substring(1))}
-              className="group text-foreground hover:text-primary gradient-text relative font-semibold lowercase transition-colors duration-200"
-            >
-              {navItem.text}
-              <div className="bg-primary absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full"></div>
-            </button>
+            <HeaderNavItem navItem={navItem} />
           </li>
         ))}
         <li>
@@ -76,13 +76,7 @@ const HeaderNav: FC = memo(() => {
               key={navItem.key}
               className="hover:bg-accent justify-end"
             >
-              <button
-                onClick={() => scrollToSection(navItem.link.substring(1))}
-                className="group text-foreground hover:text-primary gradient-text relative font-semibold lowercase transition-colors duration-200"
-              >
-                {navItem.text}
-                <div className="bg-primary absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full"></div>
-              </button>
+              <HeaderNavItem navItem={navItem} />
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
