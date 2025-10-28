@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="row-start-2 mt-16 flex flex-col items-center gap-20 sm:items-start">
+    <div className="row-start-2 mt-16 flex flex-col items-center gap-20 sm:items-start">
       <Intro />
       <About />
       <Skills />
       <Portfolio />
       <Contact />
-    </main>
+    </div>
   );
 }
