@@ -25,7 +25,8 @@ export default function Portfolio() {
   return (
     <section className="section" id="projects">
       <h3 className="header">
-        <BriefcaseBusiness className="text-primary" /> Projects
+        <BriefcaseBusiness className="text-primary" aria-label="Projects" />{" "}
+        Projects
       </h3>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {portfolioData.map((item, index) => (

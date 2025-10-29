@@ -39,7 +39,7 @@ const PortfolioCard: FC<{
               rel="noopener noreferrer"
               className="w-full md:w-1/2"
             >
-              <SiGithub className="mr-2 h-4 w-4" />
+              <SiGithub className="mr-2 h-4 w-4" aria-label="Github" />
               GitHub
             </Link>
           </Button>

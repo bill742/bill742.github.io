@@ -38,7 +38,7 @@ const Contact = memo(() => {
   return (
     <section id="contact" className="section">
       <h3 className="header">
-        <PhoneCall className="text-primary" /> Contact
+        <PhoneCall className="text-primary" aria-label="Contact" /> Contact
       </h3>
 
       <p>
