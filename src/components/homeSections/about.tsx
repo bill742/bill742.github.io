@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section className="section" id="about">
       <h3 className="header">
-        <FaUser className="text-primary" /> About Me
+        <FaUser className="text-primary" aria-label="About Me" /> About Me
       </h3>
       <p>
         I&apos;m a front-end-focused web developer with over 10 years of
