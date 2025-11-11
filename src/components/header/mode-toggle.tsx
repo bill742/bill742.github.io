@@ -22,11 +22,26 @@ const ModeToggle: FC<{ className?: string }> = memo(({ className }) => {
   const getCurrentIcon = () => {
     switch (theme) {
       case "dark":
-        return <Moon className="text-foreground h-[1.2rem] w-[1.2rem]" />;
+        return (
+          <Moon
+            className="text-foreground h-[1.2rem] w-[1.2rem]"
+            aria-label="Dark Mode"
+          />
+        );
       case "eightbit":
-        return <Joystick className="text-foreground h-[1.2rem] w-[1.2rem]" />;
+        return (
+          <Joystick
+            className="text-foreground h-[1.2rem] w-[1.2rem]"
+            aria-label="8-bit Style"
+          />
+        );
       default:
-        return <Sun className="text-foreground h-[1.2rem] w-[1.2rem]" />;
+        return (
+          <Sun
+            className="text-foreground h-[1.2rem] w-[1.2rem]"
+            aria-label="Light Mode"
+          />
+        );
     }
   };
 

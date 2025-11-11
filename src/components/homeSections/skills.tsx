@@ -135,7 +135,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section">
       <h3 className="header">
-        <FaGaugeHigh className="text-primary" />
+        <FaGaugeHigh className="text-primary" aria-label="Skills" />
         Skills
       </h3>
       <p className="mx-auto max-w-2xl text-center">
