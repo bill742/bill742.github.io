@@ -9,8 +9,7 @@ test.describe("Homepage does not have accessiblity issues", () => {
     await page.goto("./");
 
     console.log("Running accessibility scan on homepage");
-    console.log(page.url());
-    console.log(process.env.NEXT_PUBLIC_IS_PRODUCTION);
+    console.log(process.env.NEXT_PUBLIC_SITE_URL);
 
     const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
 
