@@ -74,7 +74,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL:
-      process.env.NEXT_PUBLIC_PRODUCTION === "1"
+      process.env.NEXT_PUBLIC_IS_PRODUCTION === "1"
         ? "https://billdean.me"
         : "http://localhost:3000",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
