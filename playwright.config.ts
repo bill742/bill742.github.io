@@ -4,14 +4,13 @@ import { defineConfig, devices } from "@playwright/test";
  * https://github.com/motdotla/dotenv
  */
 import dotenv from "dotenv";
-// import path from "path";
 dotenv.config({
   path: [".env.local", ".env.production"],
 });
 console.log("Loaded environment variables from .env files");
 
 require("dotenv").config();
-console.log(process.env);
+console.log(process.env.NEXT_PUBLIC_SITE_URL);
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -68,12 +67,6 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
 
   testDir: "./tests",
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: "npm run dev",
-  //   url: "http://localhost:3000",
-  //   reuseExistingServer: !process.env.CI,
-  // },
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: process.env.NEXT_PUBLIC_SITE_URL,
