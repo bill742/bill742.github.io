@@ -25,7 +25,6 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NEXT_PUBLIC_ALLOW_PORTFOLIO: ${{ vars.NEXT_PUBLIC_ALLOW_PORTFOLIO }}
   NEXT_PUBLIC_EMAIL_ADDRESS: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
   NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
   NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
@@ -80,7 +79,7 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Add Environment Variables
         env:
-          NEXT_PUBLIC_ALLOW_PORTFOLIO: ${{ env.NEXT_PUBLIC_ALLOW_PORTFOLIO }}
+          NEXT_PUBLIC_ALLOW_PORTFOLIO: ${{ vars.NEXT_PUBLIC_ALLOW_PORTFOLIO }}
           NEXT_PUBLIC_EMAIL_ADDRESS: ${{ env.NEXT_PUBLIC_EMAIL_ADDRESS }}
           NEXT_PUBLIC_GH_USERNAME: ${{ env.NEXT_PUBLIC_GH_USERNAME }}
           NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ env.NEXT_PUBLIC_LINKEDIN_USERNAME }}
