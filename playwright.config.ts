@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config({
   path: [".env", "github-pages"],
 });
-console.log("Loaded environment variables from .env files");
+console.log("Loaded environment variables.");
 
 require("dotenv").config();
 console.log(process.env.NEXT_PUBLIC_SITE_URL);
