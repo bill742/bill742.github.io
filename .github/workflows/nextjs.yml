@@ -25,10 +25,6 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NEXT_PUBLIC_EMAIL_ADDRESS: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
-  NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
-  NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
-  NEXT_PUBLIC_FORMSPREE_CODE: ${{ vars.NEXT_PUBLIC_FORMSPREE_CODE }}
 
 jobs:
   # Build job
@@ -80,11 +76,13 @@ jobs:
       - name: Add Environment Variables
         env:
           NEXT_PUBLIC_ALLOW_PORTFOLIO: ${{ vars.NEXT_PUBLIC_ALLOW_PORTFOLIO }}
-          NEXT_PUBLIC_EMAIL_ADDRESS: ${{ env.NEXT_PUBLIC_EMAIL_ADDRESS }}
-          NEXT_PUBLIC_GH_USERNAME: ${{ env.NEXT_PUBLIC_GH_USERNAME }}
-          NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ env.NEXT_PUBLIC_LINKEDIN_USERNAME }}
-          NEXT_PUBLIC_FORMSPREE_CODE: ${{ env.NEXT_PUBLIC_FORMSPREE_CODE }}
-        run: echo "Public email ${{ env.NEXT_PUBLIC_EMAIL_ADDRESS }}"
+          NEXT_PUBLIC_EMAIL_ADDRESS: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
+          NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
+          NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
+          NEXT_PUBLIC_FORMSPREE_CODE: ${{ vars.NEXT_PUBLIC_FORMSPREE_CODE }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
+        run: echo "Public email ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
