@@ -30,12 +30,6 @@ env:
   NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
   NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
   NEXT_PUBLIC_FORMSPREE_CODE: ${{ vars.NEXT_PUBLIC_FORMSPREE_CODE }}
-  NEXT_PUBLIC_SITE_URL: ${{ github.env.NEXT_PUBLIC_SITE_URL}}
-  NEXT_PUBLIC_SITE_TITLE: ${{ github.env.NEXT_PUBLIC_SITE_TITLE }}
-  Q: ${{ github.env}}
-
-  echo "Site URL in env: $NEXT_PUBLIC_SITE_URL"
-  echo "End: $Q"
 
 jobs:
   # Build job
@@ -84,10 +78,6 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Debug environment
-        run: |
-          echo "Site URL: $NEXT_PUBLIC_SITE_URL"
-          echo "Site Title: $NEXT_PUBLIC_SITE_TITLE"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
@@ -102,13 +92,19 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    env:
-      # Specific environment variables to be accessed during deployment and Playwright testing
-      NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-      NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      # Specific environment variables to be accessed during deployment and Playwright testing
+      - name: Use environment variables
+        run: |
+          echo "Using environment variables"
+          echo ${{ vars.NEXT_PUBLIC_SITE_URL }}
+        env:
+          # Access environment variables
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          # Access environment secrets
+          NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
