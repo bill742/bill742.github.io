@@ -30,8 +30,8 @@ env:
   NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
   NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
   NEXT_PUBLIC_FORMSPREE_CODE: ${{ vars.NEXT_PUBLIC_FORMSPREE_CODE }}
-  NEXT_PUBLIC_SITE_URL: ${{ github.env.NEXT_PUBLIC_SITE_URL}}
-  NEXT_PUBLIC_SITE_TITLE: ${{ github.env.NEXT_PUBLIC_SITE_TITLE }}
+  NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL}}
+  NEXT_PUBLIC_SITE_TITLE: ${{ secrets.NEXT_PUBLIC_SITE_TITLE }}
 
 jobs:
   # Build job
@@ -93,6 +93,10 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ env.NEXT_PUBLIC_SITE_URL }}
           NEXT_PUBLIC_SITE_TITLE: ${{ env.NEXT_PUBLIC_SITE_TITLE }}
         run: echo "Site title is $NEXT_PUBLIC_SITE_TITLE"
+      - name: Debug environment
+        run: |
+          echo "Site URL: $NEXT_PUBLIC_SITE_URL"
+          echo "Site Title: $NEXT_PUBLIC_SITE_TITLE"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
