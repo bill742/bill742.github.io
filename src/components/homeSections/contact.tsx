@@ -13,7 +13,7 @@ const Contact = memo(() => {
       icon: Mail,
       id: 1,
       label: "Email",
-      link: "mailto:hello@billdean.me",
+      link: `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`,
       role: iconRole,
       size: iconSize,
     },
