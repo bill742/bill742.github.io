@@ -11,6 +11,7 @@ console.log("Loaded environment variables.");
 
 require("dotenv").config();
 console.log(process.env.NEXT_PUBLIC_SITE_URL);
+console.log(process.env);
 
 /**
  * See https://playwright.dev/docs/test-configuration.
