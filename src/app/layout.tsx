@@ -26,7 +26,9 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://billdean.me"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://billdean.me"
+  ),
   openGraph: {
     description:
       "I'm a front-end web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript.",
