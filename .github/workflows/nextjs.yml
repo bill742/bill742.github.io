@@ -78,6 +78,11 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+      - name: Add Environment Variables
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ env.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_SITE_TITLE: ${{ env.NEXT_PUBLIC_SITE_TITLE }}
+        run: echo "Site title ${{ env.NEXT_PUBLIC_SITE_TITLE }}"
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
