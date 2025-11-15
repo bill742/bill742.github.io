@@ -10,8 +10,6 @@ dotenv.config({
 console.log("Loaded environment variables.");
 
 require("dotenv").config();
-console.log(process.env.NEXT_PUBLIC_SITE_URL);
-console.log(dotenv);
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -30,15 +28,15 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
+    // {
+    //   name: "firefox",
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
 
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
+    // {
+    //   name: "webkit",
+    //   use: { ...devices["Desktop Safari"] },
+    // },
 
     /* Test against mobile viewports. */
     // {
