@@ -24,13 +24,16 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-# Add Repository Variables
 env:
+  # Add Repository Variables
   NEXT_PUBLIC_ALLOW_PORTFOLIO: ${{ vars.NEXT_PUBLIC_ALLOW_PORTFOLIO }}
   NEXT_PUBLIC_EMAIL_ADDRESS: ${{ vars.NEXT_PUBLIC_EMAIL_ADDRESS }}
   NEXT_PUBLIC_GH_USERNAME: ${{ vars.NEXT_PUBLIC_GH_USERNAME }}
   NEXT_PUBLIC_LINKEDIN_USERNAME: ${{ vars.NEXT_PUBLIC_LINKEDIN_USERNAME }}
   NEXT_PUBLIC_FORMSPREE_CODE: ${{ vars.NEXT_PUBLIC_FORMSPREE_CODE }}
+  # Add Environment Variables
+  NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+  NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
 
 jobs:
   # Build job
@@ -39,11 +42,6 @@ jobs:
       name: github-pages
     runs-on: ubuntu-latest
     steps:
-      - name: Add Environment Variables
-        env:
-          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-          NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
-        run: echo "Site title ${{ vars.NEXT_PUBLIC_SITE_TITLE }}"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
@@ -102,9 +100,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    env:
-      NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-      NEXT_PUBLIC_SITE_TITLE: ${{ vars.NEXT_PUBLIC_SITE_TITLE }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
