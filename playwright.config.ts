@@ -70,7 +70,7 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: process.env.NEXT_PUBLIC_SITE_URL,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    // trace: "on-first-retry",
+    trace: "on-first-retry",
   },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
