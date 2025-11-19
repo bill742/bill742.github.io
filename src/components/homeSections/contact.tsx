@@ -41,13 +41,9 @@ const Contact = memo(() => {
         <PhoneCall className="text-primary" aria-label="Contact" /> Contact
       </h3>
 
-      <p>
-        Send me a message and let me know how I can help you with your next
-        project.
-      </p>
       <ContactForm />
       <div className="text-center">
-        <p className="mb-6">Or connect with me through the links below:</p>
+        <p className="mb-6">Connect with me through the links below:</p>
         <IconList
           hasText={false}
           iconInfos={contactIcons}

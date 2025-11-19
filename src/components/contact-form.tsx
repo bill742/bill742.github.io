@@ -23,6 +23,10 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <p>
+        Send me a message and let me know how I can help you with your next
+        project.
+      </p>
       <Label htmlFor="email">Email:</Label>
       <Input
         id="email"
@@ -50,6 +54,7 @@ export default function ContactForm() {
       >
         Send Message
       </Button>
+      <ValidationError errors={state.errors} />
     </form>
   );
 }
