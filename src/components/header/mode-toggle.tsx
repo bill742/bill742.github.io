@@ -54,6 +54,7 @@ const ModeToggle: FC<{ className?: string }> = memo(({ className }) => {
           variant="outline"
           size="icon"
           className="border-border hover:bg-accent hover:border-primary/30"
+          id="themeToggle"
         >
           {getCurrentIcon()}
           <span className="sr-only">Toggle theme</span>
