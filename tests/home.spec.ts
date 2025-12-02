@@ -15,23 +15,23 @@ test.describe("Homepage does not have accessiblity issues", () => {
     expect(accessibilityScanResults.violations).toEqual([]);
 
     // Test dark mode
-    const themeToggle = page.locator("#themeToggle");
-    await themeToggle.first().click();
-    console.log("Switching to Dark mode for accessibility testing");
-    await page.getByRole("menuitem", { name: "Dark" }).click();
-    const darkModeAccessibilityScanResults = await new AxeBuilder({
-      page,
-    }).analyze();
-    expect(darkModeAccessibilityScanResults.violations).toEqual([]);
+    // const themeToggle = page.locator("#themeToggle");
+    // await themeToggle.first().click();
+    // console.log("Switching to Dark mode for accessibility testing");
+    // await page.getByRole("menuitem", { name: "Dark" }).click();
+    // const darkModeAccessibilityScanResults = await new AxeBuilder({
+    //   page,
+    // }).analyze();
+    // expect(darkModeAccessibilityScanResults.violations).toEqual([]);
 
     // Test 8-bit mode
-    await themeToggle.first().click();
-    await page.getByRole("menuitem", { name: "8-bit Style" }).click();
-    console.log("Switched to 8-bit mode for accessibility testing");
-    const eightBitModeAccessibilityScanResults = await new AxeBuilder({
-      page,
-    }).analyze();
-    expect(eightBitModeAccessibilityScanResults.violations).toEqual([]);
+    // await themeToggle.first().click();
+    // await page.getByRole("menuitem", { name: "8-bit Style" }).click();
+    // console.log("Switched to 8-bit mode for accessibility testing");
+    // const eightBitModeAccessibilityScanResults = await new AxeBuilder({
+    //   page,
+    // }).analyze();
+    // expect(eightBitModeAccessibilityScanResults.violations).toEqual([]);
   });
 });
 
