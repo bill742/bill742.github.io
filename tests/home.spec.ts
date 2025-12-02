@@ -102,6 +102,18 @@ test("Contact form displays correctly, accepts input, and displays successful co
 
   console.log("Checking contact form on homepage");
 
+  // Mock the form submission API endpoint
+  await page.route("**/api/contact", async (route) => {
+    await route.fulfill({
+      body: JSON.stringify({
+        message: "Message sent successfully",
+        success: true,
+      }),
+      contentType: "application/json",
+      status: 200,
+    });
+  });
+
   // Navigate to Contact section
   await page
     .getByRole("navigation")
