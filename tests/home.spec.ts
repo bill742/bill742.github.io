@@ -60,7 +60,6 @@ test("Intro section displays correctly", async ({ page }) => {
 
   console.log("Checking headings on homepage");
 
-  // Expect main heading to be the same as in env variable
   const mainHeading = page.locator("h1").first();
   const subHeading = page.locator("h2").first();
   await expect(mainHeading).toHaveText("Hello! My name is Bill.");
@@ -127,9 +126,7 @@ test("Contact form displays correctly, accepts input, and displays successful co
     "This is a test message"
   );
 
-  await page
-    .getByRole("button", { name: "Send Message" })
-    .dispatchEvent("click");
+  await page.getByRole("button", { name: "Send Message" }).click();
 
   await expect(page.getByText("Thanks for your submission!")).toBeVisible();
 });
