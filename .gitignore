@@ -31,7 +31,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
 
 # vercel
 .vercel
@@ -46,3 +46,12 @@ next-env.d.ts
 # Misc
 /docs/CoverLetter*
 .sync.ffs_db
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+/tests/example.spec.ts
