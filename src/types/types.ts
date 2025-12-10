@@ -11,7 +11,7 @@ export type iconType = {
 };
 
 export type headerNavItemType = {
-  isHome: boolean;
+  isHomeSection: boolean;
   key: number;
   link: string;
   text: string;

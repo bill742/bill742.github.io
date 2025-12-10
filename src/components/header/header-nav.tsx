@@ -18,30 +18,39 @@ import ModeToggle from "./mode-toggle";
 const HeaderNav: FC = memo(() => {
   const navItems = [
     {
-      isHome: true,
+      isHomeSection: true,
       key: 1,
       link: "#about",
       text: "About Me",
     },
     {
-      isHome: true,
+      isHomeSection: true,
       key: 2,
       link: "#skills",
       text: "Skills",
     },
     {
-      isHome: true,
+      isHomeSection: true,
       key: 3,
       link: "#projects",
       text: "Projects",
     },
     {
-      isHome: true,
+      isHomeSection: true,
       key: 4,
       link: "#contact",
       text: "Contact",
     },
-    { isHome: false, key: 5, link: "/blog", text: "Blog" },
+    ...(process.env.NEXT_PUBLIC_ALLOW_BLOG === "TRUE"
+      ? [
+          {
+            isHomeSection: false,
+            key: 5,
+            link: "/blog",
+            text: "Blog",
+          },
+        ]
+      : []),
   ];
 
   return (

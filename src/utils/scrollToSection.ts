@@ -1,14 +1,12 @@
 "use client";
 
-import { useRef } from "react";
-
 export const scrollToSection = (sectionId: string) => {
-  const sectionRef = useRef(null);
+  const isHomePage = window.location.pathname === "/";
 
-  const isHome = window.location.pathname === "/";
+  console.log(isHomePage);
 
   const section = document.getElementById(sectionId);
-  if (section && isHome) {
+  if (section && isHomePage) {
     section.scrollIntoView({ behavior: "smooth", block: "start" });
   } else {
     window.location.href = `/#${sectionId}`;

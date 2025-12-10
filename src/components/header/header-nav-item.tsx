@@ -4,7 +4,7 @@ import { headerNavItemType } from "@/types/types";
 import { scrollToSection } from "@/utils/scrollToSection";
 
 const HeaderNavItem: FC<{ navItem: headerNavItemType }> = ({ navItem }) => {
-  const item = navItem.isHome ? (
+  const item = navItem.isHomeSection ? (
     <button
       onClick={() => scrollToSection(navItem.link.substring(1))}
       className="group text-foreground hover:text-primary gradient-text relative font-semibold lowercase transition-colors duration-200"
