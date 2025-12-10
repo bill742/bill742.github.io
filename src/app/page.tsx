@@ -20,7 +20,7 @@ export default function Home() {
       <Intro />
       <About />
       <Skills />
-      <Portfolio />
+      {process.env.NEXT_PUBLIC_ALLOW_PORTFOLIO === "TRUE" && <Portfolio />}
       <Contact />
     </div>
   );
