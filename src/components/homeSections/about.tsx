@@ -18,6 +18,18 @@ export default function About() {
         passionate about delivering high-quality, user-centered web experiences.
       </p>
 
+      <div>
+        <p className="font-bold">Projects I am currently working on:</p>
+        <ul className="current-projects">
+          <li>A new store front app with NextJS and Strapi</li>
+          <li>
+            Adding AI to my workflow with OpenCode, GitHub Copilot, and Claude
+            Sonnet
+          </li>
+          <li>Building GitHub Actions workflows for my projects</li>
+        </ul>
+      </div>
+
       <p>
         Feel free to reach out to me regarding a role in your organization or to
         discuss your next project.
