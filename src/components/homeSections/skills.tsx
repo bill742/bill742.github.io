@@ -146,7 +146,7 @@ export default function Skills() {
       <IconList
         iconInfos={stackIcons}
         hasText={true}
-        className="m-auto flex flex-row flex-wrap justify-center gap-8 md:justify-between"
+        className="m-auto flex w-auto max-w-150 flex-row flex-wrap justify-center gap-8 md:justify-between"
       />
     </section>
   );

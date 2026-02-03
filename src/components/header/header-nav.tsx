@@ -2,7 +2,9 @@
 
 import { Menu } from "lucide-react";
 import { FC, memo } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import IconList from "@/components/icon-list";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -53,17 +55,49 @@ const HeaderNav: FC = memo(() => {
       : []),
   ];
 
+  const iconSize = "20";
+  const iconRole = "img";
+  const contactIcons = [
+    // {
+    //   icon: Mail,
+    //   id: 1,
+    //   label: "Email",
+    //   link: `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`,
+    //   role: iconRole,
+    //   size: iconSize,
+    // },
+    {
+      icon: FaLinkedin,
+      id: 2,
+      label: "LinkedIn",
+      link: `https://www.linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_USERNAME}`,
+      role: iconRole,
+      size: iconSize,
+    },
+    {
+      icon: FaGithub,
+      id: 3,
+      label: "GitHub",
+      link: `https://github.com/${process.env.NEXT_PUBLIC_GH_USERNAME}`,
+      role: iconRole,
+      size: iconSize,
+    },
+  ];
+
   return (
-    <nav className="flex gap-x-2">
+    <nav className="flex gap-x-8">
+      <IconList
+        hasText={false}
+        iconInfos={contactIcons}
+        className="flex flex-row gap-x-2"
+      />
+
       <ul className="hidden space-x-6 md:flex md:items-center">
         {navItems.map((navItem: headerNavItemType) => (
           <li key={navItem.key}>
             <HeaderNavItem navItem={navItem} />
           </li>
         ))}
-        <li>
-          <ModeToggle />
-        </li>
       </ul>
 
       <DropdownMenu>
@@ -90,7 +124,8 @@ const HeaderNav: FC = memo(() => {
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
-      <ModeToggle className="md:hidden" />
+
+      <ModeToggle />
     </nav>
   );
 });

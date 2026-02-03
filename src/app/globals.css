@@ -66,24 +66,29 @@
   font-family: "Press Start 2P", "VT323", "monospace";
 
   h1 {
-    @apply text-3xl leading-14;
+    font-size: 1.875rem;
+    line-height: 3.5rem;
   }
 
   h2 {
-    @apply text-2xl leading-10;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
   }
 
   p {
-    @apply text-base leading-8;
+    font-size: 1rem;
+    line-height: 2rem;
   }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--color-border);
+    outline-color: color-mix(in oklch, var(--color-ring) 50%, transparent);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
@@ -92,56 +97,158 @@
 
 @layer components {
   p {
-    @apply text-lg;
+    font-size: 1.125rem;
+    color: var(--color-muted-foreground);
+  }
+
+  .current-projects {
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .current-projects li {
+    font-size: 1.125rem;
     color: var(--color-muted-foreground);
   }
 
   .section {
-    @apply mx-auto flex w-full max-w-4xl scroll-mt-20 flex-col gap-y-12;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 100%;
+    max-width: 56rem;
+    scroll-margin-top: 5rem;
+    flex-direction: column;
+    row-gap: 3rem;
   }
 
   .header {
-    @apply border-primary/20 flex flex-row items-center gap-4 overflow-hidden border-b-2 pb-2 text-2xl font-semibold lowercase;
+    border-color: color-mix(in oklch, var(--color-primary) 20%, transparent);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+    border-bottom-width: 2px;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: lowercase;
   }
 
   .resumeHeader {
-    @apply text-primary text-2xl font-bold uppercase;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   .resumeSection {
-    @apply flex flex-col gap-4;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .resumeBulletList {
-    @apply mt-3 ml-4 list-disc space-y-1;
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+    list-style-type: disc;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   .resumeExperienceCompany {
-    @apply text-foreground text-xl font-bold;
+    color: var(--color-foreground);
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 
   .resumeExperienceRole {
-    @apply text-primary text-lg font-medium;
+    color: var(--color-primary);
+    font-size: 1.125rem;
+    font-weight: 500;
   }
 
   .resumeExperienceLocation {
-    @apply text-muted-foreground text-sm;
+    color: var(--color-muted-foreground);
+    font-size: 0.875rem;
   }
 
   .gradient-text {
-    @apply from-primary to-accent bg-gradient-to-r bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary),
+      var(--color-accent)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-0.25rem);
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 
   .button-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-6 py-3 font-medium transition-colors duration-200;
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-radius: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-weight: 500;
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .button-primary:hover {
+    background-color: color-mix(
+      in oklch,
+      var(--color-primary) 90%,
+      transparent
+    );
   }
 
   .button-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 border-border rounded-lg border px-6 py-3 font-medium transition-colors duration-200;
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-foreground);
+    border-color: var(--color-border);
+    border-radius: 0.5rem;
+    border-width: 1px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-weight: 500;
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .button-secondary:hover {
+    background-color: color-mix(
+      in oklch,
+      var(--color-secondary) 80%,
+      transparent
+    );
   }
 }
 
@@ -246,15 +353,24 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-muted;
+  background-color: var(--color-muted);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground/30 rounded-full;
+  background-color: color-mix(
+    in oklch,
+    var(--color-muted-foreground) 30%,
+    transparent
+  );
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-muted-foreground/50;
+  background-color: color-mix(
+    in oklch,
+    var(--color-muted-foreground) 50%,
+    transparent
+  );
 }
 
 /* Smooth transitions for theme switching */

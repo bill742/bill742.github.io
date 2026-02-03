@@ -1,0 +1,19 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@theme",
+      "description": "Tailwind CSS v4 theme configuration block for defining design tokens and CSS variables."
+    },
+    {
+      "name": "@import",
+      "description": "Tailwind CSS v4 import directive for loading Tailwind styles.",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Documentation",
+          "url": "https://tailwindcss.com/docs"
+        }
+      ]
+    }
+  ]
+}
