@@ -13,11 +13,11 @@ const portfolioData = [
   },
   {
     content:
-      "This is a boilerplate I created to use for my NextJS projects. It includes TailwindCSS, TypeScript, and a few other libraries to get up and running quickly.",
+      "This is a boilerplate I created to use for my NextJS projects. It includes TailwindCSS, TypeScript, Playwright testing, and a few other libraries to get up and running quickly.",
     demoLink: "https://nextjs-boilerplate-three-iota-34.vercel.app/",
     description: "A boilerplate for quickly starting NextJS projects",
     githubLink: "https://github.com/bill742/nextjs-boilerplate",
-    title: "NextJS Boilerplate",
+    title: "NextStarter",
   },
 ];
 
