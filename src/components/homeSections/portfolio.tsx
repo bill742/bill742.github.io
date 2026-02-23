@@ -5,6 +5,14 @@ import PortfolioCard from "../portfolio-card";
 const portfolioData = [
   {
     content:
+      "An application to view and search information on movies currently playing and upcoming releases. Built using NextJS and the TMDB API.",
+    demoLink: "https://movie-watchlist-flame.vercel.app/",
+    description: "A resource for movie information.",
+    githubLink: "https://github.com/bill742/MovieWatchlist",
+    title: "Movie Watchlist",
+  },
+  {
+    content:
       "A resource that uses the GitHub API to allow users to find GitHub users by username and view their public repositories. Built using React.",
     demoLink: "https://github-finder-kohl-chi.vercel.app/",
     description: "GitHub user search and repository viewer",
