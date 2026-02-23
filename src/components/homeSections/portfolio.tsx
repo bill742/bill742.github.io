@@ -5,6 +5,14 @@ import PortfolioCard from "../portfolio-card";
 const portfolioData = [
   {
     content:
+      "An application to view and search information on movies currently playing and upcoming releases. Built using NextJS and the TMDB API.",
+    demoLink: "https://movie-watchlist-flame.vercel.app/",
+    description: "A resource for movie information.",
+    githubLink: "https://github.com/bill742/MovieWatchlist",
+    title: "Movie Watchlist",
+  },
+  {
+    content:
       "A resource that uses the GitHub API to allow users to find GitHub users by username and view their public repositories. Built using React.",
     demoLink: "https://github-finder-kohl-chi.vercel.app/",
     description: "GitHub user search and repository viewer",
@@ -13,11 +21,11 @@ const portfolioData = [
   },
   {
     content:
-      "This is a boilerplate I created to use for my NextJS projects. It includes TailwindCSS, TypeScript, and a few other libraries to get up and running quickly.",
+      "This is a boilerplate I created to use for my NextJS projects. It includes TailwindCSS, TypeScript, Playwright testing, and a few other libraries to get up and running quickly.",
     demoLink: "https://nextjs-boilerplate-three-iota-34.vercel.app/",
     description: "A boilerplate for quickly starting NextJS projects",
     githubLink: "https://github.com/bill742/nextjs-boilerplate",
-    title: "NextJS Boilerplate",
+    title: "NextStarter",
   },
 ];
 
