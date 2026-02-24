@@ -1,14 +1,5 @@
 # Agent Guidelines for bill742.github.io
 
-## Build/Test/Lint Commands
-
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Production build
-- `npm run lint` - ESLint check
-- `npm test` - Run all Playwright tests
-- `npx playwright test tests/home.spec.ts` - Run single test file
-- `npx playwright test -g "test name"` - Run specific test by name
-
 ## Code Style
 
 - **TypeScript**: Strict mode enabled, use proper typing
