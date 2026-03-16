@@ -58,14 +58,6 @@ const HeaderNav: FC = memo(() => {
   const iconSize = "20";
   const iconRole = "img";
   const contactIcons = [
-    // {
-    //   icon: Mail,
-    //   id: 1,
-    //   label: "Email",
-    //   link: `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`,
-    //   role: iconRole,
-    //   size: iconSize,
-    // },
     {
       icon: FaLinkedin,
       id: 2,
