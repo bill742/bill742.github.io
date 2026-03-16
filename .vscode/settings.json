@@ -3,9 +3,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "css.customData": [".vscode/css-custom-data.json"],
-  "css.validate": true
+  "css.validate": true,
+  "biome.enabled": false
 }
