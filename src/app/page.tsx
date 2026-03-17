@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import About from "@/components/homeSections/about";
 import Contact from "@/components/homeSections/contact";
 import Intro from "@/components/homeSections/intro";
 import Portfolio from "@/components/homeSections/portfolio";
 import Skills from "@/components/homeSections/skills";
+import ScrollOnLoad from "@/components/scrollOnLoad";
 
 export const metadata: Metadata = {
   alternates: {
@@ -17,6 +19,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="row-start-2 mt-16 flex flex-col items-center gap-20 sm:items-start">
+      <Suspense>
+        <ScrollOnLoad />
+      </Suspense>
       <Intro />
       <About />
       <Skills />
