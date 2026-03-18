@@ -9,3 +9,10 @@ export type iconType = {
   size: string;
   text?: string;
 };
+
+export type headerNavItemType = {
+  isHomeSection: boolean;
+  key: number;
+  link: string;
+  text: string;
+};

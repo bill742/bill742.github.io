@@ -9,8 +9,9 @@ export default function SiteHeading() {
         tabIndex={0}
         className="group text-foreground hover:text-primary gradient-text text-3xl font-bold transition-colors duration-200"
       >
-        <span className="text-primary">BD</span>
+        <span className="text-primary">Bill Dean</span>
       </Link>
+      <span>Front-end web developer</span>
     </div>
   );
 }

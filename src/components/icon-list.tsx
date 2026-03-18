@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FC, memo } from "react";
 
-import { iconType } from "@/types/iconTypes";
+import { iconType } from "@/types/types";
 
 const IconList: FC<{
   className?: string;
