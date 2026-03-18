@@ -3,9 +3,7 @@ import Image, { ImageProps } from "next/image";
 
 const components = {
   // Allows customizing built-in components, e.g. to add styling.
-  h2: ({ children }) => (
-    <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>{children}</h2>
-  ),
+  h1: ({ children }) => <h1 className="header mb-12 text-3xl">{children}</h1>,
   img: (props) => (
     <Image
       sizes="100vw"
