@@ -3,10 +3,10 @@ import { FC } from "react";
 import { headerNavItemType } from "@/types/types";
 import { scrollToSection } from "@/utils/scrollToSection";
 
-const HeaderNavItem: FC<{ navItem: headerNavItemType }> = ({ navItem }) => {
+const HeaderNavItem: FC<{ navItem: headerNavItemType; onClose?: () => void }> = ({ navItem, onClose }) => {
   const item = navItem.isHomeSection ? (
     <button
-      onClick={() => scrollToSection(navItem.link.substring(1))}
+      onClick={() => { scrollToSection(navItem.link.substring(1)); onClose?.(); }}
       className="group text-foreground hover:text-primary gradient-text relative font-semibold lowercase transition-colors duration-200"
     >
       {navItem.text}
