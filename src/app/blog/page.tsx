@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 
-export const blogSlugs = [
+const blogSlugs = [
   {
     date: "2024-07-01",
     slug: "second-post",
