@@ -10,5 +10,5 @@
   "css.customData": [".vscode/css-custom-data.json"],
   "css.validate": true,
   "biome.enabled": false,
-  "cSpell.words": ["billdean", "eightbit"]
+  "cSpell.words": ["billdean", "eightbit", "FORMSPREE"]
 }
