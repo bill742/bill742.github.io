@@ -19,6 +19,13 @@ test.describe("Homepage does not have accessibility issues", () => {
     await themeToggle.first().click();
     console.log("Switching to Dark mode for accessibility testing");
     await page.getByRole("menuitem", { name: "Dark" }).click();
+    // Wait for the dropdown to fully close and the dark theme to apply before
+    // scanning — Radix sets aria-hidden on the page body while the dropdown is
+    // open/animating, which causes spurious axe failures.
+    await page.waitForSelector("html.dark");
+    await page.waitForSelector("[data-radix-popper-content-wrapper]", {
+      state: "detached",
+    });
     const darkModeAccessibilityScanResults = await new AxeBuilder({
       page,
     }).analyze();
@@ -27,6 +34,13 @@ test.describe("Homepage does not have accessibility issues", () => {
     // Test 8-bit mode
     await themeToggle.first().click();
     await page.getByRole("menuitem", { name: "8-bit Style" }).click();
+    // Wait for the dropdown to fully close and the eightbit theme to apply before
+    // scanning — Radix sets aria-hidden on the page body while the dropdown is
+    // open/animating, which causes spurious axe failures.
+    await page.waitForSelector("html.eightbit");
+    await page.waitForSelector("[data-radix-popper-content-wrapper]", {
+      state: "detached",
+    });
     console.log("Switched to 8-bit mode for accessibility testing");
     const eightBitModeAccessibilityScanResults = await new AxeBuilder({
       page,
