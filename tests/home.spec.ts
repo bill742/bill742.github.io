@@ -96,7 +96,7 @@ test("Skills section displays correctly", async ({ page }) => {
 
   await page.getByRole("button", { name: "Skills" }).click();
   await expect(page.getByRole("heading", { name: "Skills" })).toBeVisible();
-  await expect(page.locator("#skills").getByRole("listitem")).toHaveCount(11);
+  await expect(page.locator("#skills").getByRole("listitem")).toHaveCount(17);
 });
 
 test("Projects section displays correctly", async ({ page }) => {
