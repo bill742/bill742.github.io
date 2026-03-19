@@ -10,14 +10,14 @@ export const navItems = [
   {
     isHomeSection: true,
     key: 2,
-    link: "#skills",
-    text: "Skills",
+    link: "#projects",
+    text: "Projects",
   },
   {
     isHomeSection: true,
     key: 3,
-    link: "#projects",
-    text: "Projects",
+    link: "#skills",
+    text: "Skills",
   },
   {
     isHomeSection: true,
