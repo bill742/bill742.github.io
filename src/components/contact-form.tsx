@@ -44,6 +44,7 @@ const ContactForm = () => {
         required
         id="message"
         name="message"
+        className="h-50"
       ></Textarea>
       <ValidationError prefix="Message" field="message" errors={state.errors} />
 
