@@ -13,7 +13,7 @@ export type FormData = {
   message: string;
 };
 
-export default function ContactForm() {
+const ContactForm = () => {
   const [state, handleSubmit] = useForm(
     `${process.env.NEXT_PUBLIC_FORMSPREE_CODE}`
   );
@@ -57,4 +57,8 @@ export default function ContactForm() {
       <ValidationError errors={state.errors} />
     </form>
   );
-}
+};
+
+ContactForm.displayName = "ContactForm";
+
+export default ContactForm;

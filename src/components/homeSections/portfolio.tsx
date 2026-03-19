@@ -29,7 +29,7 @@ const portfolioData = [
   },
 ];
 
-export default function Portfolio() {
+const Portfolio = () => {
   return (
     <section className="section" id="projects">
       <h3 className="header">
@@ -50,4 +50,8 @@ export default function Portfolio() {
       </div>
     </section>
   );
-}
+};
+
+Portfolio.displayName = "Portfolio";
+
+export default Portfolio;

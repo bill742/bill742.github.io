@@ -2,7 +2,7 @@ import { FaUser } from "react-icons/fa6";
 
 import ContactLink from "../contact-link";
 
-export default function About() {
+const About = () => {
   return (
     <section className="section" id="about">
       <h3 className="header">
@@ -38,4 +38,8 @@ export default function About() {
       <ContactLink />
     </section>
   );
-}
+};
+
+About.displayName = "About";
+
+export default About;
