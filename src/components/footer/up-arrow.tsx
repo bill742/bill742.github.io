@@ -5,7 +5,7 @@ import { scrollToSection } from "@/utils/scrollToSection";
 
 import { Button } from "../ui/button";
 
-export default function UpArrow() {
+const UpArrow = () => {
   return (
     <div className="flex justify-end">
       <Button
@@ -22,4 +22,8 @@ export default function UpArrow() {
       </Button>
     </div>
   );
-}
+};
+
+UpArrow.displayName = "UpArrow";
+
+export default UpArrow;

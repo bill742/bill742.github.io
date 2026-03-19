@@ -34,7 +34,7 @@ const PortfolioCard: FC<{
         {githubLink && (
           <Button asChild className="button-primary">
             <Link
-              href={githubLink}
+              href={`https://github.com/bill742/${githubLink}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full md:w-1/2"

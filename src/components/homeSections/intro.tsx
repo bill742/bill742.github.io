@@ -1,6 +1,6 @@
 import Typewriter from "@/components/ui/typewriter";
 
-export default function Intro() {
+const Intro = () => {
   return (
     <section className="section" id="top">
       <div className="space-y-6 text-center">
@@ -21,4 +21,8 @@ export default function Intro() {
       </div>
     </section>
   );
-}
+};
+
+Intro.displayName = "Intro";
+
+export default Intro;

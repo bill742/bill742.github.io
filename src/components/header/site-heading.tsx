@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function SiteHeading() {
+const SiteHeading = () => {
   return (
     <div className="flex flex-col justify-center">
       <Link
@@ -14,4 +14,8 @@ export default function SiteHeading() {
       <span>Front-end web developer</span>
     </div>
   );
-}
+};
+
+SiteHeading.displayName = "SiteHeading";
+
+export default SiteHeading;

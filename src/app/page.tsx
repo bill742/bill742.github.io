@@ -24,8 +24,8 @@ export default function Home() {
       </Suspense>
       <Intro />
       <About />
-      <Skills />
       {process.env.NEXT_PUBLIC_DISPLAY_PORTFOLIO === "TRUE" && <Portfolio />}
+      <Skills />
       <Contact />
     </div>
   );

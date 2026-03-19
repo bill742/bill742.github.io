@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function HeaderPhoto() {
+const HeaderPhoto = () => {
   return (
     <Image
       src="/images/bill-dean.jpg"
@@ -10,4 +10,8 @@ export default function HeaderPhoto() {
       className="rounded-full"
     />
   );
-}
+};
+
+HeaderPhoto.displayName = "HeaderPhoto";
+
+export default HeaderPhoto;
