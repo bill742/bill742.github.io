@@ -11,14 +11,8 @@ import { contactIcons, navItems } from "./nav-links";
 
 const HeaderNav: FC = memo(() => {
   return (
-    <nav className="flex gap-x-8">
-      <IconList
-        hasText={false}
-        iconInfos={contactIcons}
-        className="hidden flex-row gap-x-2 md:flex"
-      />
-
-      <ul className="hidden space-x-6 md:flex md:items-center">
+    <nav className="flex items-center gap-x-8">
+      <ul className="hidden space-x-6 lg:flex lg:items-center">
         {navItems.map((navItem: headerNavItemType) => (
           <li key={navItem.key}>
             <HeaderNavItem navItem={navItem} />
@@ -26,7 +20,13 @@ const HeaderNav: FC = memo(() => {
         ))}
       </ul>
 
-      <ModeToggle className="hidden md:flex" />
+      <IconList
+        hasText={false}
+        iconInfos={contactIcons}
+        className="hidden flex-row gap-x-2 lg:flex"
+      />
+
+      <ModeToggle className="hidden lg:flex" />
     </nav>
   );
 });

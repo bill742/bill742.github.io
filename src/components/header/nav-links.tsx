@@ -37,7 +37,7 @@ export const navItems = [
     : []),
 ];
 
-const iconSize = "20";
+const iconSize = "30";
 const iconRole = "img";
 
 export const contactIcons = [

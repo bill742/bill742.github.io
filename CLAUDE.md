@@ -61,7 +61,7 @@ Blog posts are MDX files in `src/content/`. Dynamic routing is handled via `src/
 
 ## Testing
 
-Playwright tests are in `tests/`. Run with `npm run test`. Tests cover:
+Playwright tests are in `tests/`. Run with `pnpm test`. Tests cover:
 - Accessibility (axe-core) across all three themes
 - Metadata validation
 - Section rendering

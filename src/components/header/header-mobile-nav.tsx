@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import IconList from "@/components/icon-list";
 import { Button } from "@/components/ui/button";
@@ -20,8 +20,18 @@ import { contactIcons, navItems } from "./nav-links";
 const HeaderMobileNav = () => {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 976) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="outline" size={"icon"}>
@@ -30,7 +40,7 @@ const HeaderMobileNav = () => {
         </SheetTrigger>
         <SheetContent
           side={"bottom"}
-          className="data-[bottom]:max-h-[50vh]"
+          className="data-bottom:max-h-[50vh]"
           aria-describedby={undefined}
         >
           <SheetHeader>
@@ -53,7 +63,7 @@ const HeaderMobileNav = () => {
               ))}
             </ul>
 
-            <div className="mt-4 flex flex-row justify-end">
+            <div className="mt-4 flex flex-row items-center justify-end">
               <IconList
                 hasText={false}
                 iconInfos={contactIcons}
