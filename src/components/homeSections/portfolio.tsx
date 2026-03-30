@@ -9,6 +9,7 @@ const portfolioData = [
     demoLink: "https://nextjs-boilerplate-three-iota-34.vercel.app/",
     description: "A boilerplate for quickly starting NextJS projects",
     githubLink: "nextstarter",
+    id: "1",
     title: "NextStarter",
   },
   {
@@ -17,14 +18,18 @@ const portfolioData = [
     demoLink: "https://movie-watchlist-flame.vercel.app/",
     description: "A resource for movie information.",
     githubLink: "MovieWatchlist",
+    id: "2",
     title: "Movie Watchlist",
   },
   {
     content:
-      "A resource that uses the GitHub API to allow users to find GitHub users by username and view their public repositories. Built using React.",
+      "Github Finder is an app that utilizes the GitHub API to search for GitHub users by username and view information about them and their public repositories.",
     demoLink: "https://github-finder-kohl-chi.vercel.app/",
     description: "GitHub user search and repository viewer",
     githubLink: "github-finder",
+    id: "3",
+    techStack:
+      "React 18 + TypeScript + Vite + React Router v7 + TanStack Query v5, Tailwind CSS v4 + Shadcn/UI",
     title: "GitHub Finder",
   },
 ];
@@ -36,15 +41,16 @@ const Portfolio = () => {
         <BriefcaseBusiness className="text-primary" aria-label="Projects" />{" "}
         Projects
       </h3>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {portfolioData.map((item, index) => (
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-1">
+        {portfolioData.map((item) => (
           <PortfolioCard
-            key={index}
+            key={item.id}
             title={item.title}
             description={item.description}
             content={item.content}
             githubLink={item.githubLink}
             demoLink={item.demoLink}
+            techStack={item.techStack}
           />
         ))}
       </div>

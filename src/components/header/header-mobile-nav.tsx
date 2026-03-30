@@ -30,7 +30,7 @@ const HeaderMobileNav = () => {
         </SheetTrigger>
         <SheetContent
           side={"bottom"}
-          className="data-[bottom]:max-h-[50vh]"
+          className="data-bottom:max-h-[50vh]"
           aria-describedby={undefined}
         >
           <SheetHeader>
