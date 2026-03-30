@@ -253,6 +253,15 @@
 }
 
 /* 8-bit Style Special Effects */
+:is(.eightbit) .site-heading-title {
+  font-size: 1.4rem;
+}
+
+:is(.eightbit) .site-heading-subtitle {
+  font-size: 0.8rem;
+  margin-top: 0.9rem;
+}
+
 :is(.eightbit) .gradient-text {
   color: #fff200;
   text-shadow:
@@ -260,7 +269,7 @@
     4px 4px 0 #ff005d,
     0 0 8px #00eaff;
   font-family: "Press Start 2P", "VT323", "monospace";
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 :is(.eightbit) .card-hover:hover {
