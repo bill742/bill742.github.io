@@ -53,7 +53,7 @@ const HeaderMobileNav = () => {
               ))}
             </ul>
 
-            <div className="mt-4 flex flex-row justify-end">
+            <div className="mt-4 flex flex-row items-center justify-end">
               <IconList
                 hasText={false}
                 iconInfos={contactIcons}
