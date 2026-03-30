@@ -5,20 +5,22 @@ import PortfolioCard from "../portfolio-card";
 const portfolioData = [
   {
     content:
-      "This is a boilerplate I created to use for my NextJS projects. It includes TailwindCSS, TypeScript, Playwright testing, and a few other libraries to get up and running quickly.",
+      "A modern Next.js boilerplate to ship production-ready projects fast — with TypeScript, Tailwind CSS v4, accessibility, testing, and developer tooling pre-configured.",
     demoLink: "https://nextjs-boilerplate-three-iota-34.vercel.app/",
     description: "A boilerplate for quickly starting NextJS projects",
     githubLink: "nextstarter",
     id: "1",
+    techStack: "Next.js + TypeScript + Tailwind CSS + ShadCN/UI + Playwright",
     title: "NextStarter",
   },
   {
     content:
-      "An application to view and search information on movies currently playing and upcoming releases. Built using NextJS and the TMDB API.",
+      "An application to view and search information on movies premiere dates and upcoming releases.",
     demoLink: "https://movie-watchlist-flame.vercel.app/",
     description: "A resource for movie information.",
     githubLink: "MovieWatchlist",
     id: "2",
+    techStack: "Next.js + TypeScript + Tailwind CSS",
     title: "Movie Watchlist",
   },
   {
