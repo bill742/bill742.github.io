@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import IconList from "@/components/icon-list";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,16 @@ import { contactIcons, navItems } from "./nav-links";
 
 const HeaderMobileNav = () => {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 976) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="lg:hidden">
