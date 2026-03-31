@@ -30,17 +30,15 @@ const IconList: FC<{
         )}
 
         {!icon.link && (
-          <>
-            <div className="text-primary flex flex-col items-center gap-y-1 rounded-lg p-2">
-              <icon.icon
-                size={icon.size}
-                role={icon.role}
-                aria-label={icon.label}
-                className=""
-              />
-              {hasText && <span>{icon.text}</span>}
-            </div>
-          </>
+          <div className="text-primary flex flex-col items-center gap-y-1 rounded-lg p-2">
+            <icon.icon
+              size={icon.size}
+              role={icon.role}
+              aria-label={icon.label}
+              className=""
+            />
+            {hasText && <span>{icon.text}</span>}
+          </div>
         )}
       </li>
     );

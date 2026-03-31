@@ -57,12 +57,11 @@ test("Home page displays correct metadata", async ({ page }) => {
   // Expect page title to be the same as in env variable
   await expect(page).toHaveTitle(process.env.NEXT_PUBLIC_SITE_TITLE || "");
 
-  // eslint-disable-next-line quotes
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(
     "content",
     "I'm a front-end web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript."
   );
-  // eslint-disable-next-line quotes
+
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
     process.env.NEXT_PUBLIC_SITE_URL || ""
@@ -96,7 +95,7 @@ test("Skills section displays correctly", async ({ page }) => {
 
   await page.getByRole("button", { name: "Skills" }).click();
   await expect(page.getByRole("heading", { name: "Skills" })).toBeVisible();
-  await expect(page.locator("#skills").getByRole("listitem")).toHaveCount(17);
+  await expect(page.locator("#skills").getByRole("listitem")).toHaveCount(16);
 });
 
 test("Projects section displays correctly", async ({ page }) => {

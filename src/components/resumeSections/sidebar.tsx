@@ -65,7 +65,7 @@ const Sidebar: FC = memo(() => {
   ];
 
   return (
-    <div className="flex flex-col content-start gap-y-6 pe-8 ps-8">
+    <div className="e-8-ps flex flex-col content-start gap-y-6 pe-8">
       <div className="flex flex-col items-center">
         <Image
           src="/images/bill-dean.jpg"

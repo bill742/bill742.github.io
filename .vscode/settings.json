@@ -12,13 +12,18 @@
   "biome.enabled": false,
   "cSpell.words": [
     "Amazonwebservices",
+    "Antigonish",
     "billdean",
     "eightbit",
     "FORMSPREE",
+    "Keyin",
     "Nextdotjs",
     "nextstarter",
     "sarif",
     "TMDB",
     "Watchlist"
-  ]
+  ],
+  "cSpell.enabledFileTypes": {
+    "yaml": false
+  }
 }

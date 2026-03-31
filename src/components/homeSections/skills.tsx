@@ -1,9 +1,9 @@
 // import { FaGaugeHigh, FaGitAlt } from "react-icons/fa6";
 import { FaGaugeHigh } from "react-icons/fa6";
 import {
-  SiAmazonwebservices,
+  // SiAmazonwebservices,
   SiClaude,
-  SiCss3,
+  SiCss,
   SiDjango,
   SiGraphql,
   SiHtml5,
@@ -40,7 +40,7 @@ const Skills = () => {
       text: "HTML5",
     },
     {
-      icon: SiCss3,
+      icon: SiCss,
       id: 2,
       label: "CSS",
       role: iconRole,
@@ -117,14 +117,14 @@ const Skills = () => {
     //   size: iconSize,
     //   text: "Git",
     // },
-    {
-      icon: SiAmazonwebservices,
-      id: 11,
-      label: "AWS",
-      role: iconRole,
-      size: iconSize,
-      text: "AWS",
-    },
+    // {
+    //   icon: SiAmazonwebservices,
+    //   id: 11,
+    //   label: "AWS",
+    //   role: iconRole,
+    //   size: iconSize,
+    //   text: "AWS",
+    // },
     // {
     //   icon: VscVscode,
     //   id: 12,
@@ -218,7 +218,7 @@ const Skills = () => {
         className={iconListClassName}
       />
 
-      {/* TODO: COnsider breaking skills into categories  */}
+      {/* TODO: Consider breaking skills into categories  */}
       {/* <div className="space-y-10">
         <div>
           <h4 className={iconLabelClassName}>Front-End Development</h4>

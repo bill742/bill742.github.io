@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Press_Start_2P, Roboto, VT323 } from "next/font/google";
 
+import Analytics from "@/components/analytics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SkipNav from "@/components/skip-nav";
@@ -71,22 +72,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
-
-        {/* 100% privacy-first analytics */}
-        <script
-          data-collect-dnt="true"
-          async
-          data-hostname="billdean.me"
-          src="https://scripts.simpleanalyticscdn.com/latest.js"
-        ></script>
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
-            alt=""
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </noscript>
+        <Analytics />
       </body>
     </html>
   );
