@@ -13,8 +13,8 @@ const About = () => {
         experience building dynamic, scalable, and accessible user interfaces. I
         specialize in React, TypeScript, and modern UI frameworks, with a strong
         background in state management, API integration, and performance
-        optimization. Whether it’s creating reusable components, improving
-        accessibility, or collaborating with cross-functional teams, I’m
+        optimization. Whether it&apos;s creating reusable components, improving
+        accessibility, or collaborating with cross-functional teams, I&apos;m
         passionate about delivering high-quality, user-centered web experiences.
       </p>
 
@@ -24,7 +24,7 @@ const About = () => {
           <li>A new store front app with NextJS and Strapi</li>
           <li>
             Adding AI to my workflow with OpenCode, GitHub Copilot, and Claude
-            Sonnet
+            Code
           </li>
           <li>Building GitHub Actions workflows for my projects</li>
         </ul>
