@@ -6,7 +6,7 @@ const portfolioData = [
   {
     content:
       "A modern Next.js boilerplate to ship production-ready projects fast — with TypeScript, Tailwind CSS v4, accessibility, testing, and developer tooling pre-configured.",
-    demoLink: "https://nextjs-boilerplate-three-iota-34.vercel.app/",
+    demoLink: "https://www.nextstarter.app/",
     description: "A boilerplate for quickly starting NextJS projects",
     githubLink: "nextstarter",
     id: "1",
