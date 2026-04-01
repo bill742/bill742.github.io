@@ -56,7 +56,7 @@ const PortfolioCard: FC<{
                 rel="noopener noreferrer"
                 className="w-full md:w-1/2"
               >
-                Live Demo
+                View Project
               </Link>
             </Button>
           )}
