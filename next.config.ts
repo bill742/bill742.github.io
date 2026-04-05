@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   },
   output: "export",
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  turbopack: {
+    root: __dirname,
+  },
 };
 
 const withMDX = createMDX({
