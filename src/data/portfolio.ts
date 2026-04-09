@@ -8,6 +8,7 @@ export const portfolioData = [
     id: "1",
     techStack: "Next.js + TypeScript + Tailwind CSS + ShadCN/UI + Playwright",
     title: "NextStarter",
+    image: "nextstarter.png"
   },
   {
     content:
@@ -18,6 +19,7 @@ export const portfolioData = [
     id: "2",
     techStack: "Next.js + TypeScript + Tailwind CSS + Radix UI",
     title: "Movie Watchlist",
+    image: "movie-watchlist.png"
   },
   {
     content:
@@ -29,6 +31,7 @@ export const portfolioData = [
     techStack:
       "React 18 + TypeScript + Vite + React Router v7 + TanStack Query v5, Tailwind CSS v4 + Shadcn/UI",
     title: "GitHub Finder",
+    image: "github-finder.png"
   },
   {
     content:
@@ -40,5 +43,6 @@ export const portfolioData = [
     techStack:
       "React 19 + TypeScript + Vite + Tailwind CSS + OpenWeatherMap API",
     title: "City Weather",
+    image: "city-weather.png"
   },
 ];
