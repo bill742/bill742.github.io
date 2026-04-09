@@ -6,6 +6,7 @@ export const portfolioData = [
     description: "A boilerplate for quickly starting NextJS projects",
     githubLink: "nextstarter",
     id: "1",
+    image: "nextstarter.png",
     techStack: "Next.js + TypeScript + Tailwind CSS + ShadCN/UI + Playwright",
     title: "NextStarter",
   },
@@ -16,6 +17,7 @@ export const portfolioData = [
     description: "A resource for movie information.",
     githubLink: "MovieWatchlist",
     id: "2",
+    image: "movie-watchlist.png",
     techStack: "Next.js + TypeScript + Tailwind CSS + Radix UI",
     title: "Movie Watchlist",
   },
@@ -26,6 +28,7 @@ export const portfolioData = [
     description: "GitHub user search and repository viewer",
     githubLink: "github-finder",
     id: "3",
+    image: "github-finder.png",
     techStack:
       "React 18 + TypeScript + Vite + React Router v7 + TanStack Query v5, Tailwind CSS v4 + Shadcn/UI",
     title: "GitHub Finder",
@@ -37,6 +40,7 @@ export const portfolioData = [
     description: "Search cities around the world for weather conditions",
     githubLink: "weather-app",
     id: "4",
+    image: "city-weather.png",
     techStack:
       "React 19 + TypeScript + Vite + Tailwind CSS + OpenWeatherMap API",
     title: "City Weather",

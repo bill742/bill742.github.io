@@ -1,8 +1,29 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
 @theme {
   --radius: 0.75rem;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 
   --color-background: oklch(0.98 0.005 240);
   --color-foreground: oklch(0.15 0.02 240);
