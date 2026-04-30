@@ -15,6 +15,12 @@ export default {
         sm: "480px",
         xl: "1440px",
       },
+      fontFamily: {
+        // Space Grotesk as the default sans stack
+        sans: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
+        // Keep a mono stack for 8-bit theme
+        mono: ['"Press Start 2P"', "VT323", "ui-monospace", "monospace"],
+      },
     },
   },
 } satisfies Config;
