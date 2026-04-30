@@ -1,30 +1,13 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Press_Start_2P, Roboto, VT323 } from "next/font/google";
 
 import Analytics from "@/components/analytics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SkipNav from "@/components/skip-nav";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
-
-const pressStart = Press_Start_2P({
-  subsets: ["latin"],
-  variable: "--font-press-start-2p",
-  weight: ["400"],
-});
-
-const vt323 = VT323({
-  subsets: ["latin"],
-  variable: "--font-vt323",
-  weight: ["400"],
-});
+import { pressStart, spaceGrotesk } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -52,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={(roboto.className, pressStart.variable, vt323.variable)}>
+      <body className={`${spaceGrotesk.variable} ${pressStart.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

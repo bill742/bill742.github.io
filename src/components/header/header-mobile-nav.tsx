@@ -20,11 +20,10 @@ import { contactIcons, navItems } from "./nav-links";
 const HeaderMobileNav = () => {
   const [open, setOpen] = useState(false);
 
+  // Close drawer when viewport becomes desktop-width
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 976) {
-        setOpen(false);
-      }
+      if (window.innerWidth >= 976) setOpen(false);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -34,27 +33,36 @@ const HeaderMobileNav = () => {
     <div className="lg:hidden">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
-          <Button variant="outline" size={"icon"}>
-            <Menu width="32px" height="32px" />
+          {/* Hamburger — three-bar icon, matches nav height */}
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="border-border text-foreground hover:bg-accent hover:text-primary h-9 w-9 border"
+          >
+            <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
+
+        {/* Top sheet — slides down from the header */}
         <SheetContent
-          side={"bottom"}
-          className="data-bottom:max-h-[50vh]"
+          side="top"
+          className="border-border bg-background/95 border-b pt-16 backdrop-blur-md"
           aria-describedby={undefined}
         >
-          <SheetHeader>
-            <SheetTitle>Menu</SheetTitle>
+          <SheetHeader className="sr-only">
+            <SheetTitle>Navigation</SheetTitle>
           </SheetHeader>
-          <div className="no-scrollbar mt-4 overflow-y-auto">
-            <ul className="flex flex-col gap-y-4">
+
+          <div className="container mx-auto max-w-6xl px-6 pb-6">
+            {/* Nav links */}
+            <ul className="flex flex-col">
               {navItems.map((navItem) => (
-                <li
-                  key={navItem.key}
-                  className="hover:bg-accent flex justify-end"
-                >
+                <li key={navItem.key}>
                   <HeaderNavItem
                     navItem={navItem}
+                    mobile
                     onClose={
                       navItem.isHomeSection ? () => setOpen(false) : undefined
                     }
@@ -63,13 +71,14 @@ const HeaderMobileNav = () => {
               ))}
             </ul>
 
-            <div className="mt-4 flex flex-row items-center justify-end">
+            {/* Social icons + theme toggle */}
+            <div className="border-border mt-6 flex flex-row items-center justify-end gap-x-3 border-t pt-4">
               <IconList
                 hasText={false}
                 iconInfos={contactIcons}
                 className="flex flex-row gap-x-2"
               />
-              <ModeToggle className="ml-2" />
+              <ModeToggle />
             </div>
           </div>
         </SheetContent>

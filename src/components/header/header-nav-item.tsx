@@ -2,33 +2,48 @@ import { FC } from "react";
 
 import { headerNavItemType } from "@/types/types";
 import { scrollToSection } from "@/utils/scrollToSection";
+import { useActiveSection } from "@/utils/useActiveSection";
 
 const HeaderNavItem: FC<{
   navItem: headerNavItemType;
   onClose?: () => void;
-}> = ({ navItem, onClose }) => {
-  const item = navItem.isHomeSection ? (
-    <button
-      onClick={() => {
-        scrollToSection(navItem.link.substring(1));
-        onClose?.();
-      }}
-      className="group text-foreground hover:text-primary gradient-text relative font-semibold lowercase transition-colors duration-200"
-    >
+  mobile?: boolean;
+}> = ({ navItem, onClose, mobile = false }) => {
+  const active = useActiveSection(["about", "projects", "skills", "contact"]);
+  const isActive = active === navItem.link.replace("#", "");
+
+  console.log(active);
+  console.log(isActive);
+
+  const baseClass = mobile
+    ? // Mobile: larger text, right-aligned, full-width tap target
+      `block w-full py-3 text-right text-base font-semibold uppercase tracking-widest transition-colors duration-200 border-b border-border last:border-0 ${
+        isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+      }`
+    : // Desktop: compact, uppercase, letter-spaced
+      `text-xs font-semibold uppercase tracking-widest transition-colors duration-200 ${
+        isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+      }`;
+
+  if (navItem.isHomeSection) {
+    return (
+      <button
+        onClick={() => {
+          scrollToSection(navItem.link.substring(1));
+          onClose?.();
+        }}
+        className={baseClass}
+      >
+        {navItem.text}
+      </button>
+    );
+  }
+
+  return (
+    <a href={navItem.link} className={baseClass} onClick={() => onClose?.()}>
       {navItem.text}
-      <div className="bg-primary absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full"></div>
-    </button>
-  ) : (
-    <a
-      href={navItem.link}
-      className="group text-foreground hover:text-primary gradient-text relative font-semibold lowercase transition-colors duration-200"
-    >
-      {navItem.text}
-      <div className="bg-primary absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full"></div>
     </a>
   );
-
-  return item;
 };
 
 HeaderNavItem.displayName = "HeaderNavItem";

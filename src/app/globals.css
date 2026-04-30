@@ -1,107 +1,144 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
+/* ─── KEYFRAMES ──────────────────────────────────────────────────────────── */
+
 @keyframes accordion-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
+  from { height: 0; }
+  to   { height: var(--radix-accordion-content-height); }
 }
 
 @keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
-  }
+  from { height: var(--radix-accordion-content-height); }
+  to   { height: 0; }
 }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nineties-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── THEME TOKENS — LIGHT (default) ────────────────────────────────────── */
 
 @theme {
-  --radius: 0.75rem;
+  /* Radii */
+  --radius: 0.25rem; /* Direction B: square-ish — was 0.75rem */
 
+  /* Animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-accordion-up:   accordion-up   0.2s ease-out;
+  --animate-fade-up:        fade-up        0.5s ease forwards;
 
-  --color-background: oklch(0.98 0.005 240);
-  --color-foreground: oklch(0.15 0.02 240);
-  --color-primary: oklch(0.55 0.15 250);
-  --color-primary-foreground: oklch(0.98 0.005 240);
-  --color-secondary: oklch(0.96 0.01 240);
-  --color-secondary-foreground: oklch(0.25 0.02 240);
-  --color-muted: oklch(0.96 0.01 240);
-  --color-muted-foreground: oklch(0.45 0.02 240);
-  --color-accent: oklch(0.94 0.02 250);
-  --color-accent-foreground: oklch(0.25 0.02 240);
-  --color-destructive: oklch(0.65 0.25 25);
-  --color-border: oklch(0.9 0.01 240);
-  --color-input: oklch(0.9 0.01 240);
-  --color-ring: oklch(0.55 0.15 250 / 0.3);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.15 0.02 240);
-  --color-popover: oklch(1 0 0);
-  --color-popover-foreground: oklch(0.15 0.02 240);
+  /* ── Palette — warm off-white base, yellow accent ── */
+
+  /* Backgrounds */
+  --color-background:        oklch(0.975 0.008 80);   /* warm off-white */
+  --color-secondary:         oklch(0.94  0.012 80);   /* bg2 — slightly darker */
+  --color-muted:             oklch(0.90  0.016 80);   /* bg3 */
+
+  /* Foregrounds */
+  --color-foreground:        oklch(0.13 0.02 60);     /* near-black */
+  --color-secondary-foreground: oklch(0.42 0.02 60);  /* fg2 — body text */
+  --color-muted-foreground:  oklch(0.62 0.015 60);    /* fg3 — captions, labels */
+
+  /* Primary / Accent — Space Grotesk yellow */
+  --color-primary:           oklch(0.82 0.19 88);     /* bright yellow */
+  --color-primary-foreground: oklch(0.13 0.02 60);    /* dark text on yellow */
+
+  /* Interactive accent (shadcn uses this for hover/focus rings) */
+  --color-accent:            oklch(0.82 0.19 88 / 0.12);
+  --color-accent-foreground: oklch(0.13 0.02 60);
+
+  /* Semantic */
+  --color-destructive:       oklch(0.65 0.25 25);
+
+  /* Surfaces */
+  --color-border:            oklch(0.88 0.01 80);
+  --color-input:             oklch(0.90 0.012 80);
+  --color-ring:              oklch(0.82 0.19 88 / 0.35);
+
+  --color-card:              oklch(1 0 0);
+  --color-card-foreground:   oklch(0.13 0.02 60);
+  --color-popover:           oklch(1 0 0);
+  --color-popover-foreground: oklch(0.13 0.02 60);
+
+  /* Typography */
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Press Start 2P", "VT323", ui-monospace, monospace;
 }
+
+/* ─── DARK THEME ─────────────────────────────────────────────────────────── */
 
 :is(.dark) {
-  --color-background: oklch(0.08 0.01 240);
-  --color-foreground: oklch(0.95 0.005 240);
-  --color-primary: oklch(0.65 0.18 250);
-  --color-primary-foreground: oklch(0.08 0.01 240);
-  --color-secondary: oklch(0.18 0.01 240);
-  --color-secondary-foreground: oklch(0.9 0.005 240);
-  --color-muted: oklch(0.18 0.01 240);
-  --color-muted-foreground: oklch(0.6 0.02 240);
-  --color-accent: oklch(0.18 0.01 240);
-  --color-accent-foreground: oklch(0.9 0.005 240);
-  --color-destructive: oklch(0.7 0.22 25);
-  --color-border: oklch(0.2 0.01 240);
-  --color-input: oklch(0.2 0.01 240);
-  --color-ring: oklch(0.65 0.18 250 / 0.3);
-  --color-card: oklch(0.12 0.01 240);
-  --color-card-foreground: oklch(0.95 0.005 240);
-  --color-popover: oklch(0.12 0.01 240);
-  --color-popover-foreground: oklch(0.95 0.005 240);
+  --color-background:           oklch(0.10 0.015 258);  /* deep navy-black */
+  --color-secondary:            oklch(0.14 0.018 258);  /* bg2 */
+  --color-muted:                oklch(0.18 0.018 258);  /* bg3 */
+
+  --color-foreground:           oklch(0.95 0.006 80);
+  --color-secondary-foreground: oklch(0.72 0.006 80);
+  --color-muted-foreground:     oklch(0.52 0.006 80);
+
+  --color-primary:              oklch(0.82 0.19 88);    /* same yellow — pops on dark */
+  --color-primary-foreground:   oklch(0.10 0.015 258);
+
+  --color-accent:               oklch(0.82 0.19 88 / 0.14);
+  --color-accent-foreground:    oklch(0.95 0.006 80);
+
+  --color-destructive:          oklch(0.7 0.22 25);
+
+  --color-border:               oklch(0.22 0.018 258);
+  --color-input:                oklch(0.18 0.018 258);
+  --color-ring:                 oklch(0.82 0.19 88 / 0.3);
+
+  --color-card:                 oklch(0.14 0.018 258);
+  --color-card-foreground:      oklch(0.95 0.006 80);
+  --color-popover:              oklch(0.14 0.018 258);
+  --color-popover-foreground:   oklch(0.95 0.006 80);
 }
+
+/* ─── 8-BIT THEME ────────────────────────────────────────────────────────── */
 
 :is(.eightbit) {
-  --color-background: #222;
-  --color-foreground: #fff200;
-  --color-primary: #00eaff;
-  --color-primary-foreground: #222;
-  --color-secondary: #ff005d;
-  --color-secondary-foreground: #fff200;
-  --color-muted: #444;
-  --color-muted-foreground: #fff200;
-  --color-accent: #ff8c00;
-  --color-accent-foreground: #222;
-  --color-destructive: #ff0000;
-  --color-border: #fff200;
-  --color-input: #fff200;
-  --color-ring: #00eaff;
-  --color-card: #333;
-  --color-card-foreground: #fff200;
-  --color-popover: #333;
-  --color-popover-foreground: #fff200;
-  font-family: "Press Start 2P", "VT323", "monospace";
+  --color-background:           #0d0d16;
+  --color-secondary:            #12121e;
+  --color-muted:                #1a1a2a;
 
-  h1 {
-    font-size: 1.875rem;
-    line-height: 3.5rem;
-  }
+  --color-foreground:           #d4f5c8;
+  --color-secondary-foreground: #8dc896;
+  --color-muted-foreground:     #557a5a;
 
-  h2 {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-  }
+  --color-primary:              #00ff88;   /* neon green */
+  --color-primary-foreground:   #000;
 
-  p {
-    font-size: 1rem;
-    line-height: 2rem;
-  }
+  --color-accent:               #00ff88;
+  --color-accent-foreground:    #000;
+
+  --color-destructive:          #ff0000;
+
+  --color-border:               #2a2a3e;
+  --color-input:                #1a1a2a;
+  --color-ring:                 #00ff88;
+
+  --color-card:                 #12121e;
+  --color-card-foreground:      #d4f5c8;
+  --color-popover:              #12121e;
+  --color-popover-foreground:   #d4f5c8;
+
+  font-family: "Press Start 2P", "VT323", monospace;
 }
+
+/* ─── BASE STYLES ────────────────────────────────────────────────────────── */
 
 @layer base {
   * {
@@ -111,32 +148,29 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+    font-family: var(--font-sans);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth theme transitions */
+  *, *::before, *::after {
+    transition:
+      background-color 0.3s ease,
+      border-color     0.3s ease,
+      color            0.3s ease;
   }
 }
 
+/* ─── COMPONENT LAYER ────────────────────────────────────────────────────── */
+
 @layer components {
+
   p {
     font-size: 1.125rem;
     color: var(--color-muted-foreground);
   }
 
-  .current-projects {
-    margin-top: 0.75rem;
-    margin-left: 1rem;
-    list-style-type: disc;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .current-projects li {
-    font-size: 1.125rem;
-    color: var(--color-muted-foreground);
-  }
-
+  /* ── Section layout ── */
   .section {
     margin-left: auto;
     margin-right: auto;
@@ -147,6 +181,7 @@
     row-gap: 3rem;
   }
 
+  /* ── Section heading ── */
   .header {
     border-color: color-mix(in oklch, var(--color-primary) 20%, transparent);
     display: flex;
@@ -157,24 +192,24 @@
     border-bottom-width: 2px;
     padding-bottom: 0.5rem;
     font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: lowercase;
-  }
-
-  .resumeHeader {
-    color: var(--color-primary);
-    font-size: 1.5rem;
     font-weight: 700;
+    text-transform: uppercase;        /* Direction B: uppercase headers */
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Section label (eyebrow) — above headings ── */
+  .section-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
   }
 
-  .resumeSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .resumeBulletList {
+  /* ── Current projects list ── */
+  .current-projects {
     margin-top: 0.75rem;
     margin-left: 1rem;
     list-style-type: disc;
@@ -182,231 +217,242 @@
     flex-direction: column;
     gap: 0.25rem;
   }
-
-  .resumeExperienceCompany {
-    color: var(--color-foreground);
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
-  .resumeExperienceRole {
-    color: var(--color-primary);
+  .current-projects li {
     font-size: 1.125rem;
-    font-weight: 500;
-  }
-
-  .resumeExperienceLocation {
     color: var(--color-muted-foreground);
-    font-size: 0.875rem;
   }
 
+  /* ── Gradient text — Direction B uses solid primary ── */
   .gradient-text {
+    color: var(--color-primary);
+  }
+  /* Keep gradient for light/dark only; 8-bit gets its own treatment below */
+  :is(.light) .gradient-text,
+  :is(.dark) .gradient-text {
     background-image: linear-gradient(
       to right,
       var(--color-primary),
-      var(--color-accent)
+      oklch(0.88 0.15 60)
     );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
 
+  /* ── Card hover — Direction B: left accent bar + lift ── */
   .card-hover {
-    transition-property: all;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
   }
-
+  .card-hover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--color-primary);
+    transition: height 0.3s ease;
+  }
+  .card-hover:hover::before { height: 100%; }
   .card-hover:hover {
-    box-shadow: 0 0 0 1px var(--color-primary), 0 0 16px 2px color-mix(in oklch, var(--color-primary) 40%, transparent);
+    box-shadow: 0 8px 32px oklch(0 0 0 / 0.12);
+    transform: translateY(-3px);
+    border-color: var(--color-primary);
   }
 
+  /* ── Buttons ── */
   .button-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     background-color: var(--color-primary);
     color: var(--color-primary-foreground);
-    border-radius: 0.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    font-weight: 500;
-    transition-property:
-      color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 0.75rem 1.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition:
+      color 200ms, background-color 200ms, border-color 200ms;
   }
-
   .button-primary:hover {
-    background-color: color-mix(
-      in oklch,
-      var(--color-primary) 90%,
-      transparent
-    );
+    background-color: transparent;
+    color: var(--color-primary);
   }
 
   .button-secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-secondary-foreground);
-    border-color: var(--color-border);
-    border-radius: 0.5rem;
-    border-width: 1px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    font-weight: 500;
-    transition-property:
-      color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: transparent;
+    color: var(--color-foreground);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition:
+      color 200ms, background-color 200ms, border-color 200ms;
   }
-
   .button-secondary:hover {
-    background-color: color-mix(
-      in oklch,
-      var(--color-secondary) 80%,
-      transparent
-    );
+    border-color: var(--color-primary);
+    color: var(--color-primary);
   }
+
+  /* ── Skill tag ── */
+  .skill-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0;                          /* Direction B: sharp */
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-muted-foreground);
+    transition: background 0.2s, color 0.2s, border-color 0.2s,
+                opacity 0.35s ease, transform 0.35s ease;
+    /* Scroll-reveal start state */
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .skill-tag.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .skill-tag:hover {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-color: var(--color-primary);
+  }
+
+  /* ── Project link buttons (GitHub / Live) ── */
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: 0;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted-foreground);
+    background: var(--color-secondary);
+    transition: all 0.2s;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  .project-link:hover {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-color: var(--color-primary);
+  }
+
+  /* ── Active nav link ── */
+  .nav-active { color: var(--color-primary) !important; }
+
+  /* ── Fade-up animation helper ── */
+  .animate-fade-up {
+    animation: fade-up 0.5s ease forwards;
+  }
+  .animate-delay-1 { animation-delay: 0.1s; }
+  .animate-delay-2 { animation-delay: 0.2s; }
+  .animate-delay-3 { animation-delay: 0.3s; }
 }
 
-/* 8-bit Style Special Effects */
-:is(.eightbit) .site-heading-title {
-  font-size: 1.4rem;
+/* ─── 8-BIT OVERRIDES ────────────────────────────────────────────────────── */
+
+:is(.eightbit) {
+  h1 { font-size: 1.875rem; line-height: 3.5rem; }
+  h2 { font-size: 1.5rem;   line-height: 2.5rem; }
+  p  { font-size: 0.7rem;   line-height: 2rem; }
 }
 
-:is(.eightbit) .site-heading-subtitle {
-  font-size: 0.8rem;
-  margin-top: 0.9rem;
+:is(.eightbit) .section-label {
+  font-size: 0.6rem;
 }
+
+:is(.eightbit) .site-heading-title  { font-size: 1.4rem; }
+:is(.eightbit) .site-heading-subtitle { font-size: 0.8rem; margin-top: 0.9rem; }
 
 :is(.eightbit) .gradient-text {
-  color: #fff200;
-  text-shadow:
-    2px 2px 0 #222,
-    4px 4px 0 #ff005d,
-    0 0 8px #00eaff;
-  font-family: "Press Start 2P", "VT323", "monospace";
+  color: #d4f5c8;
+  text-shadow: 2px 2px 0 #000, 4px 4px 0 #00ff88, 0 0 8px #00ff88;
+  font-family: "Press Start 2P", monospace;
   font-size: 0.9rem;
 }
 
-:is(.light) .card-hover:hover {
-  box-shadow: 0 0 0 1px var(--color-primary), 0 0 20px 6px color-mix(in oklch, var(--color-primary) 60%, transparent);
+:is(.eightbit) .card-hover {
+  border-width: 2px;
+  border-radius: 0;
 }
-
+:is(.eightbit) .card-hover::before { display: none; }
 :is(.eightbit) .card-hover:hover {
-  box-shadow:
-    0 0 0 4px #fff200,
-    0 0 16px 4px #00eaff;
-  border: 4px solid #fff200;
-  image-rendering: pixelated;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #00ff88;
+  border-color: #00ff88;
 }
 
 :is(.eightbit) .button-primary {
-  background: #00eaff;
-  color: #222;
-  border: 4px solid #fff200;
-  box-shadow:
-    0 0 0 4px #fff200,
-    0 0 0 8px #00eaff;
-  font-family: "Press Start 2P", "VT323", "monospace";
+  background: #00ff88;
+  color: #000;
+  border: 2px solid #00ff88;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
   text-transform: uppercase;
-  image-rendering: pixelated;
+  border-radius: 0;
 }
-
 :is(.eightbit) .button-primary:hover {
-  background: #ff005d;
-  color: #fff200;
-  transform: scale(1.05);
-  box-shadow:
-    0 0 0 6px #ff8c00,
-    0 0 0 12px #fff200;
+  background: transparent;
+  color: #00ff88;
+  box-shadow: 4px 4px 0 #00ff88;
 }
 
 :is(.eightbit) .button-secondary {
-  background: #ff005d;
-  color: #fff200;
-  border: 4px solid #00eaff;
-  box-shadow:
-    0 0 0 4px #00eaff,
-    0 0 0 8px #ff005d;
-  font-family: "Press Start 2P", "VT323", "monospace";
+  background: transparent;
+  color: #d4f5c8;
+  border: 2px solid #2a2a3e;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
   text-transform: uppercase;
-  image-rendering: pixelated;
+  border-radius: 0;
 }
-
 :is(.eightbit) .button-secondary:hover {
-  background: #00eaff;
-  color: #222;
-  transform: scale(1.05);
-  box-shadow:
-    0 0 0 6px #fff200,
-    0 0 0 12px #ff005d;
+  border-color: #00ff88;
+  color: #00ff88;
 }
 
-/* 8-bit Style Typewriter Cursor */
+:is(.eightbit) .skill-tag {
+  border-width: 2px;
+  border-radius: 0;
+  font-size: 0.62rem;
+}
+
+:is(.eightbit) .project-link {
+  border-width: 2px;
+  font-size: 0.6rem;
+}
+
 :is(.eightbit) .animate-pulse {
   animation: nineties-cursor 1s steps(2, end) infinite;
-  color: #fff200;
-  text-shadow:
-    2px 2px 0 #222,
-    0 0 8px #ff005d;
-  font-family: "Press Start 2P", "VT323", "monospace";
+  color: #d4f5c8;
+  text-shadow: 2px 2px 0 #000, 0 0 8px #00ff88;
+  font-family: "Press Start 2P", monospace;
 }
 
-@keyframes nineties-cursor {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
-}
+/* ─── SCROLLBAR ──────────────────────────────────────────────────────────── */
 
-/* 8-bit Animation */
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--color-muted);
-}
-
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background-color: var(--color-muted); }
 ::-webkit-scrollbar-thumb {
-  background-color: color-mix(
-    in oklch,
-    var(--color-muted-foreground) 30%,
-    transparent
-  );
+  background-color: color-mix(in oklch, var(--color-muted-foreground) 30%, transparent);
   border-radius: 9999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background-color: color-mix(
-    in oklch,
-    var(--color-muted-foreground) 50%,
-    transparent
-  );
-}
-
-/* Smooth transitions for theme switching */
-* {
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease;
+  background-color: color-mix(in oklch, var(--color-muted-foreground) 50%, transparent);
 }

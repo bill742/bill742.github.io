@@ -1,3 +1,4 @@
+import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const navItems = [
@@ -43,7 +44,7 @@ const iconRole = "img";
 export const contactIcons = [
   {
     icon: FaLinkedin,
-    id: 2,
+    id: 1,
     label: "LinkedIn",
     link: `https://www.linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_USERNAME}`,
     role: iconRole,
@@ -51,9 +52,17 @@ export const contactIcons = [
   },
   {
     icon: FaGithub,
-    id: 3,
+    id: 2,
     label: "GitHub",
     link: `https://github.com/${process.env.NEXT_PUBLIC_GH_USERNAME}`,
+    role: iconRole,
+    size: iconSize,
+  },
+  {
+    icon: Mail,
+    id: 3,
+    label: "Email",
+    link: `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`,
     role: iconRole,
     size: iconSize,
   },
