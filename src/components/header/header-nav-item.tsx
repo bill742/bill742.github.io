@@ -1,3 +1,4 @@
+import { usePathname } from "next/navigation";
 import { FC } from "react";
 
 import { headerNavItemType } from "@/types/types";
@@ -10,10 +11,10 @@ const HeaderNavItem: FC<{
   mobile?: boolean;
 }> = ({ navItem, onClose, mobile = false }) => {
   const active = useActiveSection(["about", "projects", "skills", "contact"]);
-  const isActive = active === navItem.link.replace("#", "");
-
-  console.log(active);
-  console.log(isActive);
+  const pathname = usePathname();
+  const isActive = navItem.isHomeSection
+    ? active === navItem.link.replace("#", "")
+    : pathname.startsWith(navItem.link);
 
   const baseClass = mobile
     ? // Mobile: larger text, right-aligned, full-width tap target
