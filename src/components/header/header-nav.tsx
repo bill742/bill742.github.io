@@ -2,9 +2,9 @@
 
 import { FC, memo } from "react";
 
+import { navItems } from "@/data/nav-links";
 import { headerNavItemType } from "@/types/types";
 
-import { navItems } from "../../data/nav-links";
 import HeaderNavItem from "./header-nav-item";
 
 const HeaderNav: FC = memo(() => {

@@ -1,6 +1,6 @@
 import IconList from "@/components/icon-list";
+import { contactIcons } from "@/data/nav-links";
 
-import { contactIcons } from "../../data/nav-links";
 import UpArrow from "./up-arrow";
 
 const Footer = () => {

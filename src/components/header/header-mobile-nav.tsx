@@ -12,8 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { contactIcons, navItems } from "@/data/nav-links";
 
-import { contactIcons, navItems } from "../../data/nav-links";
 import HeaderNavItem from "./header-nav-item";
 import ModeToggle from "./mode-toggle";
 
