@@ -135,7 +135,7 @@
   --color-popover:              #12121e;
   --color-popover-foreground:   #d4f5c8;
 
-  font-family: "Press Start 2P", "VT323", monospace;
+  font-family: var(--font-mono);
 }
 
 /* ─── BASE STYLES ────────────────────────────────────────────────────────── */
@@ -367,6 +367,10 @@
 
 /* ─── 8-BIT OVERRIDES ────────────────────────────────────────────────────── */
 
+:is(.eightbit) body {
+  font-family: var(--font-mono);
+}
+
 :is(.eightbit) {
   h1 { font-size: 1.875rem; line-height: 3.5rem; }
   h2 { font-size: 1.5rem;   line-height: 2.5rem; }
@@ -383,7 +387,7 @@
 :is(.eightbit) .gradient-text {
   color: #d4f5c8;
   text-shadow: 2px 2px 0 #000, 4px 4px 0 #00ff88, 0 0 8px #00ff88;
-  font-family: "Press Start 2P", monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 
@@ -402,7 +406,7 @@
   background: #00ff88;
   color: #000;
   border: 2px solid #00ff88;
-  font-family: "Press Start 2P", monospace;
+  font-family: var(--font-mono);
   font-size: 0.5rem;
   text-transform: uppercase;
   border-radius: 0;
@@ -417,7 +421,7 @@
   background: transparent;
   color: #d4f5c8;
   border: 2px solid #2a2a3e;
-  font-family: "Press Start 2P", monospace;
+  font-family: var(--font-mono);
   font-size: 0.5rem;
   text-transform: uppercase;
   border-radius: 0;
@@ -442,7 +446,7 @@
   animation: nineties-cursor 1s steps(2, end) infinite;
   color: #d4f5c8;
   text-shadow: 2px 2px 0 #000, 0 0 8px #00ff88;
-  font-family: "Press Start 2P", monospace;
+  font-family: var(--font-mono);
 }
 
 /* ─── SCROLLBAR ──────────────────────────────────────────────────────────── */

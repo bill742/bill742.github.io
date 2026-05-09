@@ -17,15 +17,3 @@ export const pressStart = Press_Start_2P({
   variable: "--font-mono",
   weight: "400",
 });
-
-// ─── Usage in src/app/layout.tsx ────────────────────────────────────────────
-//
-// import { spaceGrotesk, pressStart } from "@/lib/fonts"; // adjust path
-//
-// export default function RootLayout({ children }: { children: React.ReactNode }) {
-//   return (
-//     <html lang="en" className={`${spaceGrotesk.variable} ${pressStart.variable}`}>
-//       <body>{children}</body>
-//     </html>
-//   );
-// }
