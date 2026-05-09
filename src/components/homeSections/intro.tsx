@@ -4,7 +4,7 @@ import IntroPhoto from "../intro-photo";
 const Intro = () => {
   return (
     <section className="section" id="top">
-      <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:items-center md:justify-between">
         {/* ── Left: Text ── */}
         <div className="flex flex-col items-start gap-6 md:max-w-[58%]">
           {/* Headline */}
