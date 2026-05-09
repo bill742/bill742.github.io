@@ -20,7 +20,7 @@ const ContactLink = ({ showResume }: { showResume: boolean }) => {
       {showResume && (
         <Button asChild className="button-primary py-6">
           <Link
-            href="docs/Bill-Dean-Web-Developer.pdf"
+            href="docs/Resume-Bill-Dean.pdf"
             target="_blank"
             className="hover:text-accent-foreground text-lg font-bold"
           >
