@@ -33,7 +33,7 @@ test.describe("Homepage does not have accessibility issues", () => {
 
     // Test 8-bit mode
     await themeToggle.first().click();
-    await page.getByRole("menuitem", { name: "8-bit Style" }).click();
+    await page.getByRole("menuitem", { name: "8-bit" }).click();
     // Wait for the dropdown to fully close and the eightbit theme to apply before
     // scanning — Radix sets aria-hidden on the page body while the dropdown is
     // open/animating, which causes spurious axe failures.
@@ -95,7 +95,7 @@ test("Skills section displays correctly", async ({ page }) => {
 
   await page.getByRole("button", { name: "Skills" }).click();
   await expect(page.getByRole("heading", { name: "Skills" })).toBeVisible();
-  await expect(page.locator("#skills").getByRole("listitem")).toHaveCount(20);
+  await expect(page.locator("#skills span.skill-tag")).toHaveCount(21);
 });
 
 test("Projects section displays correctly", async ({ page }) => {
@@ -134,24 +134,29 @@ test("Contact form displays correctly, accepts input, and displays successful co
     .click();
   await expect(page.getByRole("heading", { name: "Contact" })).toBeVisible();
 
+  const contactSection = page.locator("[id='contact']");
   // Check form elements are visible
-  await expect(page.getByLabel("Email:")).toBeVisible();
-  await expect(page.getByLabel("Message:")).toBeVisible();
+  await expect(contactSection.getByLabel("Email")).toBeVisible();
+  await expect(contactSection.getByLabel("Message")).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Send Message" })
   ).toBeVisible();
 
   // Fill out the form
-  await page.getByLabel("Email:").fill("test@example.com");
-  await page.getByLabel("Message:").fill("This is a test message");
+  await contactSection.getByLabel("Email").fill("test@example.com");
+  await contactSection.getByLabel("Message").fill("This is a test message");
 
   // Verify the inputs contain the correct values
-  await expect(page.getByLabel("Email:")).toHaveValue("test@example.com");
-  await expect(page.getByLabel("Message:")).toHaveValue(
+  await expect(contactSection.getByLabel("Email")).toHaveValue(
+    "test@example.com"
+  );
+  await expect(contactSection.getByLabel("Message")).toHaveValue(
     "This is a test message"
   );
 
-  await page.getByRole("button", { name: "Send Message" }).click();
+  await contactSection.getByRole("button", { name: "Send Message" }).click();
 
-  await expect(page.getByText("Thanks for your submission!")).toBeVisible();
+  await expect(
+    contactSection.getByText("Message sent — I'll be in touch soon!")
+  ).toBeVisible();
 });
