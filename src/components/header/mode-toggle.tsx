@@ -53,32 +53,30 @@ const ModeToggle: FC<{ className?: string }> = memo(({ className }) => {
         <Button
           variant="outline"
           size="icon"
-          className="border-border hover:bg-accent hover:border-primary/30"
+          className="border-border hover:bg-accent hover:border-primary hover:text-primary rounded-none"
           id="themeToggle"
         >
           {getCurrentIcon()}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-card border-border">
-        <DropdownMenuItem
-          onClick={() => setTheme("light")}
-          className="hover:bg-accent cursor-pointer justify-end"
-        >
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme("dark")}
-          className="hover:bg-accent cursor-pointer justify-end"
-        >
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme("eightbit")}
-          className="hover:bg-accent cursor-pointer justify-end"
-        >
-          8-bit Style
-        </DropdownMenuItem>
+      <DropdownMenuContent
+        align="end"
+        className="bg-card border-border min-w-28 rounded-none p-1"
+      >
+        {(["light", "dark", "eightbit"] as const).map((t) => (
+          <DropdownMenuItem
+            key={t}
+            onClick={() => setTheme(t)}
+            className={`hover:bg-accent cursor-pointer justify-end rounded-none text-xs font-semibold tracking-widest uppercase ${
+              theme === t ? "text-primary" : "text-muted-foreground"
+            }`}
+          >
+            {t === "eightbit"
+              ? "8-bit"
+              : t.charAt(0).toUpperCase() + t.slice(1)}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

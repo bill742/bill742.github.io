@@ -30,6 +30,24 @@ export const skillsHeadings = [
   "AI",
 ];
 
+export const skillsData = [
+  [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "TailwindCSS",
+    "GraphQL",
+  ],
+  ["Python", "Django"],
+  ["Wagtail", "WordPress", "Strapi"],
+  ["Jest", "Playwright"],
+  ["Git", "Prettier", "ESLint", "Vercel"],
+  ["Claude", "GitHub Copilot"],
+];
+
 const iconSize = "60";
 const iconRole = "img";
 

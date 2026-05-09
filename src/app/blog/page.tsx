@@ -1,4 +1,5 @@
 // import Pagination from "@/components/pagination";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { IoMegaphone } from "react-icons/io5";
 
@@ -9,7 +10,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../components/ui/card";
+} from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
+  },
+  description: "Blog posts about tech and my experience as a developer.",
+  title: "Blog",
+};
 
 const blogSlugs = [
   {

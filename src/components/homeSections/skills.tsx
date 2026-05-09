@@ -1,13 +1,8 @@
 import { FaGaugeHigh } from "react-icons/fa6";
 
-import IconList from "@/components/icon-list";
-import { skillsHeadings, skillsIconSets } from "@/data/skills";
+import { skillsData, skillsHeadings } from "@/data/skills";
 
 const Skills = () => {
-  const iconListClassName = "m-auto flex w-auto  flex-row flex-wrap  gap-8";
-  const iconLabelClassName =
-    "text-muted-foreground mb-4 text-sm font-semibold tracking-widest uppercase";
-
   return (
     <section id="skills" className="section">
       <h3 className="header">
@@ -15,25 +10,25 @@ const Skills = () => {
         Skills
       </h3>
       <p>
-        The languages, tools & applications I currently use in my daily
+        The languages, tools &amp; applications I currently use in my daily
         workflow.
       </p>
 
-      <div className="flex flex-wrap items-start gap-x-40 gap-y-10">
-        {skillsIconSets.map((iconSet, index) => {
-          const heading = skillsHeadings[index];
-
-          return (
-            <div key={index}>
-              <h4 className={iconLabelClassName}>{heading}</h4>
-              <IconList
-                iconInfos={iconSet}
-                hasText={true}
-                className={iconListClassName}
-              />
+      <div className="grid grid-cols-2 gap-x-12 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+        {skillsData.map((group: string[], index: number) => (
+          <div key={index}>
+            <h4 className="border-primary/50 text-muted-foreground mb-4 border-b-2 pb-2 text-xs font-semibold tracking-widest uppercase">
+              {skillsHeadings[index]}
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {group.map((skill: string) => (
+                <span key={skill} className="skill-tag visible text-xs">
+                  {skill}
+                </span>
+              ))}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </section>
   );

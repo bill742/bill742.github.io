@@ -1,4 +1,5 @@
 import { defineConfig, globalIgnores } from "eslint/config";
+import { fixupPluginRules } from "@eslint/compat";
 import globals from "globals";
 import sortKeysFix from "eslint-plugin-sort-keys-fix";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
@@ -17,6 +18,7 @@ export default defineConfig([
     "src/components/ui/**",
     "**/.next/*",
     "*.config.ts",
+    "design/**",
   ]),
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -40,9 +42,9 @@ export default defineConfig([
       "@typescript-eslint": tsPlugin,
       "@next/next": nextPlugin,
       "simple-import-sort": simpleImportSort,
-      "sort-keys-fix": sortKeysFix,
+      "sort-keys-fix": fixupPluginRules(sortKeysFix),
       prettier: prettierPlugin,
-      "react-memo": reactMemo,
+      "react-memo": fixupPluginRules(reactMemo),
     },
     rules: {
       // TypeScript recommended rules
