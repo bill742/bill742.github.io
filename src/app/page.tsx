@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import About from "@/components/homeSections/about";
 import Contact from "@/components/homeSections/contact";
 import Intro from "@/components/homeSections/intro";
-import Portfolio from "@/components/homeSections/portfolio";
+import Portfolio from "@/components/homeSections/projects";
 import Skills from "@/components/homeSections/skills";
 import ScrollOnLoad from "@/components/scrollOnLoad";
 
