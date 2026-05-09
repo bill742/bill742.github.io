@@ -10,9 +10,10 @@ export const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-// 8-bit theme font
+// 8-bit theme font — preload: false because it's only used in the eightbit theme, not on initial load
 export const pressStart = Press_Start_2P({
   display: "swap",
+  preload: false,
   subsets: ["latin"],
   variable: "--font-mono",
   weight: "400",
