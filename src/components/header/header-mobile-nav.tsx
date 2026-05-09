@@ -13,9 +13,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+import { contactIcons, navItems } from "../../data/nav-links";
 import HeaderNavItem from "./header-nav-item";
 import ModeToggle from "./mode-toggle";
-import { contactIcons, navItems } from "./nav-links";
 
 const HeaderMobileNav = () => {
   const [open, setOpen] = useState(false);

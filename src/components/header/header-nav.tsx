@@ -4,8 +4,8 @@ import { FC, memo } from "react";
 
 import { headerNavItemType } from "@/types/types";
 
+import { navItems } from "../../data/nav-links";
 import HeaderNavItem from "./header-nav-item";
-import { navItems } from "./nav-links";
 
 const HeaderNav: FC = memo(() => {
   return (
