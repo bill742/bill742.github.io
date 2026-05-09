@@ -50,7 +50,7 @@
   /* Foregrounds */
   --color-foreground:        oklch(0.13 0.02 60);     /* near-black */
   --color-secondary-foreground: oklch(0.42 0.02 60);  /* fg2 — body text */
-  --color-muted-foreground:  oklch(0.62 0.015 60);    /* fg3 — captions, labels */
+  --color-muted-foreground:  oklch(0.52 0.02 60);     /* fg3 — captions, labels */
 
   /* Primary / Accent — Space Grotesk yellow */
   --color-primary:           oklch(0.82 0.19 88);     /* bright yellow */
@@ -87,7 +87,7 @@
 
   --color-foreground:           oklch(0.95 0.006 80);
   --color-secondary-foreground: oklch(0.72 0.006 80);
-  --color-muted-foreground:     oklch(0.52 0.006 80);
+  --color-muted-foreground:     oklch(0.60 0.006 80);
 
   --color-primary:              oklch(0.82 0.19 88);    /* same yellow — pops on dark */
   --color-primary-foreground:   oklch(0.10 0.015 258);
@@ -116,7 +116,7 @@
 
   --color-foreground:           #d4f5c8;
   --color-secondary-foreground: #8dc896;
-  --color-muted-foreground:     #557a5a;
+  --color-muted-foreground:     #698f6e;
 
   --color-primary:              #00ff88;   /* neon green */
   --color-primary-foreground:   #000;

@@ -82,6 +82,7 @@ const ProjectCard: FC<{
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
+              aria-label={`Github link for the ${title} project`}
             >
               <SiGithub className="h-3.5 w-3.5" aria-hidden="true" />
               GitHub
@@ -93,6 +94,7 @@ const ProjectCard: FC<{
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
+              aria-label={`Live link for the ${title} project`}
             >
               <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               Live
