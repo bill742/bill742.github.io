@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /resume
+Disallow: /blog
+
+Sitemap: https://billdean.me/sitemap.xml
