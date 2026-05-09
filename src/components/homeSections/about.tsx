@@ -1,6 +1,6 @@
 import { FaUser } from "react-icons/fa6";
 
-import ContactLink from "../contact-link";
+import ContactLink from "@/components/contact-link";
 
 const About = () => {
   return (
