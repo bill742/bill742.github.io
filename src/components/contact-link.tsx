@@ -7,7 +7,7 @@ import { scrollToSection } from "@/utils/scrollToSection";
 
 const ContactLink = ({ showResume }: { showResume: boolean }) => {
   return (
-    <div className="animate-fade-up animate-delay-3 flex flex-col gap-3 pt-2 opacity-0 md:flex-row">
+    <div className="animate-fade-up animate-delay-3 flex flex-row gap-3 pt-2 opacity-0">
       <Button asChild className="button-primary py-6">
         <button
           onClick={() => scrollToSection("contact")}
