@@ -14,7 +14,7 @@ const ContactForm = () => {
   if (state.succeeded) {
     return (
       <p className="text-primary text-sm font-semibold tracking-widest uppercase">
-        Message sent — I&apos;ll be in touch soon!
+        Message sent. I&apos;ll be in touch soon!
       </p>
     );
   }

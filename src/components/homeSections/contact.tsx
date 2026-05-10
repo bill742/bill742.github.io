@@ -14,7 +14,7 @@ const Contact = memo(() => {
         <div className="flex flex-col gap-4 pt-1">
           <p>
             Whether you&apos;re hiring, have a project in mind, or just want to
-            connect — my inbox is open.
+            connect, my inbox is open.
           </p>
         </div>
 
