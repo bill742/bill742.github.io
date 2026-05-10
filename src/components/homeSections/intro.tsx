@@ -8,7 +8,7 @@ const Intro = () => {
         {/* ── Left: Text ── */}
         <div className="flex flex-col items-start gap-6 md:max-w-[58%]">
           {/* Headline */}
-          <h1 className="animate-fade-up animate-delay-1 text-foreground text-5xl leading-tight font-bold tracking-tight opacity-0 lg:text-6xl xl:text-7xl">
+          <h1 className="animate-fade-up animate-delay-1 text-foreground text-5xl leading-tight font-semibold tracking-tight opacity-0 lg:text-6xl xl:text-7xl">
             Hello! My name is{" "}
             <span className="bg-primary text-primary-foreground px-1 whitespace-nowrap">
               Bill.

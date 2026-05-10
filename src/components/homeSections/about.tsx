@@ -48,7 +48,7 @@ const About = () => {
               >
                 {/* Accent dot */}
                 <span
-                  className="bg-primary mt-1.5 h-1.5 w-1.5 shrink-0"
+                  className="bg-primary mt-1.5 size-1.5 shrink-0"
                   aria-hidden="true"
                 />
                 <span className="text-muted-foreground leading-relaxed">

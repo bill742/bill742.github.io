@@ -39,9 +39,9 @@ const HeaderMobileNav = () => {
             size="icon"
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="border-border text-foreground hover:bg-accent hover:text-primary h-9 w-9 border"
+            className="border-border text-foreground hover:bg-accent hover:text-primary size-9 border"
           >
-            <Menu className="h-5 w-5" />
+            <Menu className="size-5" />
           </Button>
         </SheetTrigger>
 

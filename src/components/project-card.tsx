@@ -50,7 +50,7 @@ const ProjectCard: FC<{
 
         {/* Title + description */}
         <div className="relative z-10">
-          <h4 className="text-foreground text-lg font-bold tracking-tight uppercase">
+          <h4 className="text-foreground text-lg font-semibold tracking-tight uppercase">
             {title}
           </h4>
           <p className="text-muted-foreground mt-1 text-sm font-medium">
@@ -84,7 +84,7 @@ const ProjectCard: FC<{
               className="project-link"
               aria-label={`Github link for the ${title} project`}
             >
-              <SiGithub className="h-3.5 w-3.5" aria-hidden="true" />
+              <SiGithub className="size-3.5" aria-hidden="true" />
               GitHub
             </Link>
           )}
@@ -96,7 +96,7 @@ const ProjectCard: FC<{
               className="project-link"
               aria-label={`Live link for the ${title} project`}
             >
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              <ExternalLink className="size-3.5" aria-hidden="true" />
               Live
             </Link>
           )}
