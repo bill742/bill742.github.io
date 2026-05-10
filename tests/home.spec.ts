@@ -157,6 +157,6 @@ test("Contact form displays correctly, accepts input, and displays successful co
   await contactSection.getByRole("button", { name: "Send Message" }).click();
 
   await expect(
-    contactSection.getByText("Message sent — I'll be in touch soon!")
+    contactSection.getByText("Message sent. I'll be in touch soon!")
   ).toBeVisible();
 });
