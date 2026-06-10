@@ -60,7 +60,9 @@ export default defineConfig({
   ],
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: "html",
+  reporter: process.env.CI
+    ? [["github"], ["html", { open: "never" }]]
+    : "html",
 
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
