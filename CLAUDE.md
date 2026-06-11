@@ -67,6 +67,10 @@ Playwright tests are in `tests/`. Run with `pnpm test`. Tests cover:
 - Section rendering
 - Contact form interaction
 
+### CI
+
+The GitHub Actions workflow (`.github/workflows/playwright.yml`) runs tests inside the official Playwright Docker container (`mcr.microsoft.com/playwright:v<version>-noble`) so browsers and system deps are pre-installed — there is no `playwright install` download step. **When bumping `@playwright/test` in `package.json`, bump the container image tag to the matching version.** A mismatch causes browser/driver version errors.
+
 ## Static Export
 
 The site is statically exported (`output: "export"` in `next.config.ts`) for GitHub Pages hosting. There is no Node.js backend. Use a custom image loader (`imageLoader.js`) — avoid Next.js `<Image>` default loader assumptions.
