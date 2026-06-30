@@ -22,5 +22,5 @@ export const skillsData = [
   ["Wagtail", "WordPress", "Strapi"],
   ["Jest", "Playwright"],
   ["Git", "Prettier", "ESLint", "Vercel"],
-  ["Claude", "GitHub Copilot"],
+  ["Claude Code", "GitHub Copilot", "OpenCode"],
 ];
