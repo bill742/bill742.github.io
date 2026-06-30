@@ -2,7 +2,7 @@
 
 import { Joystick, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { FC, memo, useEffect, useState } from "react";
+import { FC, memo, useSyncExternalStore } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -12,12 +12,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+// Stable no-op subscription: `mounted` is false on the server snapshot and
+// true on the client snapshot, so hydration resolves in a single commit.
+const emptySubscribe = () => () => {};
+
 const ModeToggle: FC<{ className?: string }> = memo(({ className }) => {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   const getCurrentIcon = () => {
     switch (theme) {

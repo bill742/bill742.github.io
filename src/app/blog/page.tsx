@@ -1,4 +1,3 @@
-// import Pagination from "@/components/pagination";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IoMegaphone } from "react-icons/io5";

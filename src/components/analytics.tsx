@@ -1,12 +1,12 @@
+import Script from "next/script";
+
 const Analytics = () => {
   return (
-    <>
-      {/* <!-- Simple Analytics - 100% privacy-first analytics --> */}
-      <script
-        async
-        src="https://scripts.simpleanalyticscdn.com/latest.js"
-      ></script>
-    </>
+    // Simple Analytics - 100% privacy-first analytics
+    <Script
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+      strategy="afterInteractive"
+    />
   );
 };
 

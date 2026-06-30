@@ -16,7 +16,7 @@ const Skills = () => {
 
       <div className="grid grid-cols-2 gap-x-12 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
         {skillsData.map((group: string[], index: number) => (
-          <div key={index}>
+          <div key={skillsHeadings[index]}>
             <h4 className="border-primary/50 text-muted-foreground mb-4 border-b-2 pb-2 text-xs font-semibold tracking-widest uppercase">
               {skillsHeadings[index]}
             </h4>
