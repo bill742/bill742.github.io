@@ -4,7 +4,7 @@ export const portfolioData = [
       "A modern Next.js boilerplate to ship production-ready projects fast — with TypeScript, Tailwind CSS v4, accessibility, testing, and developer tooling pre-configured.",
     demoLink: "https://www.nextstarter.app/",
     description: "A boilerplate for quickly starting NextJS projects",
-    githubLink: "nextstarter",
+    githubLink: "nextstarter-lite",
     id: "1",
     image: "nextstarter.png",
     techStack: "Next.js + TypeScript + Tailwind CSS + ShadCN/UI + Playwright",
