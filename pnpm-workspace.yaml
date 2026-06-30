@@ -1,3 +1,9 @@
+# Supply-chain hardening (react-doctor require-pnpm-hardening):
+# delay installing freshly published versions by 7 days and refuse packages
+# whose provenance/signature trust weakens between resolutions.
+minimumReleaseAge: 10080
+trustPolicy: no-downgrade
+
 overrides:
   brace-expansion@<1.1.13: '>=1.1.13'
   picomatch@>=4.0.0 <4.0.4: '>=4.0.4'

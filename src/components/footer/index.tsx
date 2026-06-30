@@ -7,7 +7,10 @@ const Footer = () => {
   return (
     <footer className="border-border/50 mt-20 border-t" aria-label="Footer">
       <div className="container mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <span className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">
+        <span
+          className="text-muted-foreground text-xs font-semibold tracking-widest uppercase"
+          suppressHydrationWarning
+        >
           © {new Date().getFullYear()} Bill Dean
         </span>
 

@@ -10,6 +10,7 @@ const ContactLink = ({ showResume }: { showResume: boolean }) => {
     <div className="animate-fade-up animate-delay-3 flex flex-row gap-3 pt-2 opacity-0">
       <Button asChild className="button-primary py-6">
         <button
+          type="button"
           onClick={() => scrollToSection("contact")}
           className="hover:text-accent-foreground transition-colors duration-200"
         >

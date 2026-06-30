@@ -29,6 +29,7 @@ const HeaderNavItem: FC<{
   if (navItem.isHomeSection) {
     return (
       <button
+        type="button"
         onClick={() => {
           scrollToSection(navItem.link.substring(1));
           onClose?.();

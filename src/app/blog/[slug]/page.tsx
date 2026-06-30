@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 
+// Static map of slug → import so the bundler can code-split each post into its
+// own chunk (a templated import path can't be statically traced). This map is
+// also the single source of truth for generateStaticParams below.
+const posts = {
+  "second-post": () => import("@/content/second-post.mdx"),
+  welcome: () => import("@/content/welcome.mdx"),
+} as const;
+
 export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { default: Post } = await import(`@/content/${slug}.mdx`);
+  const { default: Post } = await posts[slug as keyof typeof posts]();
 
   return <Post />;
 }
@@ -20,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return [{ slug: "welcome" }, { slug: "second-post" }];
+  return Object.keys(posts).map((slug) => ({ slug }));
 }
 
 export const dynamicParams = false;
