@@ -10,15 +10,11 @@ const UpArrow = () => {
     <div className="flex justify-end">
       <Button
         asChild
-        className="h-10 w-10 rounded-full border-2 p-2"
+        className="hover:text-accent-foreground h-10 w-10 rounded-full border-2 p-2 transition-colors duration-200"
         aria-label="Back to Top"
+        onClick={() => scrollToSection("top")}
       >
-        <button
-          onClick={() => scrollToSection("top")}
-          className="hover:text-accent-foreground transition-colors duration-200"
-        >
-          <ArrowUp />
-        </button>
+        <ArrowUp />
       </Button>
     </div>
   );
