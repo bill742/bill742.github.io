@@ -5,6 +5,11 @@ minimumReleaseAge: 10080
 trustPolicy: no-downgrade
 
 overrides:
+  '@babel/core@<7.29.6': '>=7.29.6'
+  # TODO(2026-07-30): bump to '>=5.0.8' (GHSA DoS fix). 5.0.8 published
+  # 2026-07-23 and is still inside the 7-day minimumReleaseAge hold.
   brace-expansion@<1.1.13: '>=1.1.13'
+  js-yaml@>=4.0.0 <4.3.0: '4.3.0'
   picomatch@>=4.0.0 <4.0.4: '>=4.0.4'
   postcss@<8.5.10: '>=8.5.10'
+  sharp@<0.35.0: '>=0.35.0'

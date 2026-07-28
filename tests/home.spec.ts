@@ -3,6 +3,11 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
 test.describe("Homepage does not have accessibility issues", () => {
+  // The fade-up entrance animations mean axe can sample a half-faded element
+  // and report a spurious colour-contrast failure against the blended pixels.
+  // Reduced motion pins everything to its final state before the scan.
+  test.use({ contextOptions: { reducedMotion: "reduce" } });
+
   test("Should not have any automatically detectable accessibility issues", async ({
     page,
   }) => {

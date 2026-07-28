@@ -24,7 +24,7 @@ export const portfolioData = [
   {
     content:
       "Github Finder is an app that utilizes the GitHub API to search for GitHub users by username and view information about them and their public repositories.",
-    demoLink: "https://github-finder-kohl-chi.vercel.app/",
+    demoLink: "https://github-finder-742.netlify.app/",
     description: "GitHub user search and repository viewer",
     githubLink: "github-finder",
     id: "3",
