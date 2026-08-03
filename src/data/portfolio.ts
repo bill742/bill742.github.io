@@ -13,7 +13,7 @@ export const portfolioData = [
   {
     content:
       "A web application for discovering and exploring movies — browse trending films, now-playing releases, and upcoming titles filtered by region, with full search and detailed movie pages.",
-    demoLink: "https://movie-watchlist-flame.vercel.app/",
+    demoLink: "https://moviewatchlist-742.netlify.app/",
     description: "A resource for movie information.",
     githubLink: "MovieWatchlist",
     id: "2",
