@@ -13,7 +13,7 @@ export const portfolioData = [
   {
     content:
       "A web application for discovering and exploring movies — browse trending films, now-playing releases, and upcoming titles filtered by region, with full search and detailed movie pages.",
-    demoLink: "https://moviewatchlist-742.netlify.app/",
+    demoLink: "https://moviewatchlist.742designs.workers.dev/",
     description: "A resource for movie information.",
     githubLink: "MovieWatchlist",
     id: "2",
@@ -24,7 +24,7 @@ export const portfolioData = [
   {
     content:
       "Github Finder is an app that utilizes the GitHub API to search for GitHub users by username and view information about them and their public repositories.",
-    demoLink: "https://github-finder-742.netlify.app/",
+    demoLink: "https://github-finder-beta-neon.vercel.app/",
     description: "GitHub user search and repository viewer",
     githubLink: "github-finder",
     id: "3",
