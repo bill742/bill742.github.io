@@ -8,21 +8,18 @@ const Intro = () => {
         {/* ── Left: Text ── */}
         <div className="flex flex-col items-start gap-6 md:max-w-[58%]">
           {/* Headline */}
-          <h1 className="animate-fade-up animate-delay-1 text-foreground text-5xl leading-tight font-semibold tracking-tight opacity-0 lg:text-6xl xl:text-7xl">
+          <h1 className="animate-fade-up animate-delay-1 text-foreground text-5xl leading-tight font-semibold tracking-tight opacity-0 lg:text-6xl">
             Hello! My name is{" "}
             <span className="bg-primary text-primary-foreground px-1 whitespace-nowrap">
               Bill.
-            </span>
+            </span>{" "}
+            <span className="block">A web developer based in Toronto.</span>
           </h1>
 
           <h2 className="animate-fade-up animate-delay-2 text-muted-foreground text-xl font-semibold opacity-0 sm:text-2xl">
-            I'm a front-end web developer.
-          </h2>
-
-          <p className="animate-fade-up animate-delay-3 max-w-lg text-lg leading-relaxed opacity-0">
             I specialize in building modern, responsive websites and
             applications using React, Next.js, and TypeScript.
-          </p>
+          </h2>
 
           <ContactLink showResume={true} />
         </div>

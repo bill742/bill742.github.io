@@ -64,7 +64,7 @@ test("Home page displays correct metadata", async ({ page }) => {
 
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(
     "content",
-    "I'm a front-end web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript."
+    "I'm a web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript."
   );
 
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
@@ -80,8 +80,12 @@ test("Intro section displays correctly", async ({ page }) => {
 
   const mainHeading = page.locator("h1").first();
   const subHeading = page.locator("h2").first();
-  await expect(mainHeading).toHaveText("Hello! My name is Bill.");
-  await expect(subHeading).toHaveText("I'm a front-end web developer.");
+  await expect(mainHeading).toHaveText(
+    "Hello! My name is Bill. A web developer based in Toronto."
+  );
+  await expect(subHeading).toHaveText(
+    "I specialize in building modern, responsive websites and applications using React, Next.js, and TypeScript."
+  );
 });
 
 test("About section displays correctly", async ({ page }) => {
