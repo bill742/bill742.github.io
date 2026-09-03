@@ -2,6 +2,8 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
+import { mainNav } from "./helpers";
+
 test.describe("Homepage does not have accessibility issues", () => {
   // The fade-up entrance animations mean axe can sample a half-faded element
   // and report a spurious colour-contrast failure against the blended pixels.
@@ -93,7 +95,7 @@ test("About section displays correctly", async ({ page }) => {
 
   console.log("Checking About section on homepage");
 
-  await page.getByRole("button", { name: "About Me" }).click();
+  await mainNav(page).getByRole("button", { name: "About Me" }).click();
   await expect(page.getByRole("heading", { name: "About Me" })).toBeVisible();
 });
 
@@ -102,7 +104,7 @@ test("Skills section displays correctly", async ({ page }) => {
 
   console.log("Checking Skills section on homepage");
 
-  await page.getByRole("button", { name: "Skills" }).click();
+  await mainNav(page).getByRole("button", { name: "Skills" }).click();
   await expect(page.getByRole("heading", { name: "Skills" })).toBeVisible();
   await expect(page.locator("#skills span.skill-tag")).toHaveCount(22);
 });
@@ -112,7 +114,7 @@ test("Projects section displays correctly", async ({ page }) => {
 
   console.log("Checking Projects section on homepage");
 
-  await page.getByRole("button", { name: "Projects" }).click();
+  await mainNav(page).getByRole("button", { name: "Projects" }).click();
   await expect(page.getByRole("heading", { name: "Projects" })).toBeVisible();
   // Add more checks for projects section as more projects are added
 });
@@ -137,10 +139,7 @@ test("Contact form displays correctly, accepts input, and displays successful co
   });
 
   // Navigate to Contact section
-  await page
-    .getByRole("navigation")
-    .getByRole("button", { name: "Contact" })
-    .click();
+  await mainNav(page).getByRole("button", { name: "Contact" }).click();
   await expect(page.getByRole("heading", { name: "Contact" })).toBeVisible();
 
   const contactSection = page.locator("[id='contact']");
