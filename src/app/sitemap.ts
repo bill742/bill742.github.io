@@ -8,6 +8,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       url: "https://billdean.me",
     },
+    {
+      lastModified: new Date(),
+      url: "https://billdean.me/uses",
+    },
     // {
     //   lastModified: new Date(),
     //   url: "https://billdean.me/resume",

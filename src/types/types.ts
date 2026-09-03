@@ -27,3 +27,13 @@ export type postType = {
   summary: string;
   title: string;
 };
+
+export type usesItemType = {
+  name: string;
+  note: string;
+};
+
+export type usesGroupType = {
+  heading: string;
+  items: usesItemType[];
+};

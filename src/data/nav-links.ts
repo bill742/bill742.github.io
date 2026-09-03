@@ -38,6 +38,18 @@ export const navItems = [
     : []),
 ];
 
+// The footer repeats the header's links and adds the pages that aren't in the
+// top nav.
+export const footerNavItems = [
+  ...navItems,
+  {
+    isHomeSection: false,
+    key: 6,
+    link: "/uses",
+    text: "Uses",
+  },
+];
+
 const iconSize = "30";
 const iconRole = "img";
 
