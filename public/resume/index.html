@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- /resume was a real page at one point and may still be indexed. GitHub
+         Pages can't issue a 3xx and Next.js redirects() are unsupported under
+         `output: "export"`, so this static page stands in as the redirect. -->
+    <meta http-equiv="refresh" content="0; url=/docs/Resume-Bill-Dean.pdf" />
+    <link rel="canonical" href="https://billdean.me/docs/Resume-Bill-Dean.pdf" />
+    <title>Resume | Bill Dean - Front-End Web Developer</title>
+    <style>
+      body {
+        font-family:
+          ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        text-align: center;
+      }
+    </style>
+    <script>
+      // replace() so the redirect doesn't add a history entry to go "back" to.
+      window.location.replace("/docs/Resume-Bill-Dean.pdf");
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting to
+      <a href="/docs/Resume-Bill-Dean.pdf">Bill Dean&rsquo;s resume</a>&hellip;
+    </p>
+  </body>
+</html>
