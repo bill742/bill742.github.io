@@ -3,9 +3,11 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { scrollToSection } from "@/utils/scrollToSection";
+import { useScrollToSection } from "@/utils/useScrollToSection";
 
 const ContactLink = ({ showResume }: { showResume: boolean }) => {
+  const scrollToSection = useScrollToSection();
+
   return (
     <div className="animate-fade-up animate-delay-3 flex flex-row gap-3 pt-2 opacity-0">
       <Button asChild className="button-primary py-6">

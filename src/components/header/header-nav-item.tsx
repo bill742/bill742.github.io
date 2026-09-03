@@ -2,8 +2,8 @@ import { usePathname } from "next/navigation";
 import { FC } from "react";
 
 import { headerNavItemType } from "@/types/types";
-import { scrollToSection } from "@/utils/scrollToSection";
 import { useActiveSection } from "@/utils/useActiveSection";
+import { useScrollToSection } from "@/utils/useScrollToSection";
 
 const HeaderNavItem: FC<{
   navItem: headerNavItemType;
@@ -11,6 +11,7 @@ const HeaderNavItem: FC<{
   mobile?: boolean;
 }> = ({ navItem, onClose, mobile = false }) => {
   const active = useActiveSection(["about", "projects", "skills", "contact"]);
+  const scrollToSection = useScrollToSection();
   const pathname = usePathname();
   const isActive = navItem.isHomeSection
     ? active === navItem.link.replace("#", "")
