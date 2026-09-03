@@ -38,9 +38,9 @@ const About = () => {
           </p>
           <ul className="flex flex-col gap-3">
             {[
+              "Recently launched the Pro version of the NextStarter app",
+              "Android and iOS versions of MovieWatchList",
               "A new storefront app with Next.js and Strapi",
-              "Adding AI to my workflow with OpenCode, GitHub Copilot, and Claude Code",
-              "Building GitHub Actions workflows for my projects",
             ].map((item) => (
               <li
                 key={item}
