@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import { useScrollToSection } from "@/utils/useScrollToSection";
 
@@ -22,13 +20,17 @@ const ContactLink = ({ showResume }: { showResume: boolean }) => {
 
       {showResume && (
         <Button asChild className="button-primary py-6">
-          <Link
+          {/* A plain anchor, not next/link: the PDF is a static asset, and
+              the router would prefetch it as if it were a route, which 404s
+              on the RSC payloads it looks for. */}
+          <a
             href="/docs/Resume-Bill-Dean.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-accent-foreground text-lg font-bold"
           >
             View resume
-          </Link>
+          </a>
         </Button>
       )}
     </div>
