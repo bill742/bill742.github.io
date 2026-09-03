@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
-import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-import { mainNav } from "./helpers";
+import { expectNoViolationsInAnyTheme, mainNav } from "./helpers";
 
 test.describe("Homepage does not have accessibility issues", () => {
   // The fade-up entrance animations mean axe can sample a half-faded element
@@ -17,42 +16,7 @@ test.describe("Homepage does not have accessibility issues", () => {
 
     console.log("Running accessibility scan on homepage");
 
-    // Test light mode
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
-    expect(accessibilityScanResults.violations).toEqual([]);
-
-    // Test dark mode
-    const themeToggle = page.locator("#themeToggle");
-    await themeToggle.first().click();
-    console.log("Switching to Dark mode for accessibility testing");
-    await page.getByRole("menuitem", { name: "Dark" }).click();
-    // Wait for the dropdown to fully close and the dark theme to apply before
-    // scanning — Radix sets aria-hidden on the page body while the dropdown is
-    // open/animating, which causes spurious axe failures.
-    await page.waitForSelector("html.dark");
-    await page.waitForSelector("[data-radix-popper-content-wrapper]", {
-      state: "detached",
-    });
-    const darkModeAccessibilityScanResults = await new AxeBuilder({
-      page,
-    }).analyze();
-    expect(darkModeAccessibilityScanResults.violations).toEqual([]);
-
-    // Test 8-bit mode
-    await themeToggle.first().click();
-    await page.getByRole("menuitem", { name: "8-bit" }).click();
-    // Wait for the dropdown to fully close and the eightbit theme to apply before
-    // scanning — Radix sets aria-hidden on the page body while the dropdown is
-    // open/animating, which causes spurious axe failures.
-    await page.waitForSelector("html.eightbit");
-    await page.waitForSelector("[data-radix-popper-content-wrapper]", {
-      state: "detached",
-    });
-    console.log("Switched to 8-bit mode for accessibility testing");
-    const eightBitModeAccessibilityScanResults = await new AxeBuilder({
-      page,
-    }).analyze();
-    expect(eightBitModeAccessibilityScanResults.violations).toEqual([]);
+    await expectNoViolationsInAnyTheme(page);
   });
 });
 
