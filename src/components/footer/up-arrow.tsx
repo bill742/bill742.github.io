@@ -1,18 +1,15 @@
 "use client";
 import { ArrowUp } from "lucide-react";
 
-import { scrollToSection } from "@/utils/scrollToSection";
-
 import { Button } from "../ui/button";
 
 const UpArrow = () => {
   return (
     <div className="flex justify-end">
       <Button
-        asChild
-        className="hover:text-accent-foreground h-10 w-10 rounded-full border-2 p-2 transition-colors duration-200"
+        className="hover:text-accent-foreground h-10 w-10 rounded-full border-2 p-2 transition-colors duration-200 [&_svg]:size-6"
         aria-label="Back to Top"
-        onClick={() => scrollToSection("top")}
+        onClick={() => window.scrollTo({ behavior: "smooth", left: 0, top: 0 })}
       >
         <ArrowUp />
       </Button>
