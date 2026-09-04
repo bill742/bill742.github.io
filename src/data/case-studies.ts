@@ -33,7 +33,7 @@ export const caseStudies: caseStudyType[] = [
         title: "create-nextstarter",
       },
     ],
-    image: "nextstarter.png",
+    image: "nextstarter-case-study.png",
     intro:
       'Every project I started began the same way: two days of wiring before a single feature existed. NextStarter is that setup work, done once and done properly — and it is the project where I got to decide what "production-ready" actually has to mean.',
     sections: [
