@@ -28,6 +28,21 @@ export type postType = {
   title: string;
 };
 
+export type portfolioItemType = {
+  /** A slug in `caseStudies`. Set it to give the card a case study link. */
+  caseStudySlug?: string;
+  content: string;
+  demoLink?: string;
+  description: string;
+  /** A repo name under github.com/bill742. */
+  githubLink?: string;
+  id: string;
+  /** A file in /public/images/projects. */
+  image?: string;
+  techStack?: string;
+  title: string;
+};
+
 export type usesItemType = {
   name: string;
   note: string;
@@ -36,4 +51,43 @@ export type usesItemType = {
 export type usesGroupType = {
   heading: string;
   items: usesItemType[];
+};
+
+/** A label/value pair in a case study's at-a-glance panel. */
+export type caseStudyFactType = {
+  label: string;
+  value: string;
+};
+
+/** One of the "what's in the box" cards near the top of a case study. */
+export type caseStudyHighlightType = {
+  description: string;
+  title: string;
+};
+
+/** A prose section of a case study: a heading, paragraphs, and an optional list. */
+export type caseStudySectionType = {
+  body: string[];
+  heading: string;
+  list?: string[];
+};
+
+export type caseStudyType = {
+  dateModified?: string;
+  datePublished: string;
+  demoLink?: string;
+  facts: caseStudyFactType[];
+  /** A repo name under github.com/bill742, matching the portfolio entries. */
+  githubLink?: string;
+  highlights: caseStudyHighlightType[];
+  /** A file in /public/images/projects, matching the portfolio entries. */
+  image?: string;
+  intro: string;
+  sections: caseStudySectionType[];
+  slug: string;
+  summary: string;
+  tagline: string;
+  takeaways: string[];
+  techStack: string[];
+  title: string;
 };
