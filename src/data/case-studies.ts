@@ -13,7 +13,7 @@ export const caseStudies: caseStudyType[] = [
       { label: "Role", value: "Solo — design, build, docs and release" },
       { label: "Type", value: "Open-source boilerplate + paid starter kit" },
       { label: "Stack", value: "Next.js 16, TypeScript, Tailwind CSS v4" },
-      { label: "Status", value: "Lite released; Pro in launch prep" },
+      { label: "Status", value: "Live — Lite is open source, Pro is for sale" },
     ],
     githubLink: "nextstarter-lite",
     highlights: [
