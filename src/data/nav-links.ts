@@ -45,6 +45,12 @@ export const footerNavItems = [
   {
     isHomeSection: false,
     key: 6,
+    link: "/projects",
+    text: "Case Studies",
+  },
+  {
+    isHomeSection: false,
+    key: 7,
     link: "/uses",
     text: "Uses",
   },
