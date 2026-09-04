@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-// Static map of slug → import so the bundler can code-split each post into its
-// own chunk (a templated import path can't be statically traced). This map is
-// also the single source of truth for generateStaticParams below.
-const posts = {
-  "second-post": () => import("@/content/second-post.mdx"),
-  welcome: () => import("@/content/welcome.mdx"),
-} as const;
+import { getPost, posts } from "@/lib/posts";
 
 export default async function Page({
   params,
@@ -14,21 +9,48 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { default: Post } = await posts[slug as keyof typeof posts]();
+  const post = getPost(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const { default: Post } = await post.content();
 
   return <Post />;
 }
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/`,
-  },
-  description: "Blog posts about tech and my experience as a developer.",
-  title: "Blog",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPost(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  return {
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${post.slug}`,
+    },
+    description: post.summary,
+    openGraph: {
+      description: post.summary,
+      images: "/opengraph-image.png",
+      publishedTime: post.date,
+      title: post.title,
+      type: "article",
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${post.slug}`,
+    },
+    title: post.title,
+  };
+}
 
 export function generateStaticParams() {
-  return Object.keys(posts).map((slug) => ({ slug }));
+  return posts.map(({ slug }) => ({ slug }));
 }
 
 export const dynamicParams = false;

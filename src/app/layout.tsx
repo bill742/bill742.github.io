@@ -5,9 +5,11 @@ import type { Metadata } from "next";
 import Analytics from "@/components/analytics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { JsonLd } from "@/components/JsonLd";
 import SkipNav from "@/components/skip-nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import { pressStart, spaceGrotesk } from "@/lib/fonts";
+import { siteGraph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   ),
   openGraph: {
     description:
-      "I'm a front-end web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript.",
+      "I'm a web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript.",
     images: "/opengraph-image.png",
     title: `${process.env.NEXT_PUBLIC_SITE_TITLE}`,
   },
@@ -36,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${spaceGrotesk.variable} ${pressStart.variable}`}>
+        <JsonLd schema={siteGraph} />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

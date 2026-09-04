@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   alternates: {
@@ -19,21 +20,6 @@ export const metadata: Metadata = {
   title: "Blog",
 };
 
-const blogSlugs = [
-  {
-    date: "2024-07-01",
-    slug: "second-post",
-    summary: "Some quick summary",
-    title: "Second Post",
-  },
-  {
-    date: "2024-06-01",
-    slug: "welcome",
-    summary: "Some quick summary",
-    title: "Welcome to the Blog",
-  },
-];
-
 export default function Blog() {
   return (
     <div className="flex flex-col gap-y-12">
@@ -41,7 +27,7 @@ export default function Blog() {
         <IoMegaphone className="text-primary" /> Blog
       </h1>
       <ul className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {blogSlugs.map(({ date, slug, summary, title }) => (
+        {posts.map(({ date, slug, summary, title }) => (
           <li key={slug} className="mb-4 flex flex-col">
             <Card className="card-hover bg-card border-border hover:border-primary/30 justify-between">
               <CardHeader>

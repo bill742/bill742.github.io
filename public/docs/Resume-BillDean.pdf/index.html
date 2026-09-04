@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Redirect for the resume's old filename, which is still indexed. This is
+         a directory rather than a file so the request is answered with HTML: a
+         file ending in .pdf would be served as application/pdf whatever it
+         contains. See public/resume/index.html for why the redirect is a meta
+         refresh and not a 3xx. -->
+    <meta http-equiv="refresh" content="0; url=/docs/Resume-Bill-Dean.pdf" />
+    <link rel="canonical" href="https://billdean.me/docs/Resume-Bill-Dean.pdf" />
+    <title>Resume | Bill Dean - Front-End Web Developer</title>
+    <style>
+      body {
+        font-family:
+          ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        text-align: center;
+      }
+    </style>
+    <script>
+      // replace() so the redirect doesn't add a history entry to go "back" to.
+      window.location.replace("/docs/Resume-Bill-Dean.pdf");
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting to
+      <a href="/docs/Resume-Bill-Dean.pdf">Bill Dean&rsquo;s resume</a>&hellip;
+    </p>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 # BillDean.me
 
-Hello! My name is Bill Dean and I'm a front-end web developer based in Toronto, Canada. I specialize in building modern, responsive websites and applications using React, Next.js, and TypeScript.
+Hello! My name is Bill Dean and I'm a web developer based in Toronto, Canada. I specialize in building modern, responsive websites and applications using React, Next.js, and TypeScript.
 
 [See my GitHub profile](https://github.com/bill742) to view other repos of projects I am working on.
 

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
-import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+
+import { expectNoViolationsInAnyTheme, mainNav } from "./helpers";
 
 test.describe("Homepage does not have accessibility issues", () => {
   // The fade-up entrance animations mean axe can sample a half-faded element
@@ -15,42 +16,7 @@ test.describe("Homepage does not have accessibility issues", () => {
 
     console.log("Running accessibility scan on homepage");
 
-    // Test light mode
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
-    expect(accessibilityScanResults.violations).toEqual([]);
-
-    // Test dark mode
-    const themeToggle = page.locator("#themeToggle");
-    await themeToggle.first().click();
-    console.log("Switching to Dark mode for accessibility testing");
-    await page.getByRole("menuitem", { name: "Dark" }).click();
-    // Wait for the dropdown to fully close and the dark theme to apply before
-    // scanning — Radix sets aria-hidden on the page body while the dropdown is
-    // open/animating, which causes spurious axe failures.
-    await page.waitForSelector("html.dark");
-    await page.waitForSelector("[data-radix-popper-content-wrapper]", {
-      state: "detached",
-    });
-    const darkModeAccessibilityScanResults = await new AxeBuilder({
-      page,
-    }).analyze();
-    expect(darkModeAccessibilityScanResults.violations).toEqual([]);
-
-    // Test 8-bit mode
-    await themeToggle.first().click();
-    await page.getByRole("menuitem", { name: "8-bit" }).click();
-    // Wait for the dropdown to fully close and the eightbit theme to apply before
-    // scanning — Radix sets aria-hidden on the page body while the dropdown is
-    // open/animating, which causes spurious axe failures.
-    await page.waitForSelector("html.eightbit");
-    await page.waitForSelector("[data-radix-popper-content-wrapper]", {
-      state: "detached",
-    });
-    console.log("Switched to 8-bit mode for accessibility testing");
-    const eightBitModeAccessibilityScanResults = await new AxeBuilder({
-      page,
-    }).analyze();
-    expect(eightBitModeAccessibilityScanResults.violations).toEqual([]);
+    await expectNoViolationsInAnyTheme(page);
   });
 });
 
@@ -64,7 +30,7 @@ test("Home page displays correct metadata", async ({ page }) => {
 
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(
     "content",
-    "I'm a front-end web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript."
+    "I'm a web developer based in Toronto, Canada. I specialize in building websites and applications using modern JavaScript with React, NextJS and TypeScript."
   );
 
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
@@ -80,8 +46,12 @@ test("Intro section displays correctly", async ({ page }) => {
 
   const mainHeading = page.locator("h1").first();
   const subHeading = page.locator("h2").first();
-  await expect(mainHeading).toHaveText("Hello! My name is Bill.");
-  await expect(subHeading).toHaveText("I'm a front-end web developer.");
+  await expect(mainHeading).toHaveText(
+    "Hello! My name is Bill. A web developer based in Toronto."
+  );
+  await expect(subHeading).toHaveText(
+    "I specialize in building modern, responsive websites and applications using React, Next.js, and TypeScript."
+  );
 });
 
 test("About section displays correctly", async ({ page }) => {
@@ -89,7 +59,7 @@ test("About section displays correctly", async ({ page }) => {
 
   console.log("Checking About section on homepage");
 
-  await page.getByRole("button", { name: "About Me" }).click();
+  await mainNav(page).getByRole("button", { name: "About Me" }).click();
   await expect(page.getByRole("heading", { name: "About Me" })).toBeVisible();
 });
 
@@ -98,7 +68,7 @@ test("Skills section displays correctly", async ({ page }) => {
 
   console.log("Checking Skills section on homepage");
 
-  await page.getByRole("button", { name: "Skills" }).click();
+  await mainNav(page).getByRole("button", { name: "Skills" }).click();
   await expect(page.getByRole("heading", { name: "Skills" })).toBeVisible();
   await expect(page.locator("#skills span.skill-tag")).toHaveCount(22);
 });
@@ -108,7 +78,7 @@ test("Projects section displays correctly", async ({ page }) => {
 
   console.log("Checking Projects section on homepage");
 
-  await page.getByRole("button", { name: "Projects" }).click();
+  await mainNav(page).getByRole("button", { name: "Projects" }).click();
   await expect(page.getByRole("heading", { name: "Projects" })).toBeVisible();
   // Add more checks for projects section as more projects are added
 });
@@ -133,10 +103,7 @@ test("Contact form displays correctly, accepts input, and displays successful co
   });
 
   // Navigate to Contact section
-  await page
-    .getByRole("navigation")
-    .getByRole("button", { name: "Contact" })
-    .click();
+  await mainNav(page).getByRole("button", { name: "Contact" }).click();
   await expect(page.getByRole("heading", { name: "Contact" })).toBeVisible();
 
   const contactSection = page.locator("[id='contact']");
