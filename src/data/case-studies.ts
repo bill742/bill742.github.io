@@ -11,8 +11,8 @@ export const caseStudies: caseStudyType[] = [
     demoLink: "https://www.nextstarter.app/",
     facts: [
       { label: "Role", value: "Solo — design, build, docs and release" },
+      { label: "Timeline", value: "February 2025 – present" },
       { label: "Type", value: "Open-source boilerplate + paid starter kit" },
-      { label: "Stack", value: "Next.js 16, TypeScript, Tailwind CSS v4" },
       { label: "Status", value: "Live — Lite is open source, Pro is for sale" },
     ],
     githubLink: "nextstarter-lite",

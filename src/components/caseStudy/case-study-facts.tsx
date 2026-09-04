@@ -11,7 +11,10 @@ const CaseStudyFacts: FC<{
       aria-label="Project at a glance"
       className="bg-card border-border flex flex-col gap-8 border p-6"
     >
-      <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {/* auto-fit rather than a fixed column count: the facts are authored per
+          study, so a hardcoded grid orphans the last one the moment a study
+          carries a different number of them. */}
+      <dl className="grid grid-cols-[repeat(auto-fit,minmax(11rem,1fr))] gap-6">
         {facts.map(({ label, value }) => (
           <div key={label}>
             <dt className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">
