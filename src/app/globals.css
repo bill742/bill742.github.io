@@ -198,13 +198,19 @@
   }
 
   /* ── Section label (eyebrow) — above headings ── */
+  /* The primary yellow only reaches 1.62:1 against the light theme's
+     background, well under the 4.5:1 WCAG AA needs for text — so the accent
+     goes on the rule beside the label rather than on the label itself. Same
+     trade-off the nav makes for its active state. */
   .section-label {
     display: inline-block;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-primary);
+    color: var(--color-muted-foreground);
+    border-left: 3px solid var(--color-primary);
+    padding-left: 0.6rem;
     margin-bottom: 0.75rem;
   }
 
