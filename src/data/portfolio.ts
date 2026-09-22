@@ -35,7 +35,7 @@ export const portfolioData = [
   },
   {
     content:
-      "A weather app built with React, TypeScript, and Vite. It shows current conditions for your location automatically, or for any city you search.",
+      "A weather app built with React, TypeScript, and Vite. The app displays current conditions and 7 day forecasts for your location automatically, or for any city you search.",
     demoLink: "https://weather-app-lake-phi-87.vercel.app/",
     description: "Search cities around the world for weather conditions",
     githubLink: "weather-app",
