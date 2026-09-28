@@ -171,9 +171,9 @@ export const homeGraph = {
 };
 
 // ---------------------------------------------------------------------------
-// For later: blog posts and project case studies.
+// Per-page graphs: blog posts and project case studies.
 // Both reference the Person by @id rather than restating the author, which is
-// what makes each post accrue to your entity instead of floating free.
+// what makes each page accrue to your entity instead of floating free.
 // ---------------------------------------------------------------------------
 
 type PostInput = {
@@ -207,6 +207,68 @@ export function blogPostingGraph(post: PostInput) {
         publisher: { "@id": ID.person },
         url,
         ...(post.image ? { image: post.image } : {}),
+      },
+    ],
+  };
+}
+
+type CaseStudyInput = {
+  dateModified?: string;
+  datePublished: string; // ISO 8601, e.g. "2026-09-14"
+  demoLink?: string;
+  githubLink?: string;
+  image?: string; // a file in /public/images/projects
+  slug: string;
+  summary: string;
+  techStack: string[];
+  title: string;
+};
+
+/**
+ * A project case study. Two nodes: the write-up itself, and the software it's
+ * about. Keeping the project a separate node with its own @id is what lets the
+ * Article point at a thing rather than restate it, the same way the posts point
+ * at the Person instead of repeating the author.
+ */
+export function caseStudyGraph(study: CaseStudyInput) {
+  const url = `${SITE}/projects/${study.slug}`;
+  const image = study.image
+    ? `${SITE}/images/projects/${study.image}`
+    : undefined;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      person,
+      photo,
+      website,
+      {
+        "@id": `${url}#casestudy`,
+        "@type": "Article",
+        about: { "@id": `${url}#project` },
+        author: { "@id": ID.person },
+        dateModified: study.dateModified ?? study.datePublished,
+        datePublished: study.datePublished,
+        description: study.summary,
+        headline: `${study.title} — Case Study`,
+        inLanguage: "en",
+        isPartOf: { "@id": ID.website },
+        mainEntityOfPage: url,
+        publisher: { "@id": ID.person },
+        url,
+        ...(image ? { image } : {}),
+      },
+      {
+        "@id": `${url}#project`,
+        "@type": "SoftwareSourceCode",
+        author: { "@id": ID.person },
+        description: study.summary,
+        name: study.title,
+        programmingLanguage: study.techStack,
+        ...(study.githubLink
+          ? { codeRepository: `https://github.com/bill742/${study.githubLink}` }
+          : {}),
+        ...(study.demoLink ? { url: study.demoLink } : {}),
       },
     ],
   };

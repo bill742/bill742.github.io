@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FileText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, memo } from "react";
@@ -9,6 +9,7 @@ const ProjectCard: FC<{
   title: string;
   description: string;
   content: string;
+  caseStudySlug?: string;
   githubLink?: string;
   demoLink?: string;
   techStack?: string;
@@ -19,6 +20,7 @@ const ProjectCard: FC<{
     title,
     description,
     content,
+    caseStudySlug,
     githubLink,
     demoLink,
     techStack,
@@ -76,6 +78,16 @@ const ProjectCard: FC<{
 
         {/* Buttons */}
         <div className="relative z-10 mt-auto flex flex-wrap gap-2 pt-2">
+          {caseStudySlug && (
+            <Link
+              href={`/projects/${caseStudySlug}`}
+              className="project-link"
+              aria-label={`Read the ${title} case study`}
+            >
+              <FileText className="size-3.5" aria-hidden="true" />
+              Case Study
+            </Link>
+          )}
           {githubLink && (
             <Link
               href={`https://github.com/bill742/${githubLink}`}

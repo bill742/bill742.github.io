@@ -17,6 +17,7 @@ const Projects = () => {
           <ProjectCard
             key={item.id}
             index={i + 1}
+            caseStudySlug={item.caseStudySlug}
             title={item.title}
             description={item.description}
             content={item.content}

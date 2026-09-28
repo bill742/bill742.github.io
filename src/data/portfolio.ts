@@ -1,5 +1,8 @@
-export const portfolioData = [
+import type { portfolioItemType } from "@/types/types";
+
+export const portfolioData: portfolioItemType[] = [
   {
+    caseStudySlug: "nextstarter",
     content:
       "A modern Next.js boilerplate to ship production-ready projects fast — with TypeScript, Tailwind CSS v4, accessibility, testing, and developer tooling pre-configured.",
     demoLink: "https://www.nextstarter.app/",
