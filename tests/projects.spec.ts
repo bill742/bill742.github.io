@@ -12,7 +12,7 @@ const studyHeadings = [
   /why build another starter/i,
   /accessibility as a tested guarantee/i,
   /optional by environment/i,
-  /two tiers, one codebase/i,
+  /two tiers, one foundation/i,
   /internationalization, including right-to-left/i,
   /making the product findable/i,
   /what i took away/i,

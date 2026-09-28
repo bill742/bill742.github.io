@@ -10,10 +10,10 @@ export const caseStudies: caseStudyType[] = [
     datePublished: "2026-09-03",
     demoLink: "https://www.nextstarter.app/",
     facts: [
-      { label: "Role", value: "Solo — design, build, docs and release" },
+      { label: "Role", value: "Solo design, build, docs, and release" },
       { label: "Timeline", value: "February 2025 – present" },
       { label: "Type", value: "Open-source boilerplate + paid starter kit" },
-      { label: "Status", value: "Live — Lite is open source, Pro is for sale" },
+      { label: "Status", value: "Live. Lite is open source, Pro is for sale" },
     ],
     githubLink: "nextstarter-lite",
     highlights: [
@@ -35,12 +35,12 @@ export const caseStudies: caseStudyType[] = [
     ],
     image: "nextstarter-case-study.png",
     intro:
-      'Every project I started began the same way: two days of wiring before a single feature existed. NextStarter is that setup work, done once and done properly — and it is the project where I got to decide what "production-ready" actually has to mean.',
+      "Every project I started began the same way: two days of wiring and setup before a single feature existed. NextStarter is that setup work, done once and done properly allowing me to focus my time on building features.",
     sections: [
       {
         body: [
           "Boilerplates are easy to start and hard to justify. There are dozens of Next.js starters, most of them a package.json and a README, and the two things that separate a useful one from a dead repo are both unglamorous: it has to still build a year later, and it has to be honest about what it gives you.",
-          "So I set two constraints before writing any code. Accessibility would be verified by tests rather than claimed in a feature list, and every third-party integration would be optional — the app had to build, run and pass its full test suite with no API keys at all. Both constraints are the kind you cannot retrofit, which is why they came first.",
+          "So I set two constraints before writing any code. Accessibility would be verified by tests rather than claimed in a feature list, and every third-party integration would be optional. The app had to build, run and pass its full test suite without any API keys at all. Both constraints are the kind you cannot retrofit, which is why they came first.",
         ],
         heading: "Why build another starter",
       },
@@ -70,11 +70,11 @@ export const caseStudies: caseStudyType[] = [
       },
       {
         body: [
-          "Lite and Pro are one codebase, not a fork. The free tier is the foundation — framework, theming, accessibility, testing and tooling — and the paid tier layers the SaaS plumbing on top of it without altering anything underneath.",
-          "Keeping them in one line means a fix to the theming or the test helpers reaches both tiers, and it forces the free version to be genuinely good rather than a crippled demo. It also makes the upgrade path a merge rather than a migration.",
-          "Delivery follows the same logic. Pro ships as access to a private repository rather than a zip, so updates arrive through git pull and buyers can keep the starter as a remote across several of their own projects.",
+          "Lite and Pro live in separate repositories, and Pro is built from Lite. Everything in the free tier is in the paid one, unchanged. Framework, theming, accessibility, testing and tooling all come from Lite, and Pro layers the SaaS plumbing on top without altering anything underneath.",
+          "Splitting them this way is what lets the foundation stay open source while the paid layer stays behind a purchase. It also keeps the free tier honest. Lite is not a stripped demo built to sell an upgrade, it is the base every Pro project actually stands on, so it has to hold up on its own.",
+          "Being a private repository is also how Pro is delivered. Buyers are added to it on purchase, clone it, and take updates with git pull, which lets them keep the starter as a remote across several of their own projects.",
         ],
-        heading: "Two tiers, one codebase",
+        heading: "Two tiers, one foundation",
       },
       {
         body: [
@@ -99,7 +99,7 @@ export const caseStudies: caseStudyType[] = [
     takeaways: [
       "Constraints chosen before the first commit are the only ones that survive. Accessibility and optional-by-environment both shaped the architecture; either one added later would have meant a rewrite.",
       "A test that fails is worth more than a feature bullet. Axe-core in CI is the difference between a starter that is accessible today and one that stays accessible after someone else touches it.",
-      "The free tier has to be genuinely useful. Sharing one codebase between Lite and Pro keeps the foundation honest, because I am shipping it to myself on every project.",
+      "The free tier has to be genuinely useful. Building Pro on top of Lite keeps the foundation honest, because I am shipping it to myself on every project.",
       "Shipping the code is roughly half the work. Documentation, delivery, licensing and being findable at all turned out to take about as long as the features did.",
     ],
     techStack: [
