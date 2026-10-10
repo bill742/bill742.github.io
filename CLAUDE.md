@@ -69,7 +69,9 @@ Playwright tests are in `tests/`. Run with `pnpm test`. Tests cover:
 
 ### CI
 
-The GitHub Actions workflow (`.github/workflows/playwright.yml`) runs tests inside the official Playwright Docker container (`mcr.microsoft.com/playwright:v<version>-noble`) so browsers and system deps are pre-installed — there is no `playwright install` download step. **When bumping `@playwright/test` in `package.json`, bump the container image tag to the matching version.** A mismatch causes browser/driver version errors.
+A single workflow (`.github/workflows/ci.yml`) runs `lint`, `doctor`, and `test` as parallel jobs on PRs and pushes to master. On master it also runs `build`, then `deploy` to GitHub Pages only after lint, test, and build pass. Node comes from `.node-version`, and the `NEXT_PUBLIC_*` vars are defined once at the workflow level. Run `pnpm check` locally for the same checks.
+
+The `test` job runs inside the official Playwright Docker container (`mcr.microsoft.com/playwright:v<version>-noble`) so browsers and system deps are pre-installed — there is no `playwright install` download step. **When bumping `@playwright/test` in `package.json`, bump the container image tag to the matching version.** A mismatch causes browser/driver version errors.
 
 ## Static Export
 
