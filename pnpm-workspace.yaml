@@ -8,20 +8,29 @@ overrides:
   '@humanfs/node@<0.16.8': '>=0.16.8'
   # TODO(2026-07-30): bump to '>=5.0.8' (GHSA DoS fix). 5.0.8 published
   # 2026-07-23 and is still inside the 7-day minimumReleaseAge hold.
-  brace-expansion@<1.1.13: '>=1.1.13'
+  brace-expansion@<1.1.13: '^1.1.13'
   brace-expansion@>=3.0.0 <5.0.7: '>=5.0.7'
   brace-expansion@>=4.0.0 <5.0.8: '>=5.0.8'
   brace-expansion@>=4.0.0 <5.0.9: '>=5.0.9'
+  brace-expansion@>=4.0.0 <5.0.12: '^5.0.12'
   browserslist@<=4.28.6: '>=4.28.7'
-  fast-uri@>=3.0.0 <3.1.5: '>=3.1.5'
-  fast-uri@>=3.0.0 <3.1.6: '>=3.1.6'
-  fast-uri@>=3.1.2 <3.1.6: '>=3.1.6'
-  fast-uri@>=3.1.3 <3.1.6: '>=3.1.6'
+  fast-uri@>=3.0.0 <3.1.5: '^3.1.5'
+  fast-uri@>=3.0.0 <3.1.6: '^3.1.6'
+  fast-uri@>=3.1.2 <3.1.6: '^3.1.6'
+  fast-uri@>=3.1.3 <3.1.6: '^3.1.6'
   js-yaml@>=4.0.0 <4.3.0: '4.3.0'
   js-yaml@>=4.0.0 <4.3.1: '>=4.3.1'
   nanoid@<3.3.18: '>=3.3.18'
   picomatch@>=4.0.0 <4.0.4: '>=4.0.4'
   postcss@<8.5.10: '>=8.5.10'
   postcss@<=8.5.22: '>=8.5.23'
-  sharp@<0.35.0: '>=0.35.0'
+  sharp@<0.35.5: '^0.35.5'
+  compression@<1.8.2: '^1.8.2'
+  source-map-js@<1.2.2: '^1.2.2'
+  baseline-browser-mapping@<2.11.0: '^2.11.0'
 trustPolicy: no-downgrade
+# semver@6.3.1 (July 2023, npm team) predates npm provenance, so the
+# no-downgrade check flags it whenever the lockfile re-resolves. It was
+# already in the lockfile; this exemption doesn't add a new package.
+trustPolicyExclude:
+  - semver@6.3.1
