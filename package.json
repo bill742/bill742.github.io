@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "npx playwright test",
+    "typecheck": "tsc --noEmit",
     "doctor": "npx react-doctor@latest",
     "check": "pnpm lint && pnpm doctor && pnpm test"
   },
