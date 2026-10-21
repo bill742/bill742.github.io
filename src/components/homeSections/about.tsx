@@ -40,7 +40,7 @@ const About = () => {
             {[
               "Recently launched the Pro version of the NextStarter app",
               "Android and iOS versions of Corner Video",
-              "Adding an AI recomendation system to Corner Video ",
+              "Adding an AI recommendation system to Corner Video ",
             ].map((item) => (
               <li
                 key={item}
