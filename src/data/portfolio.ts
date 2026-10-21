@@ -4,25 +4,26 @@ export const portfolioData: portfolioItemType[] = [
   {
     caseStudySlug: "nextstarter",
     content:
-      "A modern Next.js boilerplate to ship production-ready projects fast — with TypeScript, Tailwind CSS v4, accessibility, testing, and developer tooling pre-configured.",
+      "An open-source Next.js 16 boilerplate to ship production-ready projects fast with TypeScript, Tailwind CSS v4, accessibility, testing, and developer tooling pre-configured.",
     demoLink: "https://www.nextstarter.app/",
     description: "A boilerplate for quickly starting NextJS projects",
     githubLink: "nextstarter-lite",
     id: "1",
     image: "nextstarter.png",
-    techStack: "Next.js + TypeScript + Tailwind CSS + ShadCN/UI + Playwright",
+    techStack:
+      "Next.js + TypeScript + Tailwind CSS + ShadCN/UI + Playwright + Prisma, Strips + GitHub Actions + Claude Code",
     title: "NextStarter",
   },
   {
     content:
-      "A web application for discovering and exploring movies — browse trending films, now-playing releases, and upcoming titles filtered by region, with full search and detailed movie pages.",
-    demoLink: "https://moviewatchlist.742designs.workers.dev/",
-    description: "A resource for movie information.",
-    githubLink: "MovieWatchlist",
+      "An application for discovering and exploring movies. Users can browse and search for trending films and TV shows, filter by their region, and create their own watch lists.",
+    demoLink: "https://cornervideo.app/",
+    description: "Your neighbourhood video store, minus the late fees.",
+    githubLink: "CornerVideo",
     id: "2",
-    image: "movie-watchlist.png",
+    image: "corner-video.png",
     techStack: "Next.js + TypeScript + Tailwind CSS + Radix UI",
-    title: "Movie Watchlist",
+    title: "Corner Video",
   },
   {
     content:
